@@ -53,8 +53,6 @@ export const HomeMain = ({ data }) => {
       <Container>
         <div sx={{ pt: 0, pb: 5 }}>
           <Stack variant="row">
-            {console.log(data)}
-            {console.log(data.hero.edges[0].node.heading)}
             <ContentBlock
               headingText={data.hero.edges[0].node.heading}
               paragraphText={data.hero.edges[0].node.text}

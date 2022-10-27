@@ -2,6 +2,7 @@
 import { jsx, Styled } from 'theme-ui';
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Link } from 'gatsby';
 
 export const Card = ({ item }) => {
   return (
@@ -48,7 +49,7 @@ export const Card = ({ item }) => {
             '&:hover': { textDecoration: 'underline' },
           }}
         >
-          {item.node.cardTitle} &gt;
+          <Link to={`/${item.node.slug}`}>{item.node.cardTitle} &gt;</Link>
         </Styled.h4>
       </div>
     </div>

@@ -1,34 +1,42 @@
 import React from "react"
+/** @jsx jsx */
+import { jsx, Container } from "theme-ui"
 import { graphql } from "gatsby"
+import altoonaLogo from "../../assets/logo.png"
+import Layout from "gatsby-theme-theme-ui-example/src/components/Layout/Layout"
+import { Nav } from "gatsby-theme-theme-ui-example/src/components/Nav/Nav"
+import { NewsFooter } from "gatsby-theme-theme-ui-example/src/components/CustomFooter/NewsFooter"
+import { testNavData } from "../pages/navData"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import { quickLinksTemplate as TemplateComponent } from "gatsby-theme-theme-ui-example/src/templates/quickLinksTemplate"
 export const query = graphql`
   query($slug: String!) {
-    quickLink: contentfulLesson(slug: { eq: $slug }) {
-      title
-      video
-      description {
-        json
+    quickLink: contentfulQuickLinksCards(slug: { eq: $slug }) {
+      cardTitle
+      pageContent {
+        raw
       }
-      author {
-        name
-        twitter
-      }
-      seo {
-        title
-        description {
-          description
-        }
-      }
+      id
     }
   }
 `
 
-export const QuickLinksTemplate = ({ data: { quickLink } }) => (
-  <div>
-    <h1>{lesson.title}</h1>
-    <TemplateComponent />
+const MainQuickLinksContent = ({ data: { quickLink } }) => (
+  <Container>
+    {console.log(quickLink.pageContent)}
+    <div sx={{ py: 4 }}>
+      {documentToReactComponents(
+        JSON.parse(quickLink.pageContent.raw, {
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
+              <img src={node.data.target.fields.file["en-US"].url} />
+            ),
+          },
+        })
+      )}
+    </div>
+    {/* <h1>{quickLink.title}</h1>
     <p>
       Guest: {lesson.author.name} · <a href={lesson.author.twitter}>Twitter</a>
     </p>
@@ -46,6 +54,14 @@ export const QuickLinksTemplate = ({ data: { quickLink } }) => (
           ),
         },
       })}
-    </div>
-  </div>
+    </div> */}
+  </Container>
 )
+const QuickLinksTemplatePage = ({ data }) => (
+  <Layout
+    navChild={<Nav imageSrc={altoonaLogo} navData={testNavData} />}
+    mainChild={<MainQuickLinksContent data={data} />}
+    footerChild={<NewsFooter />}
+  ></Layout>
+)
+export default QuickLinksTemplatePage

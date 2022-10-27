@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
 import React from 'react';
-import theme from '../../gatsby-plugin-theme-ui';
-import { Stack } from '../Stack/Stack';
-import { Image } from '../Image/Image';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export const Card = ({ item }) => {
   return (
@@ -11,33 +9,47 @@ export const Card = ({ item }) => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        border: '1px solid #C0C0C0',
         width: '305px',
-        borderRadius: 6,
-        cursor: 'pointer',
-        '&:hover': { boxShadow: '0 8px 16px 0 rgb(0 0 0 / 20%)' },
       }}
     >
-      <img
+      <div
         sx={{
-          borderTopRightRadius: 6,
-          borderTopLeftRadius: 6,
           height: '260px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+        }}
+        style={{
+          backgroundImage: `url(${item.node.cardImage.file.url})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
         altText={'Psu Altoona Logo'}
         onClick={() => console.log('Logo')}
-        src={item.src}
-      />
+      >
+        <h2 sx={{ color: 'whitePS', textTransform: 'uppercase' }}>
+          {item.node.cardTitle}
+        </h2>
+      </div>
       <div
         sx={{
-          p: 3,
-          backgroundColor: 'whitePS',
-          borderBottomRightRadius: 6,
-          borderBottomLeftRadius: 6,
+          py: 3,
         }}
       >
-        <Styled.h2>{item.heading}</Styled.h2>
-        <Styled.p>{item.paragraph}</Styled.p>
+        <Styled.p>
+          {documentToReactComponents(JSON.parse(item.node.cardDescription.raw))}
+        </Styled.p>
+        <Styled.h4
+          sx={{
+            color: 'mediumBluePS',
+            cursor: 'pointer',
+            '&:hover': { textDecoration: 'underline' },
+          }}
+        >
+          {item.node.cardTitle} &gt;
+        </Styled.h4>
       </div>
     </div>
   );

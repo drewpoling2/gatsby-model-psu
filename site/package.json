@@ -13,8 +13,17 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.13.1",
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.13.2",
     "gatsby": "^2.13.2",
+    "gatsby-cli": "^4.24.0",
+    "gatsby-plugin-image": "^2.24.0",
+    "gatsby-plugin-sharp": "^4.24.0",
+    "gatsby-source-contentful": "^7.22.0",
+    "gatsby-source-filesystem": "^4.24.0",
     "gatsby-theme-theme-ui-example": "*",
+    "gatsby-transformer-sharp": "^4.24.0",
     "lodash.merge": "^4.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

@@ -6,7 +6,7 @@ const Dropdown = ({ submenus, dropdown }) => {
   return (
     <>
       {dropdown === true ? (
-        <div sx={{ position: 'absolute', mt: 1 }}>
+        <div sx={{ zIndex: 10, position: 'absolute', mt: 1 }}>
           <div
             sx={{
               backgroundColor: 'whitePS',

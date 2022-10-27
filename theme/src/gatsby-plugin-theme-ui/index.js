@@ -6,7 +6,28 @@ const theme = {
   breakpoints: ['40em', '52em', '64em'],
 
   //if you have to add another index to theme arrays, add it onto the end so it doesn't break the targeting elsewhere
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512, 24, 62, 176, 6, 30, 20, 2, 10, 5], //17
+  space: [
+    0,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512,
+    24,
+    62,
+    176,
+    6,
+    30,
+    20,
+    2,
+    10,
+    5,
+    80,
+    40,
+  ], //length 19
   sizes: [
     '0%',
     '25%',
@@ -18,6 +39,7 @@ const theme = {
     '33%',
     '66%',
     '70%',
+    '80%',
   ], //9
   fonts: {
     body: 'roboto, sans-serif',
@@ -45,7 +67,7 @@ const theme = {
     text: '#000',
     transparent: 'transparent',
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96, 22],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96, 22, 42, 18], //length 11
   fontWeights: {
     body: 400,
     heading: 700,
@@ -54,6 +76,7 @@ const theme = {
   lineHeights: {
     body: 1.3,
     heading: 1.125,
+    copy: 1.5,
   },
   letterSpacing: {
     button: 0.5,
@@ -63,7 +86,7 @@ const theme = {
     dotted: '2px dotted white',
     solid: '2px solid white',
     defaultButton: '2px solid black',
-    outlineButton: '2px solid #005fa9',
+    outlineButton: '2px solid white',
   },
 
   //custom variants
@@ -103,6 +126,11 @@ const theme = {
       cursor: 'pointer',
       letterSpacing: 'button',
       lineHeight: 'heading',
+    },
+    copyP: {
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'copy',
     },
   },
   layout: {

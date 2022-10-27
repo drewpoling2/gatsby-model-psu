@@ -5,7 +5,8 @@ import theme from '../../gatsby-plugin-theme-ui';
 import PropTypes from 'prop-types';
 import { Stack } from '../Stack/Stack';
 import { Card } from '../Card/Card';
-export const QuickLinks = ({ quickLinkData, heading }) => {
+import { Link } from 'gatsby';
+export const QuickLinks = ({ heading, data }) => {
   return (
     <div sx={{ py: 5 }}>
       <h2 sx={{ color: 'darkNavyBluePS', textTransform: 'uppercase', mt: 0 }}>
@@ -19,9 +20,11 @@ export const QuickLinks = ({ quickLinkData, heading }) => {
           justifyContent: 'space-between',
         }}
       >
-        {quickLinkData &&
-          quickLinkData.map((item, index) => (
-            <Card item={item} index={index} key={index} />
+        {data &&
+          data.quickLinks.edges.map((item, index) => (
+            <>
+              <Card item={item} index={index} key={index} />
+            </>
           ))}
       </div>
     </div>

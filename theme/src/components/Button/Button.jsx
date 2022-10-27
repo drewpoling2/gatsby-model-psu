@@ -74,20 +74,19 @@ const VariantOutlined = ({ text, onClick, disabled, href }) => {
       onClick={onClick}
       sx={{
         backgroundColor: 'none',
-        color: 'mediumBluePS',
+        color: 'whitePS',
         border: 'outlineButton',
         fontSize: 2,
         width: 5,
         height: 5,
         px: 13,
-        py: 12,
+        py: 2,
         my: 2,
         cursor: 'pointer',
         variant: 'layout.rowJAC',
         '&:hover': {
-          backgroundImage: () =>
-            `linear-gradient(to bottom, ${theme.colors.robinsEggBluePS},  ${theme.colors.bluePS})`,
-          color: 'whitePS',
+          backgroundColor: 'lightBluePS',
+          color: 'mediumBluePS',
         },
       }}
     >

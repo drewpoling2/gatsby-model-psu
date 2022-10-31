@@ -1,7 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
-import React from 'react';
-import theme from '../../gatsby-plugin-theme-ui';
+import { jsx } from 'theme-ui';
 
 const VariantRow = {
   display: 'flex',

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Footer, Container, Styled } from 'theme-ui';
+import { jsx, Container } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { Button } from '@bit/button';
@@ -120,7 +120,6 @@ export const NewsFooter = ({ apiURL }) => {
                 if (subscribeLink?.displayname === 'Get News By Email') {
                   const newsletterTitle = subscribeLink?.title;
                   const newsletterLink = subscribeLink?.uri;
-                  const newsletterText = subscribeLink?.html;
                   return (
                     <React.Fragment key={`subscribeLink-${index}`}>
                       <h3 sx={{ textTransform: 'uppercase' }}>
@@ -266,7 +265,6 @@ export const NewsFooter = ({ apiURL }) => {
                   <li>
                     <Link
                       sx={{
-                        color: 'lightBluePS',
                         pr: 3,
                         borderRight: '1px solid #1e407c',
                         color: 'lightBluePS',

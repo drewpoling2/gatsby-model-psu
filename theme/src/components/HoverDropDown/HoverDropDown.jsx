@@ -1,8 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import theme from '../../gatsby-plugin-theme-ui';
-import PropTypes from 'prop-types';
+import { jsx } from 'theme-ui';
 import MenuItems from './MenuItems';
 
 export const HoverDropDown = ({ title, navData }) => {

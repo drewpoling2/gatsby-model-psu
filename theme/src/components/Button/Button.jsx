@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, jsxs, Styled } from 'theme-ui';
-import React from 'react';
+import { jsx } from 'theme-ui';
 import theme from '../../gatsby-plugin-theme-ui';
 const VariantDefault = ({ text, onClick, disabled, href }) => {
   return (

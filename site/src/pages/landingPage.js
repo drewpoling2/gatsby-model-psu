@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import React from "react"
 import Layout from "gatsby-theme-theme-ui-example/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-example/src/components/Nav/Nav"

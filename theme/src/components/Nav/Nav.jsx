@@ -1,7 +1,5 @@
 /** @jsx jsx */
-import { Container, jsx, Styled } from 'theme-ui';
-import React from 'react';
-import theme from '../../gatsby-plugin-theme-ui';
+import { Container, jsx } from 'theme-ui';
 import { Button } from '@bit/button';
 import { Divider } from '@bit/divider';
 import { Image } from '@bit/image';

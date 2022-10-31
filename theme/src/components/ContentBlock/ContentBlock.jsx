@@ -1,8 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
-import React from 'react';
-import theme from '../../gatsby-plugin-theme-ui';
-import { Image } from '@bit/image';
+import { jsx } from 'theme-ui';
 import { Button } from '@bit/button';
 import { Stack } from '@bit/stack';
 export const ContentBlock = ({ paragraphText, headingText, imageSrc }) => {

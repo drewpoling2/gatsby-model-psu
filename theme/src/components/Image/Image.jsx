@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
-import React from 'react';
+import { jsx } from 'theme-ui';
 
 export const Image = ({ width, height, onClick, altText, src }) => {
   return (

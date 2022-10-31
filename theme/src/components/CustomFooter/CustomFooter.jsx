@@ -1,13 +1,10 @@
 /** @jsx jsx */
-import { jsx, Footer, Container, Styled } from 'theme-ui';
+import { jsx, Footer, Container } from 'theme-ui';
 import React from 'react';
-import theme from '../../gatsby-plugin-theme-ui';
-import PropTypes from 'prop-types';
 import { FooterLinks } from '@bit/footer-links';
 import { Image } from '@bit/image';
 import { Stack } from '@bit/stack';
 import { Button } from '@bit/button';
-import footerData from './footerData.json';
 
 export const bottomFooterLinks = [
   { linkName: 'Privacy Statement' },

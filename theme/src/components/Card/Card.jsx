@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
-import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link } from 'gatsby';
 

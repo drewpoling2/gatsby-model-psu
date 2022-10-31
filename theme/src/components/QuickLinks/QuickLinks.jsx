@@ -1,11 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import React from 'react';
-import theme from '../../gatsby-plugin-theme-ui';
-import PropTypes from 'prop-types';
-import { Stack } from '@bit/stack';
 import { Card } from '@bit/card';
-import { Link } from 'gatsby';
 export const QuickLinks = ({ heading, data }) => {
   return (
     <div sx={{ py: 5 }}>

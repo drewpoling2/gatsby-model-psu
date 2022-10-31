@@ -1,13 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Layout as DefaultLayout,
-  Header,
-  Footer,
-  Main,
-  Container,
-  Styled,
-} from 'theme-ui';
+import { jsx, Layout as DefaultLayout, Header, Footer, Main } from 'theme-ui';
 import { Global } from '@emotion/core';
 
 const Layout = ({ navChild, mainChild, footerChild }) => (

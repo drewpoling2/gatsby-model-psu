@@ -2,8 +2,8 @@
 import { jsx, Styled } from 'theme-ui';
 import React from 'react';
 import theme from '../../gatsby-plugin-theme-ui';
-import { Stack } from '../Stack/Stack';
-import { Posts } from '../Posts/Posts';
+import { Stack } from '@bit/stack';
+import { Posts } from '@bit/posts';
 
 export const RecentPosts = ({ allPostsLink, heading, postData }) => {
   return (

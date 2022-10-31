@@ -2,8 +2,8 @@
 import { jsx, Footer, Container, Styled } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
-import { Button } from '../Button/Button';
-import Link from '../link/link';
+import { Button } from '@bit/button';
+import Link from '@bit/link';
 
 import localFooterData from './footerData.json';
 

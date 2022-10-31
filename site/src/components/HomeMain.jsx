@@ -8,44 +8,6 @@ import placeHolderImage from "../../assets/diversity-circle-block.jpeg"
 import { Stack } from "gatsby-theme-theme-ui-example/src/components/Stack/Stack"
 import { RecentPosts } from "gatsby-theme-theme-ui-example/src/components/RecentPosts/RecentPosts"
 
-const postData = [
-  {
-    month: "Oct",
-    day: "23",
-    description:
-      "Exciting new updates to Penn State's visual identity standards that are happening.",
-  },
-  {
-    month: "oct",
-    day: "24",
-    description:
-      "Exciting new updates to Penn State's visual identity standards that are happening.",
-  },
-  {
-    month: "oct",
-    day: "25",
-    description:
-      "Exciting new updates to Penn State's visual identity standards that are happening.",
-  },
-  {
-    month: "oct",
-    day: "27",
-    description:
-      "Exciting new updates to Penn State's visual identity standards that are happening.",
-  },
-  {
-    month: "oct",
-    day: "27",
-    description:
-      "Exciting new updates to Penn State's visual identity standards that are happening.",
-  },
-  {
-    month: "oct",
-    day: "27",
-    description:
-      "Exciting new updates to Penn State's visual identity standards that are happening.",
-  },
-]
 
 export const HomeMain = ({ data }) => {
   return (

@@ -1,0 +1,333 @@
+{
+  "button": {
+    "files": [
+      {
+        "relativePath": "src/components/Button/Button.jsx",
+        "test": false,
+        "name": "Button.jsx"
+      }
+    ],
+    "mainFile": "src/components/Button/Button.jsx",
+    "trackDir": "src/components/Button",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "card": {
+    "files": [
+      {
+        "relativePath": "src/components/Card/Card.jsx",
+        "test": false,
+        "name": "Card.jsx"
+      },
+      {
+        "relativePath": "src/components/Card/Card.test.js",
+        "test": false,
+        "name": "Card.test.js"
+      }
+    ],
+    "mainFile": "src/components/Card/Card.jsx",
+    "trackDir": "src/components/Card",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "content-block": {
+    "files": [
+      {
+        "relativePath": "src/components/ContentBlock/ContentBlock.jsx",
+        "test": false,
+        "name": "ContentBlock.jsx"
+      },
+      {
+        "relativePath": "src/components/ContentBlock/ContentBlock.test.js",
+        "test": false,
+        "name": "ContentBlock.test.js"
+      }
+    ],
+    "mainFile": "src/components/ContentBlock/ContentBlock.jsx",
+    "trackDir": "src/components/ContentBlock",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "custom-footer": {
+    "files": [
+      {
+        "relativePath": "src/components/CustomFooter/CustomFooter.jsx",
+        "test": false,
+        "name": "CustomFooter.jsx"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/CustomFooter.test.js",
+        "test": false,
+        "name": "CustomFooter.test.js"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/NewsFooter.jsx",
+        "test": false,
+        "name": "NewsFooter.jsx"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/assets/fb-white.inline.svg",
+        "test": false,
+        "name": "fb-white.inline.svg"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/assets/ig-white.inline.svg",
+        "test": false,
+        "name": "ig-white.inline.svg"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/assets/in-white.inline.svg",
+        "test": false,
+        "name": "in-white.inline.svg"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/assets/twt-white.inline.svg",
+        "test": false,
+        "name": "twt-white.inline.svg"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/assets/yt-white.inline.svg",
+        "test": false,
+        "name": "yt-white.inline.svg"
+      },
+      {
+        "relativePath": "src/components/CustomFooter/footerData.json",
+        "test": false,
+        "name": "footerData.json"
+      }
+    ],
+    "mainFile": "src/components/CustomFooter/CustomFooter.jsx",
+    "trackDir": "src/components/CustomFooter",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "divider": {
+    "files": [
+      {
+        "relativePath": "src/components/Divider/Divider.jsx",
+        "test": false,
+        "name": "Divider.jsx"
+      },
+      {
+        "relativePath": "src/components/Divider/Divider.test.js",
+        "test": false,
+        "name": "Divider.test.js"
+      }
+    ],
+    "mainFile": "src/components/Divider/Divider.jsx",
+    "trackDir": "src/components/Divider",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "footer-links": {
+    "files": [
+      {
+        "relativePath": "src/components/FooterLinks/FooterLinks.jsx",
+        "test": false,
+        "name": "FooterLinks.jsx"
+      },
+      {
+        "relativePath": "src/components/FooterLinks/FooterLinks.test.js",
+        "test": false,
+        "name": "FooterLinks.test.js"
+      }
+    ],
+    "mainFile": "src/components/FooterLinks/FooterLinks.jsx",
+    "trackDir": "src/components/FooterLinks",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "hover-drop-down": {
+    "files": [
+      {
+        "relativePath": "src/components/HoverDropDown/Dropdown.jsx",
+        "test": false,
+        "name": "Dropdown.jsx"
+      },
+      {
+        "relativePath": "src/components/HoverDropDown/HoverDropDown.jsx",
+        "test": false,
+        "name": "HoverDropDown.jsx"
+      },
+      {
+        "relativePath": "src/components/HoverDropDown/HoverDropDown.test.js",
+        "test": false,
+        "name": "HoverDropDown.test.js"
+      },
+      {
+        "relativePath": "src/components/HoverDropDown/MenuItems.jsx",
+        "test": false,
+        "name": "MenuItems.jsx"
+      }
+    ],
+    "mainFile": "src/components/HoverDropDown/HoverDropDown.jsx",
+    "trackDir": "src/components/HoverDropDown",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "icon-button": {
+    "files": [
+      {
+        "relativePath": "src/components/IconButton/IconButton.jsx",
+        "test": false,
+        "name": "IconButton.jsx"
+      },
+      {
+        "relativePath": "src/components/IconButton/IconButton.test.js",
+        "test": false,
+        "name": "IconButton.test.js"
+      }
+    ],
+    "mainFile": "src/components/IconButton/IconButton.jsx",
+    "trackDir": "src/components/IconButton",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "image": {
+    "files": [
+      {
+        "relativePath": "src/components/Image/Image.jsx",
+        "test": false,
+        "name": "Image.jsx"
+      },
+      {
+        "relativePath": "src/components/Image/Image.test.js",
+        "test": false,
+        "name": "Image.test.js"
+      }
+    ],
+    "mainFile": "src/components/Image/Image.jsx",
+    "trackDir": "src/components/Image",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "index": {
+    "files": [
+      {
+        "relativePath": "src/gatsby-plugin-theme-ui/index.js",
+        "test": false,
+        "name": "index.js"
+      }
+    ],
+    "mainFile": "src/gatsby-plugin-theme-ui/index.js",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "layout": {
+    "files": [
+      {
+        "relativePath": "src/components/Layout/Layout.jsx",
+        "test": false,
+        "name": "Layout.jsx"
+      }
+    ],
+    "mainFile": "src/components/Layout/Layout.jsx",
+    "trackDir": "src/components/Layout",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "link": {
+    "files": [
+      {
+        "relativePath": "src/components/link/link.js",
+        "test": false,
+        "name": "link.js"
+      }
+    ],
+    "mainFile": "src/components/link/link.js",
+    "trackDir": "src/components/link",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "nav": {
+    "files": [
+      {
+        "relativePath": "src/components/Nav/Nav.jsx",
+        "test": false,
+        "name": "Nav.jsx"
+      },
+      {
+        "relativePath": "src/components/Nav/Nav.test.js",
+        "test": false,
+        "name": "Nav.test.js"
+      }
+    ],
+    "mainFile": "src/components/Nav/Nav.jsx",
+    "trackDir": "src/components/Nav",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "posts": {
+    "files": [
+      {
+        "relativePath": "src/components/Posts/Posts.jsx",
+        "test": false,
+        "name": "Posts.jsx"
+      },
+      {
+        "relativePath": "src/components/Posts/Posts.test.js",
+        "test": false,
+        "name": "Posts.test.js"
+      }
+    ],
+    "mainFile": "src/components/Posts/Posts.jsx",
+    "trackDir": "src/components/Posts",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "quick-links": {
+    "files": [
+      {
+        "relativePath": "src/components/QuickLinks/QuickLinks.jsx",
+        "test": false,
+        "name": "QuickLinks.jsx"
+      },
+      {
+        "relativePath": "src/components/QuickLinks/QuickLinks.test.js",
+        "test": false,
+        "name": "QuickLinks.test.js"
+      }
+    ],
+    "mainFile": "src/components/QuickLinks/QuickLinks.jsx",
+    "trackDir": "src/components/QuickLinks",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "recent-posts": {
+    "files": [
+      {
+        "relativePath": "src/components/RecentPosts/RecentPosts.jsx",
+        "test": false,
+        "name": "RecentPosts.jsx"
+      },
+      {
+        "relativePath": "src/components/RecentPosts/RecentPosts.test.js",
+        "test": false,
+        "name": "RecentPosts.test.js"
+      }
+    ],
+    "mainFile": "src/components/RecentPosts/RecentPosts.jsx",
+    "trackDir": "src/components/RecentPosts",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "stack": {
+    "files": [
+      {
+        "relativePath": "src/components/Stack/Stack.jsx",
+        "test": false,
+        "name": "Stack.jsx"
+      },
+      {
+        "relativePath": "src/components/Stack/Stack.test.js",
+        "test": false,
+        "name": "Stack.test.js"
+      }
+    ],
+    "mainFile": "src/components/Stack/Stack.jsx",
+    "trackDir": "src/components/Stack",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "version": "14.8.8"
+}

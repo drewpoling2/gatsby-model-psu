@@ -3,7 +3,7 @@ import { jsx, Styled } from 'theme-ui';
 import React from 'react';
 import theme from '../../gatsby-plugin-theme-ui';
 import PropTypes from 'prop-types';
-import { Stack } from '../Stack/Stack';
+import { Stack } from '@bit/stack';
 
 export const Posts = ({ item }) => {
   return (

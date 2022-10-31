@@ -2,7 +2,7 @@
 import { jsx, Styled } from 'theme-ui';
 import React from 'react';
 import theme from '../../gatsby-plugin-theme-ui';
-import { Stack } from '../Stack/Stack';
+import { Stack } from '@bit/stack';
 
 export const FooterLinks = ({ footerLinkData }) => {
   return (

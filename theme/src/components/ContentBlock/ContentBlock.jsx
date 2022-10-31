@@ -2,9 +2,9 @@
 import { jsx, Styled } from 'theme-ui';
 import React from 'react';
 import theme from '../../gatsby-plugin-theme-ui';
-import { Image } from '../Image/Image';
-import { Button } from '../Button/Button';
-import { Stack } from '../Stack/Stack';
+import { Image } from '@bit/image';
+import { Button } from '@bit/button';
+import { Stack } from '@bit/stack';
 export const ContentBlock = ({ paragraphText, headingText, imageSrc }) => {
   return (
     <div sx={{ width: 4 }}>

@@ -34,7 +34,7 @@ export const query = graphql`
         }
       }
     }
-    hero: allContentfulAboutHero {
+    hero: allContentfulHomeHero {
       edges {
         node {
           id

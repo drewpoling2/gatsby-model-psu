@@ -3,10 +3,10 @@ import { jsx, Footer, Container, Styled } from 'theme-ui';
 import React from 'react';
 import theme from '../../gatsby-plugin-theme-ui';
 import PropTypes from 'prop-types';
-import { FooterLinks } from '../FooterLinks/FooterLinks';
-import { Image } from '../Image/Image';
-import { Stack } from '../Stack/Stack';
-import { Button } from '../Button/Button';
+import { FooterLinks } from '@bit/footer-links';
+import { Image } from '@bit/image';
+import { Stack } from '@bit/stack';
+import { Button } from '@bit/button';
 import footerData from './footerData.json';
 
 export const bottomFooterLinks = [

@@ -29,13 +29,16 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@mdx-js/react": "^1.0.21",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "bit-bin": "^14.8.8",
     "classnames": "^2.3.2",
+    "enzyme": "^3.11.0",
     "gatsby-plugin-sass": "^5.24.0",
     "gatsby-plugin-theme-ui": "^0.2.5",
     "material-icons": "^1.12.0",
     "postcss-css-variables": "^0.18.0",
     "postcss-remove-nested-calc": "^1.0.3",
+    "react-performance-testing": "^2.0.0",
     "sass": "^1.55.0",
     "theme-ui": "^0.2.5"
   },
@@ -45,5 +48,12 @@
     "eject": "react-scripts eject",
     "generate-c": "yarn plop --plopfile ./component-plopfile.js",
     "generate-p": "yarn plop --plopfile ./page-plopfile.js"
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/react@2.0.0"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }

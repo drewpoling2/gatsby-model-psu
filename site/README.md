@@ -98,10 +98,18 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 To start project:
 
-````
+```
 run >>>
    yarn
    cd example-theme-ui-psu/
    yarn workspace site develop
-   ```
-````
+```
+
+If stuck on "building schema":
+
+```
+run >>>
+   cd site
+   gatsby clean
+   yarn workspace site develop
+```

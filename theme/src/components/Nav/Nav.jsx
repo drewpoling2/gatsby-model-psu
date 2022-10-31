@@ -2,11 +2,11 @@
 import { Container, jsx, Styled } from 'theme-ui';
 import React from 'react';
 import theme from '../../gatsby-plugin-theme-ui';
-import { Button } from '../Button/Button';
-import { Divider } from '../Divider/Divider';
-import { Image } from '../Image/Image';
-import { IconButton } from '../IconButton/IconButton';
-import { HoverDropDown } from '../HoverDropDown/HoverDropDown';
+import { Button } from '@bit/button';
+import { Divider } from '@bit/divider';
+import { Image } from '@bit/image';
+import { IconButton } from '@bit/icon-button';
+import { HoverDropDown } from '@bit/hover-drop-down';
 
 export const Nav = ({ imageSrc, navData }) => {
   return (

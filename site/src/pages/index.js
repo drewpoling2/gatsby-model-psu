@@ -34,7 +34,7 @@ export const query = graphql`
         }
       }
     }
-    hero: allContentfulHomeHero {
+    hero: allContentfulLandingPageImageHero {
       edges {
         node {
           id
@@ -47,6 +47,7 @@ export const query = graphql`
             }
           }
           text
+          subtitle
         }
       }
     }

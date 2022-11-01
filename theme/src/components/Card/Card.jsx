@@ -3,7 +3,7 @@ import { jsx, Styled } from 'theme-ui';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link } from 'gatsby';
 
-export const Card = ({ item }) => {
+export const Card = ({ data }) => {
   return (
     <div
       sx={{
@@ -21,7 +21,7 @@ export const Card = ({ item }) => {
           cursor: 'pointer',
         }}
         style={{
-          backgroundImage: `url(${item.node.cardImage.file.url})`,
+          backgroundImage: `url(${data.cardImage.file.url})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -30,7 +30,7 @@ export const Card = ({ item }) => {
         onClick={() => console.log('Logo')}
       >
         <h2 sx={{ color: 'whitePS', textTransform: 'uppercase' }}>
-          {item.node.cardTitle}
+          {data.cardTitle}
         </h2>
       </div>
       <div
@@ -39,7 +39,7 @@ export const Card = ({ item }) => {
         }}
       >
         <Styled.p>
-          {documentToReactComponents(JSON.parse(item.node.cardDescription.raw))}
+          {documentToReactComponents(JSON.parse(data.cardDescription.raw))}
         </Styled.p>
         <Styled.h4
           sx={{
@@ -48,7 +48,7 @@ export const Card = ({ item }) => {
             '&:hover': { textDecoration: 'underline' },
           }}
         >
-          <Link to={`/${item.node.slug}`}>{item.node.cardTitle} &gt;</Link>
+          <Link to={`/${data.slug}`}>{data.cardTitle} &gt;</Link>
         </Styled.h4>
       </div>
     </div>

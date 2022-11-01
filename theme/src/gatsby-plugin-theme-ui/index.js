@@ -27,7 +27,8 @@ const theme = {
     5,
     80,
     40,
-  ], //length 19
+    160,
+  ], //length 20
   sizes: [
     '0%',
     '25%',
@@ -60,14 +61,17 @@ const theme = {
     bluishBlackPS: '#000321',
     grayPS: '#C0C0C0',
     darkSteelPS: '#455460',
+    blueGrayPS: '#314D64',
     paragraphGrayPS: '#444444',
     yellowPS: '#ffd100',
     lightGrayPS: '#F2F2F4',
+    mediumGrayPS: '#727272',
     background: '#fff',
     text: '#000',
+
     transparent: 'transparent',
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96, 22, 42, 18], //length 11
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96, 23, 42, 18, 55, 70, 30], //length 14
   fontWeights: {
     body: 400,
     heading: 700,

@@ -2,7 +2,12 @@
 import { jsx } from 'theme-ui';
 import { Button } from '@bit/button';
 import { Stack } from '@bit/stack';
-export const ContentBlock = ({ paragraphText, headingText, imageSrc }) => {
+export const LandingPageImageHero = ({
+  paragraphText,
+  headingText,
+  imageSrc,
+  subTitle = 'featured',
+}) => {
   return (
     <div sx={{ width: 4 }}>
       <Stack variant="col">
@@ -23,35 +28,47 @@ export const ContentBlock = ({ paragraphText, headingText, imageSrc }) => {
               position: 'absolute',
               display: 'flex',
               flexDirection: 'column',
-              pl: 5,
-              pr: 7,
+              px: 20,
               bottom: 5,
             }}
           >
-            <h1
+            <h5
               sx={{
                 mb: 3,
-                fontSize: 10,
+                letterSpacing: 0.5,
+                fontSize: 11,
+                color: 'lightBluePS',
+                textTransform: 'uppercase',
+              }}
+            >
+              {subTitle}
+            </h5>
+            <div
+              sx={{ mb: 3, borderBottom: '1px solid white', width: '3.5%' }}
+            ></div>
+            <h1
+              sx={{
+                mt: 3,
+                mb: 3,
+                fontSize: 12,
                 color: 'whitePS',
                 fontStyle: 'italic',
               }}
             >
               {headingText}
             </h1>
-            <div
-              sx={{ mb: 3, borderBottom: '1px solid white', width: '5%' }}
-            ></div>
+
             <p
               sx={{
                 variant: 'text.copyP',
                 fontSize: 9,
                 color: 'whitePS',
                 pb: 4,
+                m: 0,
               }}
             >
               {paragraphText}
             </p>
-            <Button variant="outlined" text={'learn more >'} />
           </div>
         </div>
       </Stack>

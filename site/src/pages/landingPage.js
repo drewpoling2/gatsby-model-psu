@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import React from "react"
 import Layout from "gatsby-theme-theme-ui-example/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-example/src/components/Nav/Nav"
-import { HomeMain } from "../components/HomeMain"
+import { HomeMainTest } from "../components/HomeMainTest"
 import { CustomFooter } from "gatsby-theme-theme-ui-example/src/components/CustomFooter/CustomFooter"
 import { NewsFooter } from "gatsby-theme-theme-ui-example/src/components/CustomFooter/NewsFooter"
 import { testNavData } from "../../navData"
@@ -15,40 +15,47 @@ import { graphql } from "gatsby"
 
 export const query = graphql`
   {
-    quickLinks: allContentfulQuickLinksCards {
-      edges {
-        node {
+    contentfulHomepage {
+      content {
+        ... on ContentfulQuickLinksCards {
           id
-          slug
-          cardImage {
-            id
-            file {
-              url
-              fileName
-            }
-          }
           cardTitle
           cardDescription {
             raw
           }
+          cardImage {
+            file {
+              url
+              fileName
+            }
+          }
+          slug
         }
-      }
-    }
-    hero: allContentfulHomeHero {
-      edges {
-        node {
+        ... on ContentfulLandingPageImageHero {
           id
           heading
           image {
-            id
             file {
-              fileName
               url
+              fileName
             }
           }
           text
+          subtitle
+        }
+        ... on ContentfulWideImageHero {
+          id
+          heading
+          image {
+            file {
+              url
+              fileName
+            }
+          }
+          subtitle
         }
       }
+      title
     }
   }
 `
@@ -56,7 +63,7 @@ export const query = graphql`
 export default ({ data }) => (
   <Layout
     navChild={<Nav imageSrc={altoonaLogo} navData={testNavData} />}
-    mainChild={<HomeMain data={data} imageSrc={beaverStadium} />}
+    mainChild={<HomeMainTest data={data} imageSrc={beaverStadium} />}
     footerChild={<NewsFooter />}
   ></Layout>
 )

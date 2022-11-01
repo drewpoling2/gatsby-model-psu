@@ -3,7 +3,7 @@
 /* eslint-disable testing-library/prefer-find-by */
 import React from "react";
 import Enzyme, { shallow, mount } from "enzyme";
-import ContentBlock from "./ContentBlock";
+import ParagraphSummary from "./ParagraphSummary";
 import { render, screen, fireEvent } from "@testing-library/react";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import { perf, wait } from "react-performance-testing";
@@ -17,23 +17,23 @@ const Props = {
   
 };
 
-describe("ContentBlock", () => {
+describe("ParagraphSummary", () => {
   let wrapper;
 
   //initializes wrapper for each test & renders component
   beforeEach(() => {
-    render(<ContentBlock />);
-    wrapper = mount(<ContentBlock />);
+    render(<ParagraphSummary />);
+    wrapper = mount(<ParagraphSummary />);
   });
 
-  //renders ContentBlock component
-  it("Renders ContentBlock correctly", () => {
-    shallow(<ContentBlock />);
+  //renders ParagraphSummary component
+  it("Renders ParagraphSummary correctly", () => {
+    shallow(<ParagraphSummary />);
     //screen.debug();
   });
 
   //checks for HTML elements
-  it("Includes all HTML elements for ContentBlock", () => {
+  it("Includes all HTML elements for ParagraphSummary", () => {
     //expect(wrapper.find("").length).toEqual();
   });
 });

@@ -2,8 +2,13 @@
 import { jsx } from 'theme-ui';
 import React from 'react';
 import { Stack } from '../Stack/Stack';
+import { graphql } from 'gatsby';
 
-export const ParagraphSummary = ({ props }) => {
+export const ParagraphSummary = ({
+  paragraphSummaryAuthor,
+  paragraphSummaryText,
+  paragraphSummarySubtitle,
+}) => {
   return (
     <div sx={{ display: 'flex', flexDirection: 'row' }}>
       <Stack variant="col">
@@ -17,7 +22,7 @@ export const ParagraphSummary = ({ props }) => {
             color: 'bluishBlackPS',
           }}
         >
-          By Afanasy Ordin-Nashchokin
+          {paragraphSummaryAuthor}
         </h6>
         <h5
           sx={{
@@ -28,7 +33,7 @@ export const ParagraphSummary = ({ props }) => {
             fontSize: 2,
           }}
         >
-          November 1, 2022
+          {paragraphSummarySubtitle}
         </h5>
       </Stack>
       <div sx={{ mb: 3, borderLeft: '4px solid #314D64', width: '3.5%' }}></div>{' '}
@@ -44,14 +49,16 @@ export const ParagraphSummary = ({ props }) => {
           fontStyle: 'italic',
         }}
       >
-        Within the past decade, beekeepers across the globe have observed
-        massive declines in managed honey bee populations. Similar declines have
-        been observed in populations of wild bees and other pollinators.
-        Understanding what is driving these declines is a vital question for
-        researchers, beekeepers, growers, and the public. Several factors are
-        being investigated, including habitat loss, climate change, disease, and
-        pesticide use.
+        {paragraphSummaryText}
       </p>
     </div>
   );
 };
+
+export const query = graphql`
+  fragment HomepageParagraphSummaryContent on HomepageParagraphSummary {
+    paragraphSummarySubtitle
+    paragraphSummaryAuthor
+    paragraphSummaryText
+  }
+`;

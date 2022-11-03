@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button } from '@bit/button';
-import { Stack } from '@bit/stack';
+import { Button } from '../Button/Button';
+import { Stack } from '../Stack/Stack';
 import theme from '../../gatsby-plugin-theme-ui';
+import { graphql } from 'gatsby';
 export const WideImageHero = ({
   headingText,
   imageSrc,
@@ -82,3 +83,11 @@ export const WideImageHero = ({
     </div>
   );
 };
+
+export const query = graphql`
+  fragment HomepageWideImageHeroContent on HomepageWideImageHero {
+    id
+    heading
+    Subtitle
+  }
+`;

@@ -30,24 +30,6 @@
     "origin": "AUTHORED",
     "exported": false
   },
-  "content-block": {
-    "files": [
-      {
-        "relativePath": "src/components/ContentBlock/ContentBlock.jsx",
-        "test": false,
-        "name": "ContentBlock.jsx"
-      },
-      {
-        "relativePath": "src/components/ContentBlock/ContentBlock.test.js",
-        "test": false,
-        "name": "ContentBlock.test.js"
-      }
-    ],
-    "mainFile": "src/components/ContentBlock/ContentBlock.jsx",
-    "trackDir": "src/components/ContentBlock",
-    "origin": "AUTHORED",
-    "exported": false
-  },
   "custom-footer": {
     "files": [
       {
@@ -213,6 +195,19 @@
     "origin": "AUTHORED",
     "exported": false
   },
+  "landing-page-image-hero": {
+    "files": [
+      {
+        "relativePath": "src/components/LandingPageImageHero/LandingPageImageHero.jsx",
+        "test": false,
+        "name": "LandingPageImageHero.jsx"
+      }
+    ],
+    "mainFile": "src/components/LandingPageImageHero/LandingPageImageHero.jsx",
+    "trackDir": "src/components/LandingPageImageHero",
+    "origin": "AUTHORED",
+    "exported": false
+  },
   "layout": {
     "files": [
       {
@@ -254,6 +249,24 @@
     ],
     "mainFile": "src/components/Nav/Nav.jsx",
     "trackDir": "src/components/Nav",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "paragraph-summary": {
+    "files": [
+      {
+        "relativePath": "src/components/ParagraphSummary/ParagraphSummary.jsx",
+        "test": false,
+        "name": "ParagraphSummary.jsx"
+      },
+      {
+        "relativePath": "src/components/ParagraphSummary/ParagraphSummary.test.js",
+        "test": false,
+        "name": "ParagraphSummary.test.js"
+      }
+    ],
+    "mainFile": "src/components/ParagraphSummary/ParagraphSummary.jsx",
+    "trackDir": "src/components/ParagraphSummary",
     "origin": "AUTHORED",
     "exported": false
   },
@@ -326,6 +339,19 @@
     ],
     "mainFile": "src/components/Stack/Stack.jsx",
     "trackDir": "src/components/Stack",
+    "origin": "AUTHORED",
+    "exported": false
+  },
+  "wide-image-hero": {
+    "files": [
+      {
+        "relativePath": "src/components/WideImageHero/WideImageHero.jsx",
+        "test": false,
+        "name": "WideImageHero.jsx"
+      }
+    ],
+    "mainFile": "src/components/WideImageHero/WideImageHero.jsx",
+    "trackDir": "src/components/WideImageHero",
     "origin": "AUTHORED",
     "exported": false
   },

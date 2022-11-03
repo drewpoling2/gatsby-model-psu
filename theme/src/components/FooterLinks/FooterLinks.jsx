@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Stack } from '@bit/stack';
+import { Stack } from '../Stack/Stack';
 
 export const FooterLinks = ({ footerLinkData }) => {
   return (

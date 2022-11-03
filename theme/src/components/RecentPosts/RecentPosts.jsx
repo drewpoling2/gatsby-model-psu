@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
-import { Stack } from '@bit/stack';
-import { Posts } from '@bit/posts';
-
+import { Stack } from '../Stack/Stack';
+import { Posts } from '../Posts/Posts';
+import { graphql } from 'gatsby';
 export const RecentPosts = ({ allPostsLink, heading, postData }) => {
   return (
     <div sx={{ pl: 5 }}>
@@ -29,3 +29,10 @@ export const RecentPosts = ({ allPostsLink, heading, postData }) => {
     </div>
   );
 };
+
+export const query = graphql`
+  fragment RecentPostsContent on RecentPosts {
+    id
+    testfield
+  }
+`;

@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
-import { Card } from '@bit/card';
+import { Card } from '../Card/Card';
+import { graphql } from 'gatsby';
 export const QuickLinks = ({ heading, data, index }) => {
   return (
     <div sx={{ py: 5 }}>
@@ -21,3 +22,13 @@ export const QuickLinks = ({ heading, data, index }) => {
     </div>
   );
 };
+
+export const query = graphql`
+  fragment HomepageQuickLinksContent on HomepageQuickLinksCards {
+    id
+    CardTitle
+    Slug
+    CardDescription
+    PageContent
+  }
+`;

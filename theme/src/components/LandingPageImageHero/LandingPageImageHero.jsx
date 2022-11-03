@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button } from '@bit/button';
-import { Stack } from '@bit/stack';
+import { Button } from '../Button/Button';
+import { Stack } from '../Stack/Stack';
+import { graphql } from 'gatsby';
 export const LandingPageImageHero = ({
   paragraphText,
   headingText,
@@ -75,3 +76,11 @@ export const LandingPageImageHero = ({
     </div>
   );
 };
+export const query = graphql`
+  fragment HomepageLandingPageImageHeroContent on HomepageLandingPageImageHero {
+    id
+    Heading
+    LandingPageHeroImageText
+    Subtitle
+  }
+`;

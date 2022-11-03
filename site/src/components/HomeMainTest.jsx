@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Container } from "theme-ui"
 import React from "react"
-import { LandingPageImageHero } from "gatsby-theme-theme-ui-example/src/components/Hero/LandingPageImageHero"
-import { WideImageHero } from "gatsby-theme-theme-ui-example/src/components/Hero/WideImageHero"
+import { LandingPageImageHero } from "gatsby-theme-theme-ui-example/src/components/LandingPageImageHero/LandingPageImageHero"
+import { WideImageHero } from "gatsby-theme-theme-ui-example/src/components/WideImageHero/WideImageHero"
 import { Stack } from "gatsby-theme-theme-ui-example/src/components/Stack/Stack"
 import { QuickLinks } from "gatsby-theme-theme-ui-example/src/components/QuickLinks/QuickLinks"
 import { ParagraphSummary } from "gatsby-theme-theme-ui-example/src/components/ParagraphSummary/ParagraphSummary"
@@ -18,7 +18,7 @@ export const HomeMainTest = ({ data }) => {
             <LandingPageImageHero
               key={key}
               headingText={content.heading}
-              paragraphText={content.text}
+              paragraphText={content.LandingPageHeroImageText}
               imageSrc={content.image.file.url}
               subTitle={content.subtitle}
             />
@@ -40,6 +40,19 @@ export const HomeMainTest = ({ data }) => {
           <QuickLinks key={key} data={content} heading={"quick links //"} />
         )
       }
+      case "ContentfulParagraphSummary": {
+        return (
+          <>
+            <ParagraphSummary
+              paragraphSummaryAuthor={content.paragraphSummaryAuthor}
+              paragraphSummaryText={
+                content.paragraphSummaryText.paragraphSummaryText
+              }
+              paragraphSummarySubtitle={content.paragraphSummarySubtitle}
+            />
+          </>
+        )
+      }
     }
   })
 
@@ -47,10 +60,7 @@ export const HomeMainTest = ({ data }) => {
     <>
       <Container>
         <div sx={{ pt: 0, pb: 5 }}>
-          <Stack variant="col">
-            {components}
-            <ParagraphSummary />
-          </Stack>
+          <Stack variant="col">{components}</Stack>
         </div>
       </Container>
     </>

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
-import { Stack } from '@bit/stack';
+import { Stack } from '../Stack/Stack';
 
 export const Posts = ({ item }) => {
   return (

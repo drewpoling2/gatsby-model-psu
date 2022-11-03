@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { Container, jsx } from 'theme-ui';
-import { Button } from '@bit/button';
-import { Divider } from '@bit/divider';
-import { Image } from '@bit/image';
-import { IconButton } from '@bit/icon-button';
-import { HoverDropDown } from '@bit/hover-drop-down';
+import { Button } from '../Button/Button';
+import { Divider } from '../Divider/Divider';
+import { Image } from '../Image/Image';
+import { IconButton } from '../IconButton/IconButton';
+import { HoverDropDown } from '../HoverDropDown/HoverDropDown';
 
 export const Nav = ({ imageSrc, navData }) => {
   return (

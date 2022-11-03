@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, Footer, Container } from 'theme-ui';
 import React from 'react';
-import { FooterLinks } from '@bit/footer-links';
-import { Image } from '@bit/image';
-import { Stack } from '@bit/stack';
-import { Button } from '@bit/button';
+import { FooterLinks } from '../FooterLinks/FooterLinks';
+import { Image } from '../Image/Image';
+import { Stack } from '../Stack/Stack';
+import { Button } from '../Button/Button';
 
 export const bottomFooterLinks = [
   { linkName: 'Privacy Statement' },

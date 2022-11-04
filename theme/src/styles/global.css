@@ -12,3 +12,24 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+p {
+  color: #444444;
+  line-height: 33px;
+  font-size: 23px;
+  font-weight: 400;
+}
+h2,
+h1 {
+  color: #444444;
+}
+h1 {
+  font-size: 55px;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  line-height: 59px;
+}
+h2 {
+  font-size: 22px;
+  margin-bottom: 32px;
+}

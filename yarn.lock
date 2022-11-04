@@ -12462,7 +12462,7 @@ gatsby-plugin-sass@^5.24.0:
 
 gatsby-plugin-sharp@^4.24.0:
   version "4.24.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.24.0.tgz"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.24.0.tgz#30fa66295105096b476371dfb36062c1dc7456db"
   integrity sha512-wVs8F9zLeiLf02yLi8vjse1vqSrZsx2u3RsMhoSv1bEinyaI5bcoLZ7mMJCsEeZe2G9mvNrPi4Ymhh/YzgxYCg==
   dependencies:
     "@babel/runtime" "^7.15.4"
@@ -12709,7 +12709,7 @@ gatsby-telemetry@^3.24.0:
 
 gatsby-transformer-sharp@^4.24.0:
   version "4.24.0"
-  resolved "https://registry.npmjs.org/gatsby-transformer-sharp/-/gatsby-transformer-sharp-4.24.0.tgz"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-4.24.0.tgz#0e7d61fa4834971e01a44e0eb0a942e5ef38513f"
   integrity sha512-60Ro4OZbx9ZdfPUZEBEhJnureqQUEaNizDs4CK5QWlUkAU6RvVYwsuT3uWeEMrXgugaLLyGpQStJ881N7Eeodg==
   dependencies:
     "@babel/runtime" "^7.15.4"

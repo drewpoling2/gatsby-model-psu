@@ -1,14 +1,17 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
-import { graphql } from 'gatsby';
-export const TextContent = ({ props }) => {
-  return <div>This is the TextContent component</div>;
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
+
+export const TextContent = ({ data }) => {
+  return (
+    <div sx={{ py: 4, mx: '300px' }}>
+      {documentToReactComponents(
+        JSON.parse(data.contentfulHomepageTextContent.text.raw, {
+          renderNode: {},
+        })
+      )}
+    </div>
+  );
 };
-export const query = graphql`
-  fragment HomepageTextContentContent on HomepageTextContent {
-    id
-    text
-    title
-  }
-`;

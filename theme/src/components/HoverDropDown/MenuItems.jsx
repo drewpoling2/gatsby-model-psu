@@ -15,7 +15,7 @@ const MenuItems = ({ items }) => {
 
   return (
     <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      {items.submenu ? (
+      {items.navItems ? (
         <>
           <div
             sx={{
@@ -28,12 +28,22 @@ const MenuItems = ({ items }) => {
             aria-expanded={dropdown ? 'true' : 'false'}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.title}
+            {items.name}
           </div>
-          <Dropdown submenus={items.submenu} dropdown={dropdown} />
+          <Dropdown submenus={items.navItems} dropdown={dropdown} />
         </>
       ) : (
-        <a href={items.url}>{items.title}</a>
+        <a
+          sx={{
+            color: 'whitePS',
+            mx: 14,
+            position: 'relative',
+            cursor: 'pointer',
+          }}
+          href={items.url}
+        >
+          {items.text}
+        </a>
       )}
     </li>
   );

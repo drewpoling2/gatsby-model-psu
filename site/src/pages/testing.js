@@ -27,7 +27,28 @@ export const query = graphql`
         ...HomepageParagraphSummaryContent
         ...HomepageWideImageHeroContent
         ...HomepageLandingPageImageHeroContent
-        ...HomepageTextContentContent
+      }
+    }
+    contentfulHomepageTextContent {
+      text {
+        raw
+      }
+      blocktype
+    }
+    contentfulLayoutHeader {
+      navItems {
+        id
+        ... on ContentfulNavItemGroup {
+          id
+          name
+          navItems {
+            text
+          }
+        }
+        ... on ContentfulNavItem {
+          id
+          text
+        }
       }
     }
   }
@@ -35,11 +56,8 @@ export const query = graphql`
 
 export default ({ data }) => (
   <Layout
-    navChild={<Nav imageSrc={altoonaLogo} navData={testNavData} />}
+    navChild={<Nav imageSrc={altoonaLogo} navData={data} />}
     mainChild={<HomeMainTest data={data} imageSrc={beaverStadium} />}
     footerChild={<NewsFooter />}
-  >
-    {console.log(data)}
-    <h1>test</h1>
-  </Layout>
+  ></Layout>
 )

@@ -10,7 +10,7 @@ export const ParagraphSummary = ({
   paragraphSummarySubtitle,
 }) => {
   return (
-    <div sx={{ display: 'flex', flexDirection: 'row' }}>
+    <div sx={{ py: 4, display: 'flex', flexDirection: 'row' }}>
       <Stack variant="col">
         <h6
           sx={{
@@ -60,5 +60,6 @@ export const query = graphql`
     paragraphSummarySubtitle
     paragraphSummaryAuthor
     paragraphSummaryText
+    blocktype
   }
 `;

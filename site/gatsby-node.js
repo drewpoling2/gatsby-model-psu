@@ -4,7 +4,7 @@ const { getGatsbyImageResolver } = require("gatsby-plugin-image/graphql-utils")
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
-      allContentfulQuickLinksCards {
+      allContentfulHomepageQuickLinksCards {
         nodes {
           slug
         }
@@ -16,7 +16,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panic("Error loading quick links", JSON.stringify(result.errors))
   }
 
-  result.data.allContentfulQuickLinksCards.nodes.forEach(quickLink => {
+  result.data.allContentfulHomepageQuickLinksCards.nodes.forEach(quickLink => {
     actions.createPage({
       path: `/${quickLink.slug}/`,
       component: require.resolve(
@@ -106,6 +106,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
   // abstract interfaces
   actions.createTypes(/* GraphQL */ `
+
+  interface HomepageImage implements Node {
+    id: ID!
+    alt: String
+    gatsbyImageData: GatsbyImageData @imagePassthroughArgs
+    url: String
+  }
     interface HomepageTestComponent implements Node & HomepageBlock {
       id: ID!
       href: String
@@ -123,25 +130,20 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
     interface HomepageQuickLinksCards implements Node & HomepageBlock {
       id: ID!
-      CardTitle: String
-      Slug: String
-      CardDescription: String
-      PageContent: String
+      cardTitle: String
+      slug: String
+      cardDescription: String
       blocktype: String
-    }
-    interface HomepageTextContent implements Node & HomepageBlock {
-      id: ID!
-      title: String
-      text: String
-      blocktype: String
+      image: HomepageImage
     }
 
     interface HomepageLandingPageImageHero implements Node & HomepageBlock {
       id: ID!
-      Heading: String
-      LandingPageHeroImageText: String
-      Subtitle: String
+      heading: String
+      landingPageHeroImageText: String
+      subtitle: String
       blocktype: String
+      image: HomepageImage 
     }
 
     interface HomepageWideImageHero implements Node & HomepageBlock {
@@ -149,6 +151,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       heading: String
       Subtitle: String
       blocktype: String
+      image: HomepageImage
     }
 
     interface HomepageBlock implements Node {
@@ -183,12 +186,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       navItems: [NavItem]
     }
 
-    interface HomepageImage implements Node {
-      id: ID!
-      alt: String
-      gatsbyImageData: GatsbyImageData @imagePassthroughArgs
-      url: String
-    }
+   
 
     interface HomepageHero implements Node & HomepageBlock {
       id: ID!
@@ -408,7 +406,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
     interface Page implements Node {
       id: ID!
-      slug: String!
+      slug: String
       title: String
       description: String
       image: HomepageImage
@@ -418,14 +416,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
   // CMS-specific types for Homepage
   actions.createTypes(/* GraphQL */ `
-    type ContentfulHomepageTestComponent implements Node & HomepageTestComponent & HomepageBlock
-      @dontInfer {
-      id: ID!
-      href: String
-      text: String
-      blocktype: String @blocktype
-    }
-
     type ContentfulHomepageParagraphSummary implements Node & HomepageParagraphSummary & HomepageBlock {
       id: ID!
       paragraphSummarySubtitle: String
@@ -436,19 +426,20 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
     type ContentfulHomepageQuickLinksCards implements Node & HomepageQuickLinksCards & HomepageBlock {
       id: ID!
-      CardTitle: String
-      Slug: String
-      CardDescription: String
-      PageContent: String
+      cardTitle: String
+      slug: String
+      cardDescription: String
       blocktype: String
+      image: HomepageImage @link(from: "image___NODE")
     }
 
     type ContentfulHomepageLandingPageImageHero implements Node & HomepageLandingPageImageHero & HomepageBlock {
       id: ID!
-      Heading: String
-      LandingPageHeroImageText: String
-      Subtitle: String
+      heading: String
+      landingPageHeroImageText: String
+      subtitle: String
       blocktype: String
+      image: HomepageImage @link(from: "image___NODE")
     }
 
     type ContentfulHomepageWideImageHero implements Node & HomepageWideImageHero & HomepageBlock {
@@ -456,20 +447,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       heading: String
       Subtitle: String
       blocktype: String
+      image: HomepageImage @link(from: "image___NODE")
     }
 
     type ContentfulHomepageLink implements Node & HomepageLink @dontInfer {
       id: ID!
       href: String
       text: String
-    }
-
-    type ContentfulHomepageTextContent implements Node & HomepageTextContent & HomepageBlock
-      @dontInfer {
-      id: ID!
-      text: String
-      title: String
-      blocktype: String
     }
 
     type ContentfulNavItem implements Node & NavItem & HeaderNavItem

@@ -10,7 +10,7 @@ export const WideImageHero = ({
   subTitle = 'featured',
 }) => {
   return (
-    <div sx={{ width: 4 }}>
+    <div sx={{ width: 4, pb: 4 }}>
       <Stack variant="col">
         <div
           sx={{
@@ -89,5 +89,10 @@ export const query = graphql`
     id
     heading
     Subtitle
+    image {
+      id
+      gatsbyImageData
+      alt
+    }
   }
 `;

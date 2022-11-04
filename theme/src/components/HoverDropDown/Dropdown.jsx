@@ -39,7 +39,7 @@ const Dropdown = ({ submenus, dropdown }) => {
                   }}
                   href={submenu.url}
                 >
-                  {submenu.title}
+                  {submenu.text}
                 </a>
               </li>
             ))}

@@ -3,6 +3,8 @@ import { jsx } from 'theme-ui';
 import { Button } from '../Button/Button';
 import { Stack } from '../Stack/Stack';
 import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
 export const LandingPageImageHero = ({
   paragraphText,
   headingText,
@@ -10,7 +12,7 @@ export const LandingPageImageHero = ({
   subTitle = 'featured',
 }) => {
   return (
-    <div sx={{ width: 4 }}>
+    <div sx={{ width: 4, pb: 4 }}>
       <Stack variant="col">
         <div
           style={{
@@ -79,8 +81,14 @@ export const LandingPageImageHero = ({
 export const query = graphql`
   fragment HomepageLandingPageImageHeroContent on HomepageLandingPageImageHero {
     id
-    Heading
-    LandingPageHeroImageText
-    Subtitle
+    heading
+    landingPageHeroImageText
+    subtitle
+    blocktype
+    image {
+      id
+      gatsbyImageData
+      alt
+    }
   }
 `;

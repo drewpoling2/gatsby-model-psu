@@ -8,6 +8,7 @@ require("dotenv").config()
 module.exports = {
   plugins: [
     "gatsby-theme-theme-ui-example",
+    "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-source-filesystem",

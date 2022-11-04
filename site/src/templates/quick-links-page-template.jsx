@@ -12,19 +12,20 @@ import { BLOCKS } from "@contentful/rich-text-types"
 import { quickLinksTemplate as TemplateComponent } from "gatsby-theme-theme-ui-example/src/templates/quickLinksTemplate"
 export const query = graphql`
   query($slug: String!) {
-    quickLink: contentfulQuickLinksCards(slug: { eq: $slug }) {
+    quickLink: contentfulHomepageQuickLinksCards(slug: { eq: $slug }) {
       cardTitle
-      pageContent {
-        raw
-      }
-      id
     }
   }
 `
+// pageContent {
+//   raw
+// }
+// id
 
 const MainQuickLinksContent = ({ data: { quickLink } }) => (
   <Container>
-    {console.log(quickLink.pageContent)}
+    <h1>{quickLink.cardTitle} Page</h1>
+    {/* {console.log(quickLink.pageContent)}
     <div sx={{ py: 4 }}>
       {documentToReactComponents(
         JSON.parse(quickLink.pageContent.raw, {
@@ -35,7 +36,7 @@ const MainQuickLinksContent = ({ data: { quickLink } }) => (
           },
         })
       )}
-    </div>
+    </div> */}
     {/* <h1>{quickLink.title}</h1>
     <p>
       Guest: {lesson.author.name} · <a href={lesson.author.twitter}>Twitter</a>

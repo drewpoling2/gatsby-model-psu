@@ -21,34 +21,33 @@ export const Card = ({ data }) => {
           cursor: 'pointer',
         }}
         style={{
-          backgroundImage: `url(${data.cardImage.file.url})`,
+          backgroundImage: `url(${data.image.gatsbyImageData.images.fallback.src})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
         altText={'Psu Altoona Logo'}
         onClick={() => console.log('Logo')}
-      >
-        <h2 sx={{ color: 'whitePS', textTransform: 'uppercase' }}>
-          {data.cardTitle}
-        </h2>
-      </div>
+      ></div>
       <div
         sx={{
           py: 3,
         }}
       >
-        <Styled.p>
-          {documentToReactComponents(JSON.parse(data.cardDescription.raw))}
-        </Styled.p>
+        <Styled.h2 sx={{ p: 0, lineHeight: '26px' }}>
+          {' '}
+          <Link to={`/${data.slug}`}>{data.cardTitle}</Link>
+        </Styled.h2>
         <Styled.h4
           sx={{
-            color: 'mediumBluePS',
-            cursor: 'pointer',
-            '&:hover': { textDecoration: 'underline' },
+            color: '#444444',
+            mt: '20px',
+            letterSpacing: '.48px',
+            lineHeight: '22px',
+            textTransform: 'uppercase',
           }}
         >
-          <Link to={`/${data.slug}`}>{data.cardTitle} &gt;</Link>
+          {data.cardDescription}
         </Styled.h4>
       </div>
     </div>

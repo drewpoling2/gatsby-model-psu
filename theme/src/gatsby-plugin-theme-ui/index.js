@@ -28,7 +28,8 @@ const theme = {
     80,
     40,
     160,
-  ], //length 20
+    300,
+  ], //length 21
   sizes: [
     '0%',
     '25%',

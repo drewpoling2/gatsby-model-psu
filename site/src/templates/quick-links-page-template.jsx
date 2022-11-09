@@ -32,10 +32,6 @@ export const query = graphql`
     }
   }
 `
-// pageContent {
-//   raw
-// }
-// id
 
 const MainQuickLinksContent = ({ data: { quickLink } }) => (
   <Container>

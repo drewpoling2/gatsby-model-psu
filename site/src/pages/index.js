@@ -59,7 +59,5 @@ export default ({ data }) => (
     navChild={<Nav imageSrc={altoonaLogo} navData={data} />}
     mainChild={<HomeMainTest data={data} imageSrc={beaverStadium} />}
     footerChild={<NewsFooter />}
-  >
-    {console.log(data)}
-  </Layout>
+  ></Layout>
 )

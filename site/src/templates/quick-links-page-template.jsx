@@ -6,7 +6,6 @@ import altoonaLogo from "../../assets/logo.png"
 import Layout from "gatsby-theme-theme-ui-example/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-example/src/components/Nav/Nav"
 import { NewsFooter } from "gatsby-theme-theme-ui-example/src/components/CustomFooter/NewsFooter"
-import { testNavData } from "../../navData"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import { quickLinksTemplate as TemplateComponent } from "gatsby-theme-theme-ui-example/src/templates/quickLinksTemplate"
@@ -14,6 +13,22 @@ export const query = graphql`
   query($slug: String!) {
     quickLink: contentfulHomepageQuickLinksCards(slug: { eq: $slug }) {
       cardTitle
+    }
+    contentfulLayoutHeader {
+      navItems {
+        id
+        ... on ContentfulNavItemGroup {
+          id
+          name
+          navItems {
+            text
+          }
+        }
+        ... on ContentfulNavItem {
+          id
+          text
+        }
+      }
     }
   }
 `
@@ -60,7 +75,7 @@ const MainQuickLinksContent = ({ data: { quickLink } }) => (
 )
 const QuickLinksTemplatePage = ({ data }) => (
   <Layout
-    navChild={<Nav imageSrc={altoonaLogo} navData={testNavData} />}
+    navChild={<Nav imageSrc={altoonaLogo} navData={data} />}
     mainChild={<MainQuickLinksContent data={data} />}
     footerChild={<NewsFooter />}
   ></Layout>

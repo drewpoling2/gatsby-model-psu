@@ -37,7 +37,7 @@ const Dropdown = ({ submenus, dropdown }) => {
                     variant: 'text.dropdownMenu',
                     '&:hover': { color: 'bluePS', fontStyle: 'italic' },
                   }}
-                  href={submenu.url}
+                  href={submenu.href}
                 >
                   {submenu.text}
                 </a>

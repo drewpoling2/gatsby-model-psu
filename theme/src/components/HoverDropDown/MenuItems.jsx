@@ -16,7 +16,6 @@ const MenuItems = ({ items }) => {
 
   return (
     <li sx={{ pb: 3 }} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      {console.log(items)}
       {items.navItems ? (
         <>
           <div

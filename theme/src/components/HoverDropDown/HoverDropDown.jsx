@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui';
 import MenuItems from './MenuItems';
 
 export const HoverDropDown = ({ title, navData }) => {
-  console.log(navData);
   return (
     <nav>
       <ul sx={{ variant: 'layout.row', mt: 2 }}>

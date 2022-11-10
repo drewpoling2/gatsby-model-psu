@@ -12,7 +12,8 @@ export const Nav = ({ imageSrc, navData }) => {
       sx={{
         variant: 'layout.rowJSB',
         width: 4,
-        py: 9,
+        pt: 2,
+        pb: 2,
       }}
     >
       <Container
@@ -46,7 +47,7 @@ export const Nav = ({ imageSrc, navData }) => {
                 variant: 'layout.rowJAC',
                 mx: 3,
                 my: 15,
-                pt: -3,
+                pt: 2,
               }}
             >
               <Button
@@ -74,7 +75,8 @@ export const Nav = ({ imageSrc, navData }) => {
             </div>
           </div>
 
-          <Divider />
+          {/* this will be added later when the menu modal is added */}
+          {/* <Divider />
           <div
             sx={{
               variant: 'layout.rowJAC',
@@ -82,7 +84,7 @@ export const Nav = ({ imageSrc, navData }) => {
           >
             <IconButton />
             <Button variant="icon" text="menu" />
-          </div>
+          </div> */}
         </div>
       </Container>
     </div>

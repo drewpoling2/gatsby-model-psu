@@ -1,11 +1,4 @@
-@font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url(/fonts/Inter-roman.var.woff2) format('woff2');
-}
+@import 'fonts.css';
 
 ul {
   list-style-type: none;
@@ -19,7 +12,16 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'roboto-bold';
+}
 p {
+  font-family: 'roboto-regular';
   color: #444444;
   line-height: 33px;
   font-size: 23px;

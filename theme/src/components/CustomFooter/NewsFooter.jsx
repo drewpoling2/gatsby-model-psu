@@ -157,6 +157,8 @@ export const NewsFooter = ({ apiURL }) => {
                           >
                             <span
                               sx={{
+                                fontFamily: 'roboto-condensed-bold',
+                                letterSpacing: '.2px',
                                 '&:hover': { textDecoration: 'underline' },
                               }}
                             >
@@ -205,7 +207,15 @@ export const NewsFooter = ({ apiURL }) => {
                   sx={{ color: 'lightBluePS', pr: 3 }}
                   id="footer-menu-item-click"
                 >
-                  {address?.html}
+                  <span
+                    sx={{
+                      fontFamily: 'roboto-condensed-regular',
+                      fontSize: '14px',
+                      letterSpacing: '.2px',
+                    }}
+                  >
+                    {address?.html}
+                  </span>
                 </li>
                 <li>
                   <Link
@@ -217,7 +227,15 @@ export const NewsFooter = ({ apiURL }) => {
                     to={`tel:${telephone?.html}`}
                     id="footer-menu-item-click"
                   >
-                    {telephone?.html}
+                    <span
+                      sx={{
+                        fontFamily: 'roboto-condensed-bold',
+                        fontSize: '14px',
+                        letterSpacing: '.2px',
+                      }}
+                    >
+                      {telephone?.html}
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -230,12 +248,20 @@ export const NewsFooter = ({ apiURL }) => {
                     to={contactUs?.uri}
                     id="footer-menu-item-click"
                   >
-                    {contactUs?.title}
+                    <span
+                      sx={{
+                        fontFamily: 'roboto-condensed-bold',
+                        fontSize: '14px',
+                        letterSpacing: '.2px',
+                      }}
+                    >
+                      {contactUs?.title}
+                    </span>
                   </Link>
                 </li>
               </ul>
             </div>
-            <div sx={{ display: 'flex', flexDirection: 'column', pt: 19 }}>
+            <div sx={{ display: 'flex', flexDirection: 'column', pt: 55 }}>
               {/* Legal links */}
               <ul
                 sx={{
@@ -256,7 +282,16 @@ export const NewsFooter = ({ apiURL }) => {
                       to={link?.uri}
                       id="footer-menu-item-click"
                     >
-                      {link?.displayname}
+                      <span
+                        sx={{
+                          fontFamily: 'roboto-condensed-regular',
+                          fontSize: '14px',
+                          letterSpacing: '.2px',
+                        }}
+                      >
+                        {' '}
+                        {link?.displayname}
+                      </span>
                     </Link>
                   </li>
                 ))}
@@ -283,7 +318,16 @@ export const NewsFooter = ({ apiURL }) => {
                       to={copyright?.uri}
                       id="footer-menu-item-click"
                     >
-                      {copyright?.displayname} &copy; {new Date().getFullYear()}{' '}
+                      <span
+                        sx={{
+                          fontFamily: 'roboto-condensed-regular',
+                          fontSize: '14px',
+                          letterSpacing: '.2px',
+                        }}
+                      >
+                        {copyright?.displayname} &copy;{' '}
+                        {new Date().getFullYear()}{' '}
+                      </span>
                     </Link>
                   </li>
                   <li sx={{ pl: 3 }}>
@@ -291,7 +335,7 @@ export const NewsFooter = ({ apiURL }) => {
                       src={weArePenn?.html}
                       alt={weArePenn?.title}
                       loading="lazy"
-                      sx={{ width: '220px' }}
+                      sx={{ width: '170px' }}
                     />
                   </li>
                 </ul>

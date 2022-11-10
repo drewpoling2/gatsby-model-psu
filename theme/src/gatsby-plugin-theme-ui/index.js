@@ -29,7 +29,8 @@ const theme = {
     40,
     160,
     300,
-  ], //length 21
+    46,
+  ], //length 22
   sizes: [
     '0%',
     '25%',
@@ -44,10 +45,14 @@ const theme = {
     '80%',
   ], //9
   fonts: {
-    body: 'roboto, sans-serif',
-    heading: 'roboto, sans-serif',
+    body: 'roboto-regular, sans-serif',
+    heading: 'roboto-bold, sans-serif',
     monospace: 'Menlo, monospace',
-    a: 'roboto',
+    a: 'roboto-regular',
+    robotoBold: 'roboto-bold, sans-serif',
+    robotoRegular: 'roboto-regular, sans-serif',
+    robotoCondensedBold: 'roboto-condensed-bold, sans-serif',
+    robotoCondensedRegular: 'roboto-condensed-regular, sans-serif',
   },
   colors: {
     whitePS: '#fff',

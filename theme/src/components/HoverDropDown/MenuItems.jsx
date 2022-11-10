@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui';
 import React, { useState } from 'react';
 import Dropdown from './Dropdown';
+import { Link } from 'gatsby';
 
 const MenuItems = ({ items }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -14,7 +15,8 @@ const MenuItems = ({ items }) => {
   };
 
   return (
-    <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <li sx={{ pb: 3 }} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      {console.log(items)}
       {items.navItems ? (
         <>
           <div
@@ -40,7 +42,7 @@ const MenuItems = ({ items }) => {
             position: 'relative',
             cursor: 'pointer',
           }}
-          href={items.url}
+          href={items.href}
         >
           {items.text}
         </a>

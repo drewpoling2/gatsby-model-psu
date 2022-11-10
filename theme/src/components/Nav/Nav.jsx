@@ -5,7 +5,7 @@ import { Divider } from '../Divider/Divider';
 import { Image } from '../Image/Image';
 import { IconButton } from '../IconButton/IconButton';
 import { HoverDropDown } from '../HoverDropDown/HoverDropDown';
-
+import { Link } from 'gatsby';
 export const Nav = ({ imageSrc, navData }) => {
   return (
     <div
@@ -21,12 +21,14 @@ export const Nav = ({ imageSrc, navData }) => {
         }}
       >
         <div sx={{ variant: 'layout.rowJAC' }}>
-          <Image
-            altText={'Psu Altoona Logo'}
-            src={imageSrc}
-            width="180px"
-            onClick={() => console.log('Logo')}
-          />
+          <Link to="/">
+            <img
+              src={imageSrc}
+              sx={{ width: '180px' }}
+              alt={'Psu logo'}
+              loading="lazy"
+            />
+          </Link>
         </div>
         <div
           sx={{
@@ -44,12 +46,24 @@ export const Nav = ({ imageSrc, navData }) => {
                 variant: 'layout.rowJAC',
                 mx: 3,
                 my: 15,
+                pt: -3,
               }}
             >
-              <Button text="vendor application" variant="hotLine" />
-              <Button text="contact us" variant="outlinedNav" />
-              <Button text="about us" variant="outlinedNav" />
-              <Button text="home" variant="outlinedNav" />
+              <Button
+                text="vendor application"
+                href={'https://clc.com/home/get-licensed/'}
+                variant="hotLine"
+              />
+              <Button
+                text="contact us"
+                href={'/contact-us'}
+                variant="outlinedNav"
+              />
+              <Button
+                text="about us"
+                href={'/about-us'}
+                variant="outlinedNav"
+              />
             </div>
             <div
               sx={{

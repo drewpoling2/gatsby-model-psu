@@ -222,7 +222,7 @@ const theme = {
     p: {
       color: 'paragraphGrayPS',
       variant: 'text.p',
-      fontSize: 2,
+      fontSize: 4,
       my: 2,
     },
     h1: {

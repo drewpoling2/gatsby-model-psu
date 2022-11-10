@@ -3,8 +3,7 @@ import { jsx, Container } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
-import Link from '../link/link';
-
+import { Link } from 'gatsby';
 import localFooterData from './footerData.json';
 
 export const NewsFooter = ({ apiURL }) => {
@@ -108,7 +107,11 @@ export const NewsFooter = ({ apiURL }) => {
                           id="footer-social-icon-click"
                         >
                           {social[link?.title]}
-                          <span>{link?.title}</span>
+                          <span
+                            sx={{ '&:hover': { textDecoration: 'underline' } }}
+                          >
+                            {link?.title}
+                          </span>
                         </Link>
                       </li>
                     );
@@ -152,7 +155,13 @@ export const NewsFooter = ({ apiURL }) => {
                             to={navItem?.uri}
                             id="footer-menu-item-click"
                           >
-                            {navItem?.title}
+                            <span
+                              sx={{
+                                '&:hover': { textDecoration: 'underline' },
+                              }}
+                            >
+                              {navItem?.title}
+                            </span>
                           </Link>
                         </li>
                       );
@@ -242,6 +251,7 @@ export const NewsFooter = ({ apiURL }) => {
                         px: 3,
                         borderLeft: '1px solid #1e407c',
                         color: 'lightBluePS',
+                        '&:hover': { textDecoration: 'underline' },
                       }}
                       to={link?.uri}
                       id="footer-menu-item-click"
@@ -268,6 +278,7 @@ export const NewsFooter = ({ apiURL }) => {
                         pr: 3,
                         borderRight: '1px solid #1e407c',
                         color: 'lightBluePS',
+                        '&:hover': { textDecoration: 'underline' },
                       }}
                       to={copyright?.uri}
                       id="footer-menu-item-click"

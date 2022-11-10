@@ -35,7 +35,6 @@ export const Card = ({ data }) => {
         }}
       >
         <Styled.h2 sx={{ p: 0, lineHeight: '26px' }}>
-          {' '}
           <Link to={`/${data.slug}`}>{data.cardTitle}</Link>
         </Styled.h2>
         <Styled.h4

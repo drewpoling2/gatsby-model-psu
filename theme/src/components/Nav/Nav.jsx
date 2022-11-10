@@ -5,8 +5,7 @@ import { Divider } from '../Divider/Divider';
 import { Image } from '../Image/Image';
 import { IconButton } from '../IconButton/IconButton';
 import { HoverDropDown } from '../HoverDropDown/HoverDropDown';
-import Link from '../Link/Link';
-
+import { Link } from 'gatsby';
 export const Nav = ({ imageSrc, navData }) => {
   return (
     <div
@@ -47,6 +46,7 @@ export const Nav = ({ imageSrc, navData }) => {
                 variant: 'layout.rowJAC',
                 mx: 3,
                 my: 15,
+                pt: -3,
               }}
             >
               <Button

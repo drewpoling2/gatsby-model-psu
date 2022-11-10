@@ -15,7 +15,7 @@ const MenuItems = ({ items }) => {
   };
 
   return (
-    <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <li sx={{ pb: 3 }} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {console.log(items)}
       {items.navItems ? (
         <>

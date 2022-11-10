@@ -3,8 +3,7 @@ import { jsx, Container } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
-import Link from '../Link/Link';
-
+import { Link } from 'gatsby';
 import localFooterData from './footerData.json';
 
 export const NewsFooter = ({ apiURL }) => {

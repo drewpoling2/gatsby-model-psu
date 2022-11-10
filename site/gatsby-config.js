@@ -7,7 +7,7 @@ require("dotenv").config()
 
 module.exports = {
   plugins: [
-    "gatsby-theme-theme-ui-example",
+    "gatsby-theme-theme-ui-psu",
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     {

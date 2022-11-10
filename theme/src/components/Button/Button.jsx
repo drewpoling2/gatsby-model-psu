@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Link } from 'gatsby';
 import { jsx } from 'theme-ui';
 import theme from '../../gatsby-plugin-theme-ui';
 const VariantDefault = ({ text, onClick, disabled, href }) => {
@@ -13,8 +14,8 @@ const VariantDefault = ({ text, onClick, disabled, href }) => {
         width: 5,
         height: 5,
         px: 13,
-        py: 12,
-        mx: 1,
+        py: 2,
+        mx: 0,
         cursor: 'pointer',
         variant: 'layout.rowJAC',
         '&:hover': {},
@@ -34,9 +35,10 @@ const VariantDefault = ({ text, onClick, disabled, href }) => {
 
 const VariantHotline = ({ text, onClick, disabled, href }) => {
   return (
-    <div
+    <a
       disabled={disabled}
       onClick={onClick}
+      href={'https://clc.com/home/get-licensed/'}
       sx={{
         backgroundColor: 'bluishBlackPS',
         color: 'lightBluePS',
@@ -55,15 +57,14 @@ const VariantHotline = ({ text, onClick, disabled, href }) => {
         },
       }}
     >
-      <a
-        href={href}
+      <span
         sx={{
           variant: 'text.button',
         }}
       >
         {text}
-      </a>
-    </div>
+      </span>
+    </a>
   );
 };
 const VariantOutlined = ({ text, onClick, disabled, href }) => {
@@ -102,9 +103,10 @@ const VariantOutlined = ({ text, onClick, disabled, href }) => {
 };
 const VariantOutlinedNav = ({ text, onClick, disabled, href }) => {
   return (
-    <div
+    <Link
       disabled={disabled}
       onClick={onClick}
+      href={href}
       sx={{
         backgroundColor: 'none',
         color: 'lightBluePS',
@@ -124,15 +126,8 @@ const VariantOutlinedNav = ({ text, onClick, disabled, href }) => {
         },
       }}
     >
-      <a
-        href={href}
-        sx={{
-          variant: 'text.button',
-        }}
-      >
-        {text}
-      </a>
-    </div>
+      <span sx={{ variant: 'text.button' }}>{text}</span>
+    </Link>
   );
 };
 

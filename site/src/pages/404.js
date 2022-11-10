@@ -1,5 +1,4 @@
 import React from "react"
-import Preview404 from "../templates/preview-404"
 import Link from "gatsby-theme-theme-ui-example/src/components/link/link"
 
 const NotFoundPage = () => {

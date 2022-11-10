@@ -1,14 +1,12 @@
-import React from "react"
 /** @jsx jsx */
 import { jsx, Container } from "theme-ui"
 import { graphql } from "gatsby"
 import altoonaLogo from "../../assets/logo.png"
-import Layout from "gatsby-theme-theme-ui-example/src/components/Layout/Layout"
-import { Nav } from "gatsby-theme-theme-ui-example/src/components/Nav/Nav"
-import { NewsFooter } from "gatsby-theme-theme-ui-example/src/components/CustomFooter/NewsFooter"
+import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
+import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
+import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
-import { quickLinksTemplate as TemplateComponent } from "gatsby-theme-theme-ui-example/src/templates/quickLinksTemplate"
 export const query = graphql`
   query($slug: String!) {
     quickLink: contentfulHomepageQuickLinksCards(slug: { eq: $slug }) {

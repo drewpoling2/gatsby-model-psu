@@ -22,7 +22,7 @@
     "gatsby-plugin-sharp": "^4.24.0",
     "gatsby-source-contentful": "^7.22.0",
     "gatsby-source-filesystem": "^4.24.0",
-    "gatsby-theme-theme-ui-example": "*",
+    "gatsby-theme-theme-ui-psu": "*",
     "gatsby-transformer-sharp": "^4.24.0",
     "lodash.merge": "^4.6.1",
     "react": "^16.8.6",

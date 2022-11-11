@@ -6,11 +6,21 @@ import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
 import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { TestContent } from "../components/TestContent"
 import { BLOCKS } from "@contentful/rich-text-types"
+
 export const query = graphql`
   query($slug: String!) {
-    quickLink: contentfulHomepageQuickLinksCards(slug: { eq: $slug }) {
-      cardTitle
+    customPage: contentfulCustomPage(slug: { eq: $slug }) {
+      title
+      blocks: content {
+        id
+        blocktype
+        ...HomepageQuickLinksContent
+        ...HomepageParagraphSummaryContent
+        ...HomepageWideImageHeroContent
+        ...HomepageLandingPageImageHeroContent
+      }
     }
     contentfulLayoutHeader {
       navItems {
@@ -33,9 +43,10 @@ export const query = graphql`
   }
 `
 
-const MainQuickLinksContent = ({ data: { quickLink } }) => (
+const MainQuickLinksContent = ({ data: { customPage } }) => (
   <Container>
-    <h1>{quickLink.cardTitle} Page</h1>
+    {console.log(customPage)}
+    <h1>{customPage.title} Page</h1>
     {/* {console.log(quickLink.pageContent)}
     <div sx={{ py: 4 }}>
       {documentToReactComponents(
@@ -69,11 +80,11 @@ const MainQuickLinksContent = ({ data: { quickLink } }) => (
     </div> */}
   </Container>
 )
-const QuickLinksTemplatePage = ({ data }) => (
+const CustomPageTemplatePage = ({ data }) => (
   <Layout
     navChild={<Nav imageSrc={altoonaLogo} navData={data} />}
-    mainChild={<MainQuickLinksContent data={data} />}
+    mainChild={<TestContent data={data} />}
     footerChild={<NewsFooter />}
   ></Layout>
 )
-export default QuickLinksTemplatePage
+export default CustomPageTemplatePage

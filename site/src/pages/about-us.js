@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Container, Styled } from "theme-ui"
+import { jsx, Container } from "theme-ui"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
-import { PageContent } from "../components/PageContent"
 import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
 import altoonaLogo from "../../assets/logo.png"
 import beaverStadium from "../../assets/beaver-stadium-fireworks_0.jpeg"
@@ -42,11 +41,13 @@ export const query = graphql`
           name
           navItems {
             text
+            href
           }
         }
         ... on ContentfulNavItem {
           id
           text
+          href
         }
       }
     }

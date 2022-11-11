@@ -66,6 +66,7 @@ const theme = {
     lightNavyBluePS: '#1b3c76',
     bluishBlackPS: '#000321',
     grayPS: '#C0C0C0',
+    silverGrayPS: '#CCDAE6',
     darkSteelPS: '#455460',
     blueGrayPS: '#314D64',
     paragraphGrayPS: '#444444',

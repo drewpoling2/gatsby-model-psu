@@ -2,14 +2,12 @@
 import { jsx, Container } from "theme-ui"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
-import { PageContent } from "../components/PageContent"
 import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
 import altoonaLogo from "../../assets/logo.png"
 import { graphql } from "gatsby"
 import { Form } from "gatsby-theme-theme-ui-psu/src/components/Form/Form"
 import React from "react"
 import { TopicPageHeader } from "gatsby-theme-theme-ui-psu/src/components/TopicPageHeader/TopicPageHeader"
-import { QuickLinks } from "gatsby-theme-theme-ui-psu/src/components/QuickLinks/QuickLinks"
 
 export const query = graphql`
   {
@@ -44,11 +42,13 @@ export const query = graphql`
           name
           navItems {
             text
+            href
           }
         }
         ... on ContentfulNavItem {
           id
           text
+          href
         }
       }
     }

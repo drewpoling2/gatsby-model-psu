@@ -102,7 +102,7 @@ export const NewsFooter = ({ apiURL }) => {
                     return (
                       <li key={`subscribe-${index}`}>
                         <Link
-                          sx={{ color: 'lightBluePS' }}
+                          sx={{ color: 'silverGrayPS' }}
                           to={link.uri}
                           id="footer-social-icon-click"
                         >
@@ -151,7 +151,7 @@ export const NewsFooter = ({ apiURL }) => {
                       return (
                         <li sx={{ py: 2 }} key={`item-${index}`}>
                           <Link
-                            sx={{ color: 'lightBluePS' }}
+                            sx={{ color: 'silverGrayPS' }}
                             to={navItem?.uri}
                             id="footer-menu-item-click"
                           >
@@ -204,7 +204,7 @@ export const NewsFooter = ({ apiURL }) => {
             <div sx={{ display: 'flex' }}>
               <ul sx={{ display: 'flex' }}>
                 <li
-                  sx={{ color: 'lightBluePS', pr: 3 }}
+                  sx={{ color: 'silverGrayPS', pr: 3 }}
                   id="footer-menu-item-click"
                 >
                   <span
@@ -276,7 +276,7 @@ export const NewsFooter = ({ apiURL }) => {
                       sx={{
                         px: 3,
                         borderLeft: '1px solid #1e407c',
-                        color: 'lightBluePS',
+                        color: 'silverGrayPS',
                         '&:hover': { textDecoration: 'underline' },
                       }}
                       to={link?.uri}
@@ -312,7 +312,7 @@ export const NewsFooter = ({ apiURL }) => {
                       sx={{
                         pr: 3,
                         borderRight: '1px solid #1e407c',
-                        color: 'lightBluePS',
+                        color: 'silverGrayPS',
                         '&:hover': { textDecoration: 'underline' },
                       }}
                       to={copyright?.uri}

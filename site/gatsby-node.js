@@ -9,6 +9,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           slug
         }
       }
+      allContentfulCustomPage {
+        nodes {
+          slug
+        }
+      }
     }
   `)
 
@@ -24,6 +29,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ),
       context: {
         slug: quickLink.slug,
+      },
+    })
+  })
+  result.data.allContentfulCustomPage.nodes.forEach(customPage => {
+    actions.createPage({
+      path: `/${customPage.slug}/`,
+      component: require.resolve("./src/templates/custom-page-template.jsx"),
+      context: {
+        slug: customPage.slug,
       },
     })
   })
@@ -107,20 +121,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
   // abstract interfaces
   actions.createTypes(/* GraphQL */ `
 
-  interface HomepageImage implements Node {
-    id: ID!
-    alt: String
-    gatsbyImageData: GatsbyImageData @imagePassthroughArgs
-    url: String
-  }
-    interface HomepageTestComponent implements Node & HomepageBlock {
+    interface HomepageImage implements Node {
       id: ID!
-      href: String
-      text: String
-      blocktype: String
+      alt: String
+      gatsbyImageData: GatsbyImageData @imagePassthroughArgs
+      url: String
     }
-
-    interface HomepageParagraphSummary implements Node & HomepageBlock {
+    
+    interface HomepageParagraphSummary implements Node & HomepageBlock & CustomPageBlock {
       id: ID!
       paragraphSummarySubtitle: String
       paragraphSummaryAuthor: String
@@ -128,7 +136,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       blocktype: String
     }
 
-    interface HomepageQuickLinksCards implements Node & HomepageBlock {
+    interface HomepageQuickLinksCards implements Node & HomepageBlock & CustomPageBlock{
       id: ID!
       cardTitle: String
       slug: String
@@ -137,7 +145,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
     }
 
-    interface HomepageLandingPageImageHero implements Node & HomepageBlock {
+    interface HomepageLandingPageImageHero implements Node & HomepageBlock & CustomPageBlock {
       id: ID!
       heading: String
       landingPageHeroImageText: String
@@ -146,7 +154,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage 
     }
 
-    interface HomepageWideImageHero implements Node & HomepageBlock {
+    interface HomepageWideImageHero implements Node & HomepageBlock & CustomPageBlock{
       id: ID!
       heading: String
       Subtitle: String
@@ -155,6 +163,11 @@ exports.createSchemaCustomization = async ({ actions }) => {
     }
 
     interface HomepageBlock implements Node {
+      id: ID!
+      blocktype: String
+    }
+
+    interface CustomPageBlock  {
       id: ID!
       blocktype: String
     }
@@ -185,8 +198,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       name: String
       navItems: [NavItem]
     }
-
-   
 
     interface HomepageHero implements Node & HomepageBlock {
       id: ID!
@@ -311,8 +322,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       title: String
       description: String
-      image: HomepageImage
       content: [HomepageBlock]
+    }
+
+    interface CustomPage implements Node {
+      id: ID!
+      title: String
+      description: String
+      content: [CustomPageBlock]
     }
 
     interface LayoutHeader implements Node {
@@ -416,7 +433,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
   // CMS-specific types for Homepage
   actions.createTypes(/* GraphQL */ `
-    type ContentfulHomepageParagraphSummary implements Node & HomepageParagraphSummary & HomepageBlock {
+    type ContentfulHomepageParagraphSummary implements Node & HomepageParagraphSummary & HomepageBlock & CustomPageBlock {
       id: ID!
       paragraphSummarySubtitle: String
       paragraphSummaryAuthor: String
@@ -424,7 +441,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       blocktype: String
     }
 
-    type ContentfulHomepageQuickLinksCards implements Node & HomepageQuickLinksCards & HomepageBlock {
+    type ContentfulHomepageQuickLinksCards implements Node & HomepageQuickLinksCards & HomepageBlock & CustomPageBlock {
       id: ID!
       cardTitle: String
       slug: String
@@ -433,7 +450,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(from: "image___NODE")
     }
 
-    type ContentfulHomepageLandingPageImageHero implements Node & HomepageLandingPageImageHero & HomepageBlock {
+    type ContentfulHomepageLandingPageImageHero implements Node & HomepageLandingPageImageHero & HomepageBlock & CustomPageBlock {
       id: ID!
       heading: String
       landingPageHeroImageText: String
@@ -442,7 +459,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(from: "image___NODE")
     }
 
-    type ContentfulHomepageWideImageHero implements Node & HomepageWideImageHero & HomepageBlock {
+    type ContentfulHomepageWideImageHero implements Node & HomepageWideImageHero & HomepageBlock & CustomPageBlock {
       id: ID!
       heading: String
       Subtitle: String
@@ -615,6 +632,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(from: "image___NODE")
       content: [HomepageBlock] @link(from: "content___NODE")
     }
+
+    type ContentfulCustomPage implements Node & CustomPage @dontInfer {
+      id: ID!
+      title: String
+      description: String
+      slug: String
+      content: [CustomPageBlock] @link(from: "content___NODE")
+    }
   `)
 
   // CMS specific types for About page
@@ -714,46 +739,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
       image: HomepageImage @link(from: "image___NODE")
       html: String! @richText
-    }
-  `)
-
-  /////////////////////
-
-  actions.createTypes(`
-
-    interface HomepageBlock {
-      id: ID!
-      blocktype: String
-    }
-
-    interface HomepageTestComponent implements Node & HomepageBlock {
-      id: ID!
-      href: String
-      text: String
-      blocktype: String
-    }
-
-    interface RecentPosts implements Node & HomepageBlock{
-      id: ID!
-      testfield: String
-      blocktype: String
-    }
-  `)
-
-  // ...
-  actions.createTypes(`
-
-    type ContentfulRecentPosts implements Node & RecentPosts & HomepageBlock @dontInfer{
-      id: ID!
-      testfield: String
-      blocktype: String @blocktype
-    }
-    type ContentfulHomepageTestComponent implements Node & HomepageTestComponent & HomepageBlock
-      @dontInfer {
-      id: ID!
-      href: String
-      text: String
-      blocktype: String @blocktype
     }
   `)
 }

@@ -7,10 +7,10 @@ import { QuickLinks } from "gatsby-theme-theme-ui-psu/src/components/QuickLinks/
 import { ParagraphSummary } from "gatsby-theme-theme-ui-psu/src/components/ParagraphSummary/ParagraphSummary"
 import { TextContent } from "gatsby-theme-theme-ui-psu/src/components/TextContent/TextContent"
 
-export const PageContent = ({ data }) => {
+export const TestContent = ({ data }) => {
   console.log(data)
   const getFieldContentKey = (typeName, index) => `${typeName}-${index}`
-  const components = data?.contentfulHomepage?.blocks?.map((content, i) => {
+  const components = data?.customPage?.blocks?.map((content, i) => {
     const key = getFieldContentKey(content["blocktype"], i)
     switch (content["blocktype"]) {
       case "HomepageLandingPageImageHero": {
@@ -58,7 +58,6 @@ export const PageContent = ({ data }) => {
     <Container>
       <div sx={{ pt: 0, pb: 5 }}>
         <Stack variant="col">{components}</Stack>
-        <TextContent data={data}></TextContent>
       </div>
     </Container>
   )

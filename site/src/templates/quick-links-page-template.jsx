@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container } from "theme-ui"
 import { graphql } from "gatsby"
-import altoonaLogo from "../../assets/logo.png"
+import logo from "../../assets/psu-mark.png"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
 import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
@@ -11,22 +11,63 @@ export const query = graphql`
   query($slug: String!) {
     quickLink: contentfulHomepageQuickLinksCards(slug: { eq: $slug }) {
       cardTitle
+      pageContent {
+        raw
+      }
+    }
+    allContentfulCtaItem {
+      totalCount
+      edges {
+        node {
+          text
+          ref {
+            ... on ContentfulCustomPage {
+              id
+              slug
+            }
+            ... on ContentfulExternalLink {
+              id
+              href
+            }
+          }
+        }
+      }
     }
     contentfulLayoutHeader {
       navItems {
-        id
+        ... on ContentfulNavItem {
+          id
+          ref {
+            ... on ContentfulCustomPage {
+              id
+              slug
+            }
+            ... on ContentfulExternalLink {
+              id
+              href
+            }
+          }
+          text
+        }
         ... on ContentfulNavItemGroup {
           id
           name
           navItems {
-            text
-            href
+            ... on ContentfulNavItem {
+              id
+              text
+              ref {
+                ... on ContentfulCustomPage {
+                  id
+                  slug
+                }
+                ... on ContentfulExternalLink {
+                  id
+                  href
+                }
+              }
+            }
           }
-        }
-        ... on ContentfulNavItem {
-          id
-          text
-          href
         }
       }
     }
@@ -35,43 +76,24 @@ export const query = graphql`
 
 const MainQuickLinksContent = ({ data: { quickLink } }) => (
   <Container>
-    <h1>{quickLink.cardTitle} Page</h1>
-    {/* {console.log(quickLink.pageContent)}
-    <div sx={{ py: 4 }}>
-      {documentToReactComponents(
-        JSON.parse(quickLink.pageContent.raw, {
-          renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
-              <img src={node.data.target.fields.file["en-US"].url} />
-            ),
-          },
-        })
-      )}
-    </div> */}
-    {/* <h1>{quickLink.title}</h1>
-    <p>
-      Guest: {lesson.author.name} · <a href={lesson.author.twitter}>Twitter</a>
-    </p>
-    <div>
-      {documentToReactComponents(lesson.description.json, {
-        renderNode: {
-          [BLOCKS.HEADING_2]: (_node, children) => (
-            <h2 style={{ color: "red" }}>{children}</h2>
-          ),
-          [BLOCKS.EMBEDDED_ASSET]: node => (
-            <img
-              src={`${node.data.target.fields.file["en-US"].url}?w=300&q=90`}
-              alt={node.data.target.fields.title["en-US"]}
-            />
-          ),
-        },
-      })}
-    </div> */}
+    {quickLink.pageContent && (
+      <div sx={{ py: 4, my: 4 }}>
+        {documentToReactComponents(
+          JSON.parse(quickLink.pageContent.raw, {
+            renderNode: {
+              [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
+                <img src={node.data.target.fields.file["en-US"].url} />
+              ),
+            },
+          })
+        )}
+      </div>
+    )}
   </Container>
 )
 const QuickLinksTemplatePage = ({ data }) => (
   <Layout
-    navChild={<Nav imageSrc={altoonaLogo} navData={data} />}
+    navChild={<Nav imageSrc={logo} navData={data} />}
     mainChild={<MainQuickLinksContent data={data} />}
     footerChild={<NewsFooter />}
   ></Layout>

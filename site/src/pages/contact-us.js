@@ -3,7 +3,7 @@ import { jsx, Container } from "theme-ui"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
 import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
-import altoonaLogo from "../../assets/logo.png"
+import logo from "../../assets/psu-mark.png"
 import { graphql } from "gatsby"
 import { Form } from "gatsby-theme-theme-ui-psu/src/components/Form/Form"
 import React from "react"
@@ -22,33 +22,65 @@ export const query = graphql`
       blocks: content {
         id
         blocktype
-        ...HomepageQuickLinksContent
+        ...QuickLinkGroupContent
         ...HomepageParagraphSummaryContent
         ...HomepageWideImageHeroContent
         ...HomepageLandingPageImageHeroContent
       }
     }
-    contentfulHomepageTextContent {
-      text {
-        raw
+    allContentfulCtaItem {
+      totalCount
+      edges {
+        node {
+          text
+          ref {
+            ... on ContentfulCustomPage {
+              id
+              slug
+            }
+            ... on ContentfulExternalLink {
+              id
+              href
+            }
+          }
+        }
       }
-      blocktype
     }
     contentfulLayoutHeader {
       navItems {
-        id
+        ... on ContentfulNavItem {
+          id
+          ref {
+            ... on ContentfulCustomPage {
+              id
+              slug
+            }
+            ... on ContentfulExternalLink {
+              id
+              href
+            }
+          }
+          text
+        }
         ... on ContentfulNavItemGroup {
           id
           name
           navItems {
-            text
-            href
+            ... on ContentfulNavItem {
+              id
+              text
+              ref {
+                ... on ContentfulCustomPage {
+                  id
+                  slug
+                }
+                ... on ContentfulExternalLink {
+                  id
+                  href
+                }
+              }
+            }
           }
-        }
-        ... on ContentfulNavItem {
-          id
-          text
-          href
         }
       }
     }
@@ -56,9 +88,9 @@ export const query = graphql`
 `
 
 //need to hook this form up to contentful
-const index = ({ data }) => (
+const contactUsPage = ({ data }) => (
   <Layout
-    navChild={<Nav imageSrc={altoonaLogo} navData={data} />}
+    navChild={<Nav imageSrc={logo} navData={data} />}
     mainChild={
       <Container>
         <div sx={{ py: 10 }}>
@@ -80,4 +112,4 @@ const index = ({ data }) => (
   ></Layout>
 )
 
-export default index
+export default contactUsPage

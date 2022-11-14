@@ -5,10 +5,9 @@ import { WideImageHero } from "gatsby-theme-theme-ui-psu/src/components/WideImag
 import { Stack } from "gatsby-theme-theme-ui-psu/src/components/Stack/Stack"
 import { QuickLinks } from "gatsby-theme-theme-ui-psu/src/components/QuickLinks/QuickLinks"
 import { ParagraphSummary } from "gatsby-theme-theme-ui-psu/src/components/ParagraphSummary/ParagraphSummary"
-import { TextContent } from "gatsby-theme-theme-ui-psu/src/components/TextContent/TextContent"
+import { RichTextContent } from "gatsby-theme-theme-ui-psu/src/components/RichTextContent/RichTextContent"
 
-export const PageContent = ({ data }) => {
-  console.log(data)
+export const HomePageContent = ({ data }) => {
   const getFieldContentKey = (typeName, index) => `${typeName}-${index}`
   const components = data?.contentfulHomepage?.blocks?.map((content, i) => {
     const key = getFieldContentKey(content["blocktype"], i)
@@ -34,7 +33,7 @@ export const PageContent = ({ data }) => {
           />
         )
       }
-      case "HomepageQuickLinksCards": {
+      case "QuickLinkGroup": {
         return (
           <QuickLinks key={key} data={content} heading={"quick links //"} />
         )
@@ -48,8 +47,13 @@ export const PageContent = ({ data }) => {
           />
         )
       }
+      case "RichTextBlock": {
+        return (
+          <RichTextContent richTextRaw={content.richText.raw}></RichTextContent>
+        )
+      }
       default: {
-        return null
+        return ""
       }
     }
   })
@@ -58,7 +62,6 @@ export const PageContent = ({ data }) => {
     <Container>
       <div sx={{ pt: 0, pb: 5 }}>
         <Stack variant="col">{components}</Stack>
-        <TextContent data={data}></TextContent>
       </div>
     </Container>
   )

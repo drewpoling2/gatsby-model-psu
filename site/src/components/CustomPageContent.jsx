@@ -5,9 +5,9 @@ import { WideImageHero } from "gatsby-theme-theme-ui-psu/src/components/WideImag
 import { Stack } from "gatsby-theme-theme-ui-psu/src/components/Stack/Stack"
 import { QuickLinks } from "gatsby-theme-theme-ui-psu/src/components/QuickLinks/QuickLinks"
 import { ParagraphSummary } from "gatsby-theme-theme-ui-psu/src/components/ParagraphSummary/ParagraphSummary"
-import { TextContent } from "gatsby-theme-theme-ui-psu/src/components/TextContent/TextContent"
+import { RichTextContent } from "gatsby-theme-theme-ui-psu/src/components/RichTextContent/RichTextContent"
 
-export const TestContent = ({ data }) => {
+export const CustomPageContent = ({ data }) => {
   console.log(data)
   const getFieldContentKey = (typeName, index) => `${typeName}-${index}`
   const components = data?.customPage?.blocks?.map((content, i) => {
@@ -34,7 +34,7 @@ export const TestContent = ({ data }) => {
           />
         )
       }
-      case "HomepageQuickLinksCards": {
+      case "QuickLinkGroup": {
         return (
           <QuickLinks key={key} data={content} heading={"quick links //"} />
         )
@@ -48,8 +48,13 @@ export const TestContent = ({ data }) => {
           />
         )
       }
+      case "RichTextBlock": {
+        return (
+          <RichTextContent richTextRaw={content.richText.raw}></RichTextContent>
+        )
+      }
       default: {
-        return null
+        return ""
       }
     }
   })

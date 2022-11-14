@@ -17,7 +17,7 @@ const Dropdown = ({ submenus, dropdown }) => {
               transform: 'rotate(45deg)',
             }}
           ></div>
-          <ul
+          <div
             sx={{
               backgroundColor: 'whitePS',
               p: 13,
@@ -30,20 +30,20 @@ const Dropdown = ({ submenus, dropdown }) => {
             }}
           >
             {submenus.map((submenu, index) => (
-              <li key={index} sx={{ py: 2, borderBottom: '1px dashed gray' }}>
+              <div key={index} sx={{ py: 2, borderBottom: '1px dashed gray' }}>
                 <a
                   sx={{
                     color: 'bluishBlackPS',
                     variant: 'text.dropdownMenu',
                     '&:hover': { color: 'bluePS', fontStyle: 'italic' },
                   }}
-                  href={submenu.href}
+                  href={submenu.ref.href}
                 >
                   {submenu.text}
                 </a>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       ) : null}
     </>

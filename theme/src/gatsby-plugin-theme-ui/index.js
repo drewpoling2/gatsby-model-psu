@@ -241,6 +241,7 @@ const theme = {
     h2: {
       variant: 'text.heading',
       fontSize: 4,
+      fontFamily: 'roboto-slab-var',
       color: 'mediumBluePS',
       my: 1,
     },

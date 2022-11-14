@@ -17,26 +17,28 @@ export const QuickLinks = ({ heading, data, index }) => {
           justifyContent: 'space-between',
         }}
       >
-        <Card data={data} index={index} key={index} />
-        <Card data={data} index={index} key={index} />
-        <Card data={data} index={index} key={index} />
-        <Card data={data} index={index} key={index} />
+        {data.quickLinkList.map((item, index) => {
+          return <Card item={item} key={index} index={index}></Card>;
+        })}
       </div>
     </div>
   );
 };
 
 export const query = graphql`
-  fragment HomepageQuickLinksContent on HomepageQuickLinksCards {
-    id
-    cardTitle
-    slug
-    cardDescription
-    blocktype
-    image {
-      id
-      gatsbyImageData
-      alt
+  fragment QuickLinkGroupContent on QuickLinkGroup {
+    quickLinkList {
+      blocktype
+      cardTitle
+      image {
+        gatsbyImageData
+        alt
+        id
+      }
+      slug
+      cardDescription
     }
+    blocktype
+    id
   }
 `;

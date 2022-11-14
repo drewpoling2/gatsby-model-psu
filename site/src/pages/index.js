@@ -2,10 +2,9 @@
 import { jsx } from "theme-ui"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
-import { PageContent } from "../components/PageContent"
+import { HomePageContent } from "../components/HomePageContent"
 import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
-import altoonaLogo from "../../assets/logo.png"
-import beaverStadium from "../../assets/beaver-stadium-fireworks_0.jpeg"
+import logo from "../../assets/psu-mark.png"
 import { graphql } from "gatsby"
 
 export const query = graphql`
@@ -21,33 +20,66 @@ export const query = graphql`
       blocks: content {
         id
         blocktype
-        ...HomepageQuickLinksContent
+        ...QuickLinkGroupContent
         ...HomepageParagraphSummaryContent
         ...HomepageWideImageHeroContent
         ...HomepageLandingPageImageHeroContent
+        ...RichTextBlockContent
       }
     }
-    contentfulHomepageTextContent {
-      text {
-        raw
+    allContentfulCtaItem {
+      totalCount
+      edges {
+        node {
+          text
+          ref {
+            ... on ContentfulCustomPage {
+              id
+              slug
+            }
+            ... on ContentfulExternalLink {
+              id
+              href
+            }
+          }
+        }
       }
-      blocktype
     }
     contentfulLayoutHeader {
       navItems {
-        id
+        ... on ContentfulNavItem {
+          id
+          ref {
+            ... on ContentfulCustomPage {
+              id
+              slug
+            }
+            ... on ContentfulExternalLink {
+              id
+              href
+            }
+          }
+          text
+        }
         ... on ContentfulNavItemGroup {
           id
           name
           navItems {
-            text
-            href
+            ... on ContentfulNavItem {
+              id
+              text
+              ref {
+                ... on ContentfulCustomPage {
+                  id
+                  slug
+                }
+                ... on ContentfulExternalLink {
+                  id
+                  href
+                }
+              }
+            }
           }
-        }
-        ... on ContentfulNavItem {
-          id
-          text
-          href
         }
       }
     }
@@ -56,10 +88,12 @@ export const query = graphql`
 
 const index = ({ data }) => (
   <Layout
-    navChild={<Nav imageSrc={altoonaLogo} navData={data} />}
-    mainChild={<PageContent data={data} imageSrc={beaverStadium} />}
+    navChild={<Nav imageSrc={logo} navData={data} />}
+    mainChild={<HomePageContent data={data} />}
     footerChild={<NewsFooter />}
-  ></Layout>
+  >
+    {console.log(data)}
+  </Layout>
 )
 
 export default index

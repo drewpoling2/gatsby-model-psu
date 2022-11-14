@@ -144,6 +144,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       blocktype: String
       image: HomepageImage
     }
+    
+    interface QuickLinkGroup implements Node & HomepageBlock & CustomPageBlock{
+      id: ID!
+      text: String
+      blocktype: String
+      quickLinkList: [HomepageQuickLinksCards]
+    }
 
     interface HomepageLandingPageImageHero implements Node & HomepageBlock & CustomPageBlock {
       id: ID!
@@ -154,12 +161,19 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage 
     }
 
-    interface HomepageWideImageHero implements Node & HomepageBlock & CustomPageBlock{
+    interface HomepageWideImageHero implements Node & HomepageBlock & CustomPageBlock {
       id: ID!
       heading: String
       Subtitle: String
       blocktype: String
       image: HomepageImage
+    }
+
+    interface RichTextBlock implements Node & HomepageBlock & CustomPageBlock {
+      id: ID!
+      blocktype: String
+      title: String
+      richText: RichText
     }
 
     interface HomepageBlock implements Node {
@@ -441,6 +455,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       blocktype: String
     }
 
+    type RichText {
+      raw: JSON
+      html: String!
+      markdown: String!
+      text: String!
+    }
+
     type ContentfulHomepageQuickLinksCards implements Node & HomepageQuickLinksCards & HomepageBlock & CustomPageBlock {
       id: ID!
       cardTitle: String
@@ -448,6 +469,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       cardDescription: String
       blocktype: String
       image: HomepageImage @link(from: "image___NODE")
+    }
+
+    type ContentfulQuickLinkGroup implements Node & QuickLinkGroup & HomepageBlock & CustomPageBlock {
+      id: ID!
+      text: String
+      blocktype: String
+      quickLinkList: [HomepageQuickLinksCards]
+        @link(from: "quickLinkList___NODE")
     }
 
     type ContentfulHomepageLandingPageImageHero implements Node & HomepageLandingPageImageHero & HomepageBlock & CustomPageBlock {
@@ -473,8 +502,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       text: String
     }
 
-    type ContentfulNavItem implements Node & NavItem & HeaderNavItem
-      @dontInfer {
+    type ContentfulNavItem implements Node & NavItem & HeaderNavItem {
       id: ID!
       navItemType: String @navItemType(name: "Link")
       href: String
@@ -483,8 +511,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
     }
 
-    type ContentfulNavItemGroup implements Node & NavItemGroup & HeaderNavItem
-      @dontInfer {
+    type ContentfulNavItemGroup implements Node & NavItemGroup & HeaderNavItem {
       id: ID!
       navItemType: String @navItemType(name: "Group")
       name: String
@@ -703,7 +730,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
   // Layout types
   actions.createTypes(/* GraphQL */ `
-    type ContentfulLayoutHeader implements Node & LayoutHeader @dontInfer {
+    type ContentfulLayoutHeader implements Node & LayoutHeader {
       id: ID!
       navItems: [HeaderNavItem] @link(from: "navItems___NODE")
       cta: HomepageLink @link(from: "cta___NODE")
@@ -727,6 +754,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       header: LayoutHeader @link(from: "header___NODE")
       footer: LayoutFooter @link(from: "footer___NODE")
+    }
+
+    type ContentfulRichTextBlock implements Node & RichTextBlock & CustomPageBlock & HomepageBlock {
+      id: ID!
+      blocktype: String
+      title: String
+      richText: RichText
     }
   `)
 

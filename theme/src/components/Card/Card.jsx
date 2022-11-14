@@ -3,7 +3,7 @@ import { jsx, Styled } from 'theme-ui';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link } from 'gatsby';
 
-export const Card = ({ data }) => {
+export const Card = ({ item }) => {
   return (
     <div
       sx={{
@@ -21,7 +21,7 @@ export const Card = ({ data }) => {
           cursor: 'pointer',
         }}
         style={{
-          backgroundImage: `url(${data.image.gatsbyImageData.images.fallback.src})`,
+          backgroundImage: `url(${item.image.gatsbyImageData.images.fallback.src})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -35,18 +35,28 @@ export const Card = ({ data }) => {
         }}
       >
         <Styled.h2 sx={{ p: 0, lineHeight: '26px' }}>
-          <Link to={`/${data.slug}`}>{data.cardTitle}</Link>
+          <Link
+            sx={{
+              fontFamily: 'roboto-slab-var',
+              fontSize: '22px',
+              textDecoration: 'none',
+            }}
+            to={`/${item.slug}`}
+          >
+            {item.cardTitle}
+          </Link>
         </Styled.h2>
         <Styled.h4
           sx={{
             color: '#444444',
             mt: '20px',
-            letterSpacing: '.48px',
+            fontSize: '18px',
+            letterSpacing: '.54px',
             lineHeight: '22px',
             textTransform: 'uppercase',
           }}
         >
-          {data.cardDescription}
+          {item.cardDescription}
         </Styled.h4>
       </div>
     </div>

@@ -14,6 +14,7 @@ const VariantDefault = ({ text, onClick, disabled, href }) => {
         width: 5,
         height: 5,
         px: 13,
+        textDecoration: 'none',
         py: 2,
         mx: 0,
         cursor: 'pointer',
@@ -25,6 +26,8 @@ const VariantDefault = ({ text, onClick, disabled, href }) => {
         href={href}
         sx={{
           variant: 'text.button',
+          color: 'whitePS',
+          textDecoration: 'none',
         }}
       >
         {text}
@@ -46,6 +49,7 @@ const VariantHotline = ({ text, onClick, disabled, href }) => {
         height: 5,
         border: '2px solid #000321',
         px: 13,
+        textDecoration: 'none',
         py: 1,
         mx: 1,
         cursor: 'pointer',
@@ -94,6 +98,8 @@ const VariantOutlined = ({ text, onClick, disabled, href }) => {
         href={href}
         sx={{
           variant: 'text.button',
+          textDecoration: 'none',
+          color: 'whitePS',
         }}
       >
         {text}
@@ -112,6 +118,7 @@ const VariantOutlinedNav = ({ text, onClick, disabled, href }) => {
         color: 'lightBluePS',
         border: '2px solid #ccf0ff',
         width: 5,
+        textDecoration: 'none',
         height: 5,
         px: 13,
         py: 1,
@@ -140,6 +147,7 @@ const VariantIcon = ({ text, onClick, disabled, Icon, href, iconSize }) => {
         backgroundColor: 'transparent',
         color: 'whitePS',
         cursor: 'pointer',
+        textDecoration: 'none',
         variant: 'layout.rowJAC',
       }}
     >

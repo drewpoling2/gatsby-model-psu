@@ -1,15 +1,17 @@
 @import 'fonts.css';
 
 ul {
-  list-style-type: none;
+  list-style-type: square;
+  color: #009cde;
 }
 * {
   transition: all 0.2s ease-out;
 }
 a {
   cursor: pointer;
-  color: inherit;
-  text-decoration: none;
+  color: #005fa9;
+  font-family: 'roboto-bold';
+  text-decoration: underline;
 }
 
 h1,

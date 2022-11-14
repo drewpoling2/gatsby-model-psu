@@ -19,7 +19,6 @@ export const LandingPageImageHero = ({
             backgroundImage: `url(${imageSrc})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
             width: '100%',
             position: 'relative',
           }}

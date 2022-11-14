@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'gatsby';
 import localFooterData from './footerData.json';
-
+import logoMark from './assets/psu-mark.png';
 export const NewsFooter = ({ apiURL }) => {
   const [apiData, setApiData] = useState(false);
 
@@ -94,15 +94,15 @@ export const NewsFooter = ({ apiURL }) => {
               <div>
                 <img src={mapInfo?.html} alt={mapInfo?.title} />
               </div>
-              <ul data-testid="subscribe-links">
+              <div data-testid="subscribe-links">
                 {/* Social media icons */}
                 {alteredSubscribeLinks.map((link, index) => {
                   // Some items are empty strings, check if valid link.
                   if (link && link?.title !== 'Get News By Email') {
                     return (
-                      <li key={`subscribe-${index}`}>
+                      <div key={`subscribe-${index}`}>
                         <Link
-                          sx={{ color: 'silverGrayPS' }}
+                          sx={{ color: 'silverGrayPS', textDecoration: 'none' }}
                           to={link.uri}
                           id="footer-social-icon-click"
                         >
@@ -113,11 +113,11 @@ export const NewsFooter = ({ apiURL }) => {
                             {link?.title}
                           </span>
                         </Link>
-                      </li>
+                      </div>
                     );
                   }
                 })}
-              </ul>
+              </div>
               {/* Newsletter */}
               {alteredSubscribeLinks.map((subscribeLink, index) => {
                 if (subscribeLink?.displayname === 'Get News By Email') {
@@ -146,12 +146,15 @@ export const NewsFooter = ({ apiURL }) => {
                   <h3 sx={{ m: 0, textTransform: 'uppercase' }}>
                     {link?.Type}
                   </h3>
-                  <ul>
+                  <div>
                     {children.map((navItem, index) => {
                       return (
-                        <li sx={{ py: 2 }} key={`item-${index}`}>
+                        <div sx={{ py: 2 }} key={`item-${index}`}>
                           <Link
-                            sx={{ color: 'silverGrayPS' }}
+                            sx={{
+                              color: 'silverGrayPS',
+                              textDecoration: 'none',
+                            }}
                             to={navItem?.uri}
                             id="footer-menu-item-click"
                           >
@@ -165,10 +168,10 @@ export const NewsFooter = ({ apiURL }) => {
                               {navItem?.title}
                             </span>
                           </Link>
-                        </li>
+                        </div>
                       );
                     })}
-                  </ul>
+                  </div>
                 </div>
               );
             })}
@@ -187,7 +190,8 @@ export const NewsFooter = ({ apiURL }) => {
             {/* TODO: API footer logo currently 404s - manually set the same as WWW site */}
             <Link to="/">
               <img
-                src="https://www.psu.edu/components/img/psu-mark-footer.png"
+                sx={{ width: '170px' }}
+                src={logoMark}
                 alt={logo.title}
                 loading="lazy"
               />
@@ -202,8 +206,8 @@ export const NewsFooter = ({ apiURL }) => {
             }}
           >
             <div sx={{ display: 'flex' }}>
-              <ul sx={{ display: 'flex' }}>
-                <li
+              <div sx={{ display: 'flex' }}>
+                <div
                   sx={{ color: 'silverGrayPS', pr: 3 }}
                   id="footer-menu-item-click"
                 >
@@ -216,12 +220,14 @@ export const NewsFooter = ({ apiURL }) => {
                   >
                     {address?.html}
                   </span>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link
                     sx={{
                       fontWeight: 700,
                       px: 3,
+                      textDecoration: 'none',
+                      color: 'whitePS',
                       borderLeft: '1px solid #1e407c',
                     }}
                     to={`tel:${telephone?.html}`}
@@ -231,18 +237,21 @@ export const NewsFooter = ({ apiURL }) => {
                       sx={{
                         fontFamily: 'roboto-condensed-bold',
                         fontSize: '14px',
+                        textDecoration: 'none',
                         letterSpacing: '.2px',
                       }}
                     >
                       {telephone?.html}
                     </span>
                   </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link
                     sx={{
                       fontWeight: 700,
                       px: 3,
+                      textDecoration: 'none',
+                      color: 'whitePS',
                       borderLeft: '1px solid #1e407c',
                     }}
                     to={contactUs?.uri}
@@ -258,12 +267,12 @@ export const NewsFooter = ({ apiURL }) => {
                       {contactUs?.title}
                     </span>
                   </Link>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
             <div sx={{ display: 'flex', flexDirection: 'column', pt: 55 }}>
               {/* Legal links */}
-              <ul
+              <div
                 sx={{
                   display: 'flex',
                   flexDirection: 'row',
@@ -271,12 +280,13 @@ export const NewsFooter = ({ apiURL }) => {
                 }}
               >
                 {legalLinks.map((link, index) => (
-                  <li key={`card-${index}`}>
+                  <div key={`card-${index}`}>
                     <Link
                       sx={{
                         px: 3,
                         borderLeft: '1px solid #1e407c',
                         color: 'silverGrayPS',
+                        textDecoration: 'none',
                         '&:hover': { textDecoration: 'underline' },
                       }}
                       to={link?.uri}
@@ -287,18 +297,19 @@ export const NewsFooter = ({ apiURL }) => {
                           fontFamily: 'roboto-condensed-regular',
                           fontSize: '14px',
                           letterSpacing: '.2px',
+                          textDecoration: 'none',
                         }}
                       >
                         {' '}
                         {link?.displayname}
                       </span>
                     </Link>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
               {/* Copyright */}
               <div sx={{ display: 'flex', flexDirection: 'row' }}>
-                <ul
+                <div
                   sx={{
                     display: 'flex',
                     flexDirection: 'row',
@@ -307,12 +318,13 @@ export const NewsFooter = ({ apiURL }) => {
                     width: '100%',
                   }}
                 >
-                  <li>
+                  <div>
                     <Link
                       sx={{
                         pr: 3,
                         borderRight: '1px solid #1e407c',
                         color: 'silverGrayPS',
+                        textDecoration: 'none',
                         '&:hover': { textDecoration: 'underline' },
                       }}
                       to={copyright?.uri}
@@ -323,22 +335,23 @@ export const NewsFooter = ({ apiURL }) => {
                           fontFamily: 'roboto-condensed-regular',
                           fontSize: '14px',
                           letterSpacing: '.2px',
+                          textDecoration: 'none',
                         }}
                       >
                         {copyright?.displayname} &copy;{' '}
                         {new Date().getFullYear()}{' '}
                       </span>
                     </Link>
-                  </li>
-                  <li sx={{ pl: 3 }}>
+                  </div>
+                  <div sx={{ pl: 3 }}>
                     <img
                       src={weArePenn?.html}
                       alt={weArePenn?.title}
                       loading="lazy"
                       sx={{ width: '170px' }}
                     />
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

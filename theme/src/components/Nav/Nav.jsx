@@ -6,14 +6,18 @@ import { Image } from '../Image/Image';
 import { IconButton } from '../IconButton/IconButton';
 import { HoverDropDown } from '../HoverDropDown/HoverDropDown';
 import { Link } from 'gatsby';
+import React from 'react';
+import theme from '../../gatsby-plugin-theme-ui';
+
 export const Nav = ({ imageSrc, navData }) => {
+  const items = navData.allContentfulCtaItem.edges;
   return (
     <div
       sx={{
         variant: 'layout.rowJSB',
         width: 4,
-        pt: 2,
-        pb: 2,
+        pt: 3,
+        pb: 0,
       }}
     >
       <Container
@@ -50,21 +54,75 @@ export const Nav = ({ imageSrc, navData }) => {
                 pt: 2,
               }}
             >
-              <Button
-                text="vendor application"
-                href={'https://clc.com/home/get-licensed/'}
-                variant="hotLine"
-              />
-              <Button
-                text="contact us"
-                href={'/contact-us'}
-                variant="outlinedNav"
-              />
-              <Button
-                text="about us"
-                href={'/about-us'}
-                variant="outlinedNav"
-              />
+              {/* using Button here is better but something is wrong with the Button export blocking conditional rendering for variants*/}
+              {items.map((item, i) => {
+                return i === 0 ? (
+                  <Link
+                    href={
+                      item.node.ref.href
+                        ? item.node.ref.href
+                        : item.node.ref.slug
+                    }
+                    sx={{
+                      backgroundColor: 'bluishBlackPS',
+                      color: 'lightBluePS',
+                      width: 5,
+                      height: 5,
+                      border: '2px solid #000321',
+                      px: 13,
+                      textDecoration: 'none',
+                      py: 1,
+                      mx: 1,
+                      cursor: 'pointer',
+                      variant: 'layout.rowJAC',
+                      '&:hover': {
+                        border: '2px solid #ffd100',
+                        backgroundColor: 'yellowPS',
+                        color: 'bluishBlackPS',
+                      },
+                    }}
+                  >
+                    <span
+                      sx={{
+                        variant: 'text.button',
+                      }}
+                    >
+                      {item.node.text}
+                    </span>
+                  </Link>
+                ) : (
+                  <Link
+                    href={
+                      item.node.ref.href
+                        ? item.node.ref.href
+                        : item.node.ref.slug
+                    }
+                    sx={{
+                      backgroundColor: 'none',
+                      color: 'lightBluePS',
+                      border: '2px solid #ccf0ff',
+                      width: 5,
+                      textDecoration: 'none',
+                      height: 5,
+                      px: 13,
+                      py: 1,
+                      mx: 1,
+                      cursor: 'pointer',
+                      variant: 'layout.rowJAC',
+                      '&:hover': {
+                        border: '2px solid #009CDE',
+                        backgroundImage: () =>
+                          `linear-gradient(to bottom, ${theme.colors.robinsEggBluePS},  ${theme.colors.bluePS})`,
+                        color: 'whitePS',
+                      },
+                    }}
+                  >
+                    <span sx={{ variant: 'text.button' }}>
+                      {item.node.text}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
             <div
               sx={{

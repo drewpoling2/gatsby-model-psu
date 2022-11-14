@@ -15,12 +15,16 @@ const MenuItems = ({ items }) => {
   };
 
   return (
-    <li sx={{ pb: 3 }} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <div sx={{ pb: 3 }} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {items.navItems ? (
         <>
           <div
             sx={{
               color: 'whitePS',
+              textDecoration: 'none',
+              fontSize: '18px',
+              letterSpacing: '.16px',
+              fontFamily: 'roboto-condensed-regular',
               mx: 14,
               position: 'relative',
               cursor: 'pointer',
@@ -29,24 +33,33 @@ const MenuItems = ({ items }) => {
             aria-expanded={dropdown ? 'true' : 'false'}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.name}
+            {items.name}{' '}
+            {dropdown === false ? (
+              <span sx={{ fontFamily: 'roboto-regular', pl: 1 }}>+</span>
+            ) : (
+              <span sx={{ fontFamily: 'roboto-regular', pl: 1 }}>--</span>
+            )}
           </div>
           <Dropdown submenus={items.navItems} dropdown={dropdown} />
         </>
       ) : (
-        <a
+        <Link
           sx={{
+            textDecoration: 'none',
+            fontSize: '18px',
+            letterSpacing: '.16px',
+            fontFamily: 'roboto-condensed-regular',
             color: 'whitePS',
             mx: 14,
             position: 'relative',
             cursor: 'pointer',
           }}
-          href={items.href}
+          href={items.ref.slug ? items.ref.slug : items.ref.href}
         >
           {items.text}
-        </a>
+        </Link>
       )}
-    </li>
+    </div>
   );
 };
 

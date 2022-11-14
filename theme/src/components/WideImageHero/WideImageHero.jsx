@@ -20,6 +20,7 @@ export const WideImageHero = ({
             height: '604px',
             display: 'flex',
             justifyContent: 'flex-end',
+            position: 'relative',
           }}
         >
           <div
@@ -28,8 +29,8 @@ export const WideImageHero = ({
               backgroundRepeat: 'no-repeat',
               position: 'absolute',
               backgroundSize: 'cover',
-              width: '40%',
-              height: '65%',
+              width: '57%',
+              height: '100%',
               zIndex: 0,
             }}
             altText={`${imageSrc}`}
@@ -40,7 +41,7 @@ export const WideImageHero = ({
               display: 'flex',
               flexDirection: 'column',
               pl: 5,
-              pr: 8,
+              pr: 7,
               height: '100%',
               justifyContent: 'center',
             }}
@@ -70,6 +71,8 @@ export const WideImageHero = ({
                 mt: 3,
                 mb: 3,
                 zIndex: 1,
+                lineHeight: '70px',
+                letterSpacing: '.35px',
                 fontSize: 13,
                 color: 'whitePS',
                 fontStyle: 'italic',

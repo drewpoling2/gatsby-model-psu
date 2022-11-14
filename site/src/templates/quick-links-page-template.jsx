@@ -76,18 +76,19 @@ export const query = graphql`
 
 const MainQuickLinksContent = ({ data: { quickLink } }) => (
   <Container>
-    {console.log(quickLink.pageContent.raw)}
-    <div sx={{ py: 4, my: 4 }}>
-      {documentToReactComponents(
-        JSON.parse(quickLink.pageContent.raw, {
-          renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
-              <img src={node.data.target.fields.file["en-US"].url} />
-            ),
-          },
-        })
-      )}
-    </div>
+    {quickLink.pageContent && (
+      <div sx={{ py: 4, my: 4 }}>
+        {documentToReactComponents(
+          JSON.parse(quickLink.pageContent.raw, {
+            renderNode: {
+              [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
+                <img src={node.data.target.fields.file["en-US"].url} />
+              ),
+            },
+          })
+        )}
+      </div>
+    )}
   </Container>
 )
 const QuickLinksTemplatePage = ({ data }) => (

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Container } from 'theme-ui';
 import { Button } from '../Button/Button';
 import { Stack } from '../Stack/Stack';
 import { graphql } from 'gatsby';
@@ -12,7 +12,7 @@ export const LandingPageImageHero = ({
   subTitle = 'featured',
 }) => {
   return (
-    <div sx={{ width: 4, pb: 4 }}>
+    <div sx={{ pb: 4 }}>
       <Stack variant="col">
         <div
           style={{
@@ -34,43 +34,40 @@ export const LandingPageImageHero = ({
               bottom: 5,
             }}
           >
-            <h5
-              sx={{
-                mb: 3,
-                letterSpacing: 0.5,
-                fontSize: 11,
-                color: 'lightBluePS',
-                textTransform: 'uppercase',
-              }}
-            >
-              {subTitle}
-            </h5>
-            <div
-              sx={{ mb: 3, borderBottom: '1px solid white', width: '3.5%' }}
-            ></div>
-            <h1
-              sx={{
-                mt: 3,
-                mb: 3,
-                fontSize: 12,
-                color: 'whitePS',
-                fontStyle: 'italic',
-              }}
-            >
-              {headingText}
-            </h1>
+            <Container>
+              <div sx={{ mx: '300px' }}>
+                <h1
+                  sx={{
+                    mt: 3,
+                    mb: 5,
+                    fontSize: 13,
+                    color: 'bluePS',
+                  }}
+                >
+                  {headingText}
+                </h1>
+                <div
+                  sx={{
+                    mb: 3,
+                    borderBottom: '5px solid #009CDE',
+                    width: '10.5%',
+                  }}
+                ></div>
 
-            <p
-              sx={{
-                variant: 'text.copyP',
-                fontSize: 9,
-                color: 'whitePS',
-                pb: 4,
-                m: 0,
-              }}
-            >
-              {paragraphText}
-            </p>
+                <p
+                  sx={{
+                    variant: 'text.copyP',
+                    fontSize: 14,
+                    color: 'paragraphGrayPS',
+                    pb: 4,
+                    pt: 3,
+                    m: 0,
+                  }}
+                >
+                  {paragraphText}
+                </p>
+              </div>
+            </Container>
           </div>
         </div>
       </Stack>

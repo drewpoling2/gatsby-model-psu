@@ -60,10 +60,8 @@ export const CustomPageContent = ({ data }) => {
   })
 
   return (
-    <Container>
-      <div sx={{ pt: 0, pb: 5 }}>
-        <Stack variant="col">{components}</Stack>
-      </div>
-    </Container>
+    <div sx={{ pt: 0, pb: 5 }}>
+      <Stack variant="col">{components}</Stack>
+    </div>
   )
 }

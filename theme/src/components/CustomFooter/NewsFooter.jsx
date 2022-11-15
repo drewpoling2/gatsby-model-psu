@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'gatsby';
+import FacebookLogo from './assets/FacebookLogo';
+import InstagramLogo from './assets/InstagramLogo';
+import LinkedInLogo from './assets/LinkedInLogo';
+import TwitterLogo from './assets/TwitterLogo';
 import localFooterData from './footerData.json';
 import logoMark from './assets/psu-mark.png';
 export const NewsFooter = ({ apiURL }) => {
@@ -45,7 +49,12 @@ export const NewsFooter = ({ apiURL }) => {
     }
   });
 
-  const social = {};
+  const social = {
+    Facebook: <FacebookLogo />,
+    Instagram: <InstagramLogo />,
+    Twitter: <TwitterLogo />,
+    Linkedin: <LinkedInLogo />,
+  };
 
   // Subfooter items
   const subFooter = allLinks.filter((link) => link.Type === 'Sub-Footer')?.[0]
@@ -94,24 +103,33 @@ export const NewsFooter = ({ apiURL }) => {
               <div>
                 <img src={mapInfo?.html} alt={mapInfo?.title} />
               </div>
-              <div data-testid="subscribe-links">
+              <div
+                data-testid="subscribe-links"
+                sx={{ display: 'inline-flex' }}
+              >
                 {/* Social media icons */}
                 {alteredSubscribeLinks.map((link, index) => {
                   // Some items are empty strings, check if valid link.
                   if (link && link?.title !== 'Get News By Email') {
                     return (
-                      <div key={`subscribe-${index}`}>
+                      <div
+                        key={`subscribe-${index}`}
+                        sx={{
+                          py: 13,
+                          borderBottom: '1px dashed #1e407c',
+                          mb: 13,
+                        }}
+                      >
                         <Link
-                          sx={{ color: 'silverGrayPS', textDecoration: 'none' }}
+                          sx={{
+                            color: 'silverGrayPS',
+                            textDecoration: 'none',
+                            pr: 3,
+                          }}
                           to={link.uri}
                           id="footer-social-icon-click"
                         >
                           {social[link?.title]}
-                          <span
-                            sx={{ '&:hover': { textDecoration: 'underline' } }}
-                          >
-                            {link?.title}
-                          </span>
                         </Link>
                       </div>
                     );
@@ -125,11 +143,12 @@ export const NewsFooter = ({ apiURL }) => {
                   const newsletterLink = subscribeLink?.uri;
                   return (
                     <React.Fragment key={`subscribeLink-${index}`}>
-                      <h3 sx={{ textTransform: 'uppercase' }}>
+                      <h3
+                        sx={{ textTransform: 'uppercase', fontSize: 2, mt: 0 }}
+                      >
                         {newsletterTitle} //
                       </h3>
                       <Button
-                        sx={{ color: 'white' }}
                         variant={'outlined'}
                         text={'subscribe >'}
                         href={newsletterLink}
@@ -285,6 +304,11 @@ export const NewsFooter = ({ apiURL }) => {
                       sx={{
                         px: 3,
                         borderLeft: '1px solid #1e407c',
+                        ...(index === 0 && {
+                          borderLeft: 'none',
+                          pl: 0,
+                          pr: 3,
+                        }),
                         color: 'silverGrayPS',
                         textDecoration: 'none',
                         '&:hover': { textDecoration: 'underline' },

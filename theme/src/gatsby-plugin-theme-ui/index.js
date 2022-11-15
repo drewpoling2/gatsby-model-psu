@@ -211,7 +211,7 @@ const theme = {
     Layout: {},
     Header: {
       backgroundImage: () =>
-        `linear-gradient(to right, ${theme.colors.navyBluePS} 0, ${theme.colors.navyBluePS} 31%, ${theme.colors.lightNavyBluePS} 76%, ${theme.colors.bluishBlackPS})`,
+        `linear-gradient(to right, ${theme.colors.darkNavyBluePS} 0, ${theme.colors.darkNavyBluePS} 31%, ${theme.colors.lightNavyBluePS} 76%, ${theme.colors.bluishBlackPS})`,
     },
     Main: { width: 4 },
     Container: { p: 0, maxWidth: 1325 },

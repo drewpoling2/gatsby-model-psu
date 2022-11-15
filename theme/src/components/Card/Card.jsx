@@ -41,7 +41,7 @@ export const Card = ({ item }) => {
               fontSize: '22px',
               textDecoration: 'none',
             }}
-            to={`/${item.slug}`}
+            to={`${item.slug}`}
           >
             {item.cardTitle}
           </Link>

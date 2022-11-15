@@ -16,7 +16,6 @@ export const Nav = ({ imageSrc, navData }) => {
       sx={{
         variant: 'layout.rowJSB',
         width: 4,
-        pt: 3,
         pb: 0,
       }}
     >
@@ -29,7 +28,7 @@ export const Nav = ({ imageSrc, navData }) => {
           <Link to="/">
             <img
               src={imageSrc}
-              sx={{ width: '180px' }}
+              sx={{ width: '200px' }}
               alt={'Psu logo'}
               loading="lazy"
             />
@@ -51,7 +50,7 @@ export const Nav = ({ imageSrc, navData }) => {
                 variant: 'layout.rowJAC',
                 mx: 3,
                 my: 15,
-                pt: 2,
+                pt: 4,
               }}
             >
               {/* using Button here is better but something is wrong with the Button export blocking conditional rendering for variants*/}

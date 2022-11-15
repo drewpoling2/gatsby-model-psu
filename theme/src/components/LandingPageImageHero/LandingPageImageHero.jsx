@@ -9,7 +9,6 @@ export const LandingPageImageHero = ({
   paragraphText,
   headingText,
   imageSrc,
-  subTitle = 'featured',
 }) => {
   return (
     <div sx={{ pb: 4 }}>

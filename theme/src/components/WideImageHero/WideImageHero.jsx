@@ -31,6 +31,7 @@ export const WideImageHero = ({
                 position: 'absolute',
                 backgroundSize: 'cover',
                 width: '57%',
+                background: `linear-gradient(to top, rgba(#001E44), 1) 0, rgba(#001E44), 0) 100%)`,
                 height: '100%',
                 zIndex: 0,
               }}

@@ -26,7 +26,7 @@ export const Card = ({ item }) => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
-        altText={'Psu Altoona Logo'}
+        alt={'Psu Altoona Logo'}
         onClick={() => console.log('Logo')}
       ></div>
       <div

@@ -54,7 +54,7 @@ const MenuItems = ({ items }) => {
             position: 'relative',
             cursor: 'pointer',
           }}
-          href={items.ref.slug ? items.ref.slug : items.ref.href}
+          href={items.ref.slug ? `/${items.ref.slug}` : `/${items.ref.href}`}
         >
           {items.text}
         </Link>

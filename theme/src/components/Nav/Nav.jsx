@@ -57,10 +57,11 @@ export const Nav = ({ imageSrc, navData }) => {
               {items.map((item, i) => {
                 return i === 0 ? (
                   <Link
+                    key={i}
                     href={
                       item.node.ref.href
-                        ? item.node.ref.href
-                        : item.node.ref.slug
+                        ? `/${item.node.ref.href}`
+                        : `/${item.node.ref.slug}`
                     }
                     sx={{
                       backgroundColor: 'bluishBlackPS',
@@ -91,10 +92,11 @@ export const Nav = ({ imageSrc, navData }) => {
                   </Link>
                 ) : (
                   <Link
+                    key={i}
                     href={
                       item.node.ref.href
-                        ? item.node.ref.href
-                        : item.node.ref.slug
+                        ? `/${item.node.ref.href}`
+                        : `/${item.node.ref.slug}`
                     }
                     sx={{
                       backgroundColor: 'none',

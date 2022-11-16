@@ -13,14 +13,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "content",
         path: "boop",
       },
     },
     {
       resolve: "gatsby-source-contentful",
       options: {
-        spaceId: "s892xt1n4anv",
-        accessToken: process.env.CONTENTFUL_API_TOKEN,
+        spaceId: "s892xt1n4anv" || "",
+        accessToken: process.env.CONTENTFUL_API_TOKEN || "",
       },
     },
   ],

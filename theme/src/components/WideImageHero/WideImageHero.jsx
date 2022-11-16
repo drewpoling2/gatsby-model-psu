@@ -35,7 +35,7 @@ export const WideImageHero = ({
                 height: '100%',
                 zIndex: 0,
               }}
-              altText={`${imageSrc}`}
+              alt={`${imageSrc}`}
             ></div>
 
             <div

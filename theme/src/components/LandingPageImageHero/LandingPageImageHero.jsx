@@ -22,7 +22,7 @@ export const LandingPageImageHero = ({
             position: 'relative',
           }}
           sx={{ height: '640px' }}
-          altText={`${imageSrc}`}
+          alt={`${imageSrc}`}
         >
           <div
             sx={{

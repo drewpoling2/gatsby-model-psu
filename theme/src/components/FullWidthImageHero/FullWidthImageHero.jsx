@@ -31,7 +31,7 @@ export const FullWidthImageHero = ({
               backgroundSize: 'cover',
               zIndex: 0,
             }}
-            altText={`${imageSrc}`}
+            alt={`${imageSrc}`}
           ></div>
 
           <div

@@ -7,7 +7,15 @@ import { graphql } from 'gatsby';
 export const RichTextContent = ({ richTextRaw }) => {
   return (
     <Container>
-      <div sx={{ py: 4, mx: '230px' }}>
+      <div
+        sx={{
+          py: 4,
+          mx: '14.375rem',
+          '@media screen and (max-width: 64em)': {
+            mx: '2rem',
+          },
+        }}
+      >
         {documentToReactComponents(
           JSON.parse(richTextRaw, {
             renderNode: {},

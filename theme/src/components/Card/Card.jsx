@@ -3,7 +3,7 @@ import { jsx, Styled } from 'theme-ui';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link } from 'gatsby';
 
-export const Card = ({ item }) => {
+export const Card = ({ item, index }) => {
   return (
     <div
       sx={{
@@ -36,6 +36,7 @@ export const Card = ({ item }) => {
       >
         <Styled.h2 sx={{ p: 0, lineHeight: '26px' }}>
           <Link
+            id={`quicklink ${index} ${item.slug}`}
             sx={{
               fontFamily: 'roboto-slab-var',
               fontSize: '22px',

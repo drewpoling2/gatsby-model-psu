@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container } from 'theme-ui';
+import { jsx, Container, Flex } from 'theme-ui';
 import React from 'react';
 import { Stack } from '../Stack/Stack';
 import { graphql } from 'gatsby';
@@ -11,8 +11,24 @@ export const ParagraphSummary = ({
 }) => {
   return (
     <Container>
-      <div sx={{ py: 4, display: 'flex', flexDirection: 'row' }}>
-        <Stack variant="col">
+      <div
+        sx={{
+          py: 4,
+          display: 'flex',
+          flexDirection: 'row',
+          '@media screen and (max-width: 64em)': {
+            px: 4,
+          },
+        }}
+      >
+        <Flex
+          sx={{
+            flexDirection: 'column',
+            '@media screen and (min-width: 64em)': {
+              width: '55%',
+            },
+          }}
+        >
           <h6
             sx={{
               pt: 5,
@@ -21,6 +37,9 @@ export const ParagraphSummary = ({
               whiteSpace: 'nowrap',
               fontSize: 2,
               color: 'bluishBlackPS',
+              '@media screen and (max-width: 64em)': {
+                display: 'none',
+              },
             }}
           >
             {paragraphSummaryAuthor}
@@ -30,16 +49,16 @@ export const ParagraphSummary = ({
               textTransform: 'uppercase',
               color: 'mediumGrayPS',
               m: 0,
-              whiteSpace: 'nowrap',
               fontSize: 2,
+              '@media screen and (max-width: 64em)': {
+                display: 'none',
+              },
             }}
           >
             {paragraphSummarySubtitle}
           </h5>
-        </Stack>
-        <div
-          sx={{ mb: 3, borderLeft: '4px solid #314D64', width: '3.5%' }}
-        ></div>{' '}
+        </Flex>
+        <div sx={{ mb: 3, borderLeft: '4px solid #314D64' }}></div>
         <p
           sx={{
             variant: 'text.copyP',

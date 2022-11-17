@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Dropdown from './Dropdown';
 import { Link } from 'gatsby';
 
-const MenuItems = ({ items }) => {
+const MenuItems = ({ items, column }) => {
   const [dropdown, setDropdown] = useState(false);
 
   const onMouseEnter = () => {
@@ -20,12 +20,12 @@ const MenuItems = ({ items }) => {
         <>
           <div
             sx={{
-              color: 'whitePS',
+              color: column ? 'darkNavyBluePS' : 'white',
               textDecoration: 'none',
-              fontSize: '18px',
+              fontSize: column ? 4 : 11,
+              mx: column ? 0 : 3,
               letterSpacing: '.16px',
               fontFamily: 'roboto-condensed-regular',
-              mx: 14,
               position: 'relative',
               cursor: 'pointer',
             }}
@@ -33,23 +33,35 @@ const MenuItems = ({ items }) => {
             aria-expanded={dropdown ? 'true' : 'false'}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.name}{' '}
+            {items.name}
             {dropdown === false ? (
-              <span sx={{ fontFamily: 'roboto-regular', pl: 1 }}>+</span>
+              <span
+                sx={{ fontFamily: 'roboto-regular', mx: column ? 0 : 1, pl: 1 }}
+              >
+                +
+              </span>
             ) : (
-              <span sx={{ fontFamily: 'roboto-regular', pl: 1 }}>--</span>
+              <span
+                sx={{ fontFamily: 'roboto-regular', mx: column ? 0 : 1, pl: 1 }}
+              >
+                --
+              </span>
             )}
           </div>
-          <Dropdown submenus={items.navItems} dropdown={dropdown} />
+          <Dropdown
+            column={column}
+            submenus={items.navItems}
+            dropdown={dropdown}
+          />
         </>
       ) : (
         <Link
           sx={{
             textDecoration: 'none',
-            fontSize: '18px',
+            fontSize: column ? 4 : 11,
             letterSpacing: '.16px',
             fontFamily: 'roboto-condensed-regular',
-            color: 'whitePS',
+            color: column ? 'darkNavyBluePS' : 'white',
             mx: 14,
             position: 'relative',
             cursor: 'pointer',

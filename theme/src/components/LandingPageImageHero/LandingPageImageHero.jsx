@@ -21,20 +21,35 @@ export const LandingPageImageHero = ({
             width: '100%',
             position: 'relative',
           }}
-          sx={{ height: '640px' }}
           alt={`${imageSrc}`}
         >
           <div
             sx={{
-              position: 'absolute',
               display: 'flex',
+              height: '100%',
+              alignContent: 'center',
               flexDirection: 'column',
-              px: 20,
-              bottom: 5,
             }}
           >
-            <Container>
-              <div sx={{ mx: '300px' }}>
+            <Container
+              sx={{
+                height: '100%',
+                alignItems: 'center',
+                display: 'flex',
+                py: 5,
+                '@media screen and (max-width: 64em)': {
+                  py: '2rem',
+                },
+              }}
+            >
+              <div
+                sx={{
+                  mx: '14.375rem',
+                  '@media screen and (max-width: 64em)': {
+                    mx: 4,
+                  },
+                }}
+              >
                 <h1
                   sx={{
                     mt: 3,

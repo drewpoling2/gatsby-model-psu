@@ -9,7 +9,16 @@ export const TopicPageHeader = ({
   topicPageHeaderTitle,
 }) => {
   return (
-    <div sx={{ py: 4, display: 'flex', flexDirection: 'column' }}>
+    <div
+      sx={{
+        py: 4,
+        display: 'flex',
+        flexDirection: 'column',
+        '@media screen and (max-width: 64em)': {
+          px: 4,
+        },
+      }}
+    >
       <h1
         sx={{
           borderBottom: '1px solid #314D64',

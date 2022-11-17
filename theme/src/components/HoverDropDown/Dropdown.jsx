@@ -2,11 +2,11 @@
 import { jsx } from 'theme-ui';
 import React from 'react';
 
-const Dropdown = ({ submenus, dropdown }) => {
+const Dropdown = ({ submenus, dropdown, column }) => {
   return (
     <>
       {dropdown === true ? (
-        <div sx={{ zIndex: 10, position: 'absolute', mt: 1 }}>
+        <div sx={{ zIndex: 100, position: 'absolute', mt: 1 }}>
           <div
             sx={{
               backgroundColor: 'whitePS',
@@ -19,12 +19,12 @@ const Dropdown = ({ submenus, dropdown }) => {
           ></div>
           <div
             sx={{
+              zIndex: 101,
               backgroundColor: 'whitePS',
               p: 13,
               mt: 2,
               position: 'absolute',
               borderRadius: 10,
-              width: 'fit-content',
               whiteSpace: 'nowrap',
               boxShadow: '0 8px 16px 0 rgb(0 0 0 / 20%)',
             }}

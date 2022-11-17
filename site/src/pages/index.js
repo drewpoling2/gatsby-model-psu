@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import logo from "../../assets/psu-mark.png"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
 import { HomePageContent } from "../components/HomePageContent"
 import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
-import logo from "../../assets/psu-mark.png"
 import { graphql } from "gatsby"
 
 export const query = graphql`
@@ -88,12 +88,20 @@ export const query = graphql`
 
 const index = ({ data }) => (
   <Layout
-    navChild={<Nav imageSrc={logo} navData={data} />}
+    navChild={
+      <Nav
+        sx={{
+          "@media screen and (max-width: 64em)": {
+            display: "none",
+          },
+        }}
+        imageSrc={logo}
+        navData={data}
+      />
+    }
     mainChild={<HomePageContent data={data} />}
     footerChild={<NewsFooter />}
-  >
-    {console.log(data)}
-  </Layout>
+  ></Layout>
 )
 
 export default index

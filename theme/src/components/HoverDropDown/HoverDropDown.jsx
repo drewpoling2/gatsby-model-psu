@@ -1,15 +1,23 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Flex } from 'theme-ui';
 import MenuItems from './MenuItems';
 
-export const HoverDropDown = ({ title, navData }) => {
+export const HoverDropDown = ({ navData, column }) => {
   return (
-    <nav>
-      <ul sx={{ variant: 'layout.row', mt: 3 }}>
+    <nav id="navItems">
+      <Flex
+        sx={{
+          flexDirection: column ? 'column' : 'row',
+          alignItems: column ? 'center' : 'none',
+          mt: 3,
+        }}
+      >
         {navData.contentfulLayoutHeader.navItems.map((items, index) => {
-          return <MenuItems items={items} key={index}></MenuItems>;
+          return (
+            <MenuItems column={column} items={items} key={index}></MenuItems>
+          );
         })}
-      </ul>
+      </Flex>
     </nav>
   );
 };

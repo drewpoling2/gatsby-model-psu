@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Flex } from 'theme-ui';
 import { useState } from 'react';
 import { Stack } from '../Stack/Stack';
 import { Button } from '../Button/Button';
@@ -32,18 +32,31 @@ export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
   };
   return (
     <Stack variant={'col'}>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div sx={{ display: 'flex', flexDirection: 'column' }}>
+      <div sx={{ width: '100%' }}>
+        <form
+          onSubmit={handleSubmit}
+          sx={{
+            width: '50%',
+            '@media screen and (max-width: 64em)': {
+              mx: 4,
+              width: '75%',
+            },
+          }}
+        >
+          <Flex sx={{ flexDirection: 'column' }}>
             <input
-              sx={{ p: 16, fontSize: 2, mb: 2, width: '50%' }}
+              sx={{
+                p: 16,
+                fontSize: 2,
+                mb: 2,
+              }}
               placeholder={fieldTextOne}
               type="text"
               value={inputOne}
               onChange={handleChangeOne}
             />
             <input
-              sx={{ p: 16, fontSize: 2, mb: 2, width: '50%' }}
+              sx={{ p: 16, fontSize: 2, mb: 2 }}
               placeholder={fieldTextTwo}
               type="text"
               value={inputTwo}
@@ -54,14 +67,13 @@ export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
                 p: 16,
                 fontSize: 2,
                 mb: 2,
-                width: '50%',
               }}
               placeholder={fieldTextThree}
               type="text"
               value={inputThree}
               onChange={handleChangeThree}
             />
-          </div>
+          </Flex>
           <Button type="submit" text="Submit" onClick={handleSubmit}></Button>
         </form>
       </div>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container } from 'theme-ui';
+import { jsx, Container, Grid } from 'theme-ui';
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
@@ -82,22 +82,44 @@ export const NewsFooter = ({ apiURL }) => {
 
   return (
     <Container>
-      <footer sx={{ pt: 18, pb: 4 }} data-testid="footer">
-        <div sx={{ display: 'flex', flexDirection: 'column' }}>
+      <footer
+        sx={{
+          pt: 18,
+          '@media screen and (max-width: 64em)': {
+            pt: 2,
+          },
+          pb: 4,
+        }}
+        data-testid="footer"
+      >
+        <div
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           <div
             sx={{
               pt: 19,
               display: 'flex',
               flexDirection: 'row',
+              width: '100%',
               justifyContent: 'space-between',
+              '@media screen and (max-width: 64em)': {
+                flexDirection: 'column',
+                width: '100%',
+                alignItems: 'center',
+              },
             }}
           >
             {/* Main footer navigation */}
-
             <div
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
+                '@media screen and (max-width: 64em)': {
+                  alignItems: 'center',
+                },
               }}
             >
               <div>
@@ -158,42 +180,63 @@ export const NewsFooter = ({ apiURL }) => {
                 }
               })}
             </div>
-            {navLinks.map((link, index) => {
-              const children = link?.Children?.[0]?.Children;
-              return (
-                <div sx={{ pb: 18 }} key={`column-${index}`}>
-                  <h3 sx={{ m: 0, textTransform: 'uppercase' }}>
-                    {link?.Type}
-                  </h3>
-                  <div>
-                    {children.map((navItem, index) => {
-                      return (
-                        <div sx={{ py: 2 }} key={`item-${index}`}>
-                          <Link
-                            sx={{
-                              color: 'silverGrayPS',
-                              textDecoration: 'none',
-                            }}
-                            to={navItem?.uri}
-                            id="footer-menu-item-click"
-                          >
-                            <span
+            <div
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                width: '100%',
+                '@media screen and (max-width: 64em)': {
+                  flexWrap: 'wrap',
+                  width: '90%',
+                  pt: 4,
+                  pl: 0,
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                },
+                justifyContent: 'space-around',
+                pl: 4,
+              }}
+            >
+              {navLinks.map((link, index) => {
+                const children = link?.Children?.[0]?.Children;
+                return (
+                  <div
+                    sx={{ pb: 18, display: 'flex', flexDirection: 'column' }}
+                    key={`column-${index}`}
+                  >
+                    <h3 sx={{ m: 0, textTransform: 'uppercase' }}>
+                      {link?.Type}
+                    </h3>
+                    <div>
+                      {children.map((navItem, index) => {
+                        return (
+                          <div sx={{ py: 2 }} key={`item-${index}`}>
+                            <Link
                               sx={{
-                                fontFamily: 'roboto-condensed-bold',
-                                letterSpacing: '.2px',
-                                '&:hover': { textDecoration: 'underline' },
+                                color: 'silverGrayPS',
+                                textDecoration: 'none',
                               }}
+                              to={navItem?.uri}
+                              id="footer-menu-item-click"
                             >
-                              {navItem?.title}
-                            </span>
-                          </Link>
-                        </div>
-                      );
-                    })}
+                              <span
+                                sx={{
+                                  fontFamily: 'roboto-condensed-bold',
+                                  letterSpacing: '.2px',
+                                  '&:hover': { textDecoration: 'underline' },
+                                }}
+                              >
+                                {navItem?.title}
+                              </span>
+                            </Link>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
         <div
@@ -202,6 +245,11 @@ export const NewsFooter = ({ apiURL }) => {
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
+
+            '@media screen and (max-width: 64em)': {
+              flexWrap: 'wrap',
+              display: 'flex',
+            },
           }}
         >
           {/* Contact Links */}
@@ -209,7 +257,12 @@ export const NewsFooter = ({ apiURL }) => {
             {/* TODO: API footer logo currently 404s - manually set the same as WWW site */}
             <Link to="/">
               <img
-                sx={{ width: '170px' }}
+                sx={{
+                  width: '170px',
+                  '@media screen and (max-width: 64em)': {
+                    pb: 4,
+                  },
+                }}
                 src={logoMark}
                 alt={logo.title}
                 loading="lazy"
@@ -222,10 +275,27 @@ export const NewsFooter = ({ apiURL }) => {
               flexDirection: 'column',
               pl: 18,
               pr: 3,
+              '@media screen and (max-width: 64em)': {
+                flexWrap: 'wrap',
+                p: 0,
+              },
             }}
           >
-            <div sx={{ display: 'flex' }}>
-              <div sx={{ display: 'flex' }}>
+            <div
+              sx={{
+                display: 'flex',
+              }}
+            >
+              <div
+                sx={{
+                  display: 'flex',
+                  '@media screen and (max-width: 64em)': {
+                    flexWrap: 'wrap',
+                    width: '100%',
+                    justifyContent: 'center',
+                  },
+                }}
+              >
                 <div
                   sx={{ color: 'silverGrayPS', pr: 3 }}
                   id="footer-menu-item-click"
@@ -268,7 +338,7 @@ export const NewsFooter = ({ apiURL }) => {
                   <Link
                     sx={{
                       fontWeight: 700,
-                      px: 3,
+                      pl: 3,
                       textDecoration: 'none',
                       color: 'whitePS',
                       borderLeft: '1px solid #1e407c',
@@ -296,6 +366,12 @@ export const NewsFooter = ({ apiURL }) => {
                   display: 'flex',
                   flexDirection: 'row',
                   pb: 2,
+                  '@media screen and (max-width: 64em)': {
+                    flexWrap: 'wrap',
+
+                    width: '100%',
+                    justifyContent: 'center',
+                  },
                 }}
               >
                 {legalLinks.map((link, index) => (
@@ -367,7 +443,14 @@ export const NewsFooter = ({ apiURL }) => {
                       </span>
                     </Link>
                   </div>
-                  <div sx={{ pl: 3 }}>
+                  <div
+                    sx={{
+                      pl: 3,
+                      '@media screen and (max-width: 64em)': {
+                        pl: 0,
+                      },
+                    }}
+                  >
                     <img
                       src={weArePenn?.html}
                       alt={weArePenn?.title}

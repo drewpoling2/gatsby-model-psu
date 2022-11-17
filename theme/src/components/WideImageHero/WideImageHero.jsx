@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container } from 'theme-ui';
+import { jsx, Container, Flex } from 'theme-ui';
 import { Button } from '../Button/Button';
 import { Stack } from '../Stack/Stack';
 import theme from '../../gatsby-plugin-theme-ui';
@@ -12,7 +12,7 @@ export const WideImageHero = ({
   return (
     <Container>
       <div sx={{ width: 4, pb: 4 }}>
-        <Stack variant="col">
+        <Flex sx={{ flexDirection: 'column' }}>
           <div
             sx={{
               backgroundImage: () =>
@@ -20,28 +20,33 @@ export const WideImageHero = ({
               width: '100%',
               height: '604px',
               display: 'flex',
+              '@media screen and (max-width: 44em)': {
+                flexDirection: 'column',
+                height: '750px',
+              },
               justifyContent: 'flex-end',
-              position: 'relative',
+              '@media screen and (min-width: 44em)': { position: 'relative' },
             }}
           >
             <div
-              style={{
+              sx={{
                 backgroundImage: `url(${imageSrc})`,
                 backgroundRepeat: 'no-repeat',
-                position: 'absolute',
+                '@media screen and (min-width: 44em)': {
+                  position: 'absolute',
+                  width: '57%',
+                },
                 backgroundSize: 'cover',
-                width: '57%',
-                background: `linear-gradient(to top, rgba(#001E44), 1) 0, rgba(#001E44), 0) 100%)`,
                 height: '100%',
                 zIndex: 0,
               }}
               alt={`${imageSrc}`}
             ></div>
-
             <div
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
+                '@media screen and (max-width: 44em)': { px: 4, pb: 4 },
                 pl: 5,
                 pr: 7,
                 height: '100%',
@@ -53,7 +58,7 @@ export const WideImageHero = ({
                   mb: 3,
                   zIndex: 1,
                   letterSpacing: 0.5,
-                  fontSize: 11,
+                  fontSize: 3,
                   color: 'lightBluePS',
                   textTransform: 'uppercase',
                 }}
@@ -84,7 +89,7 @@ export const WideImageHero = ({
               </h1>
             </div>
           </div>
-        </Stack>
+        </Flex>
       </div>
     </Container>
   );

@@ -6,8 +6,24 @@ import { graphql } from 'gatsby';
 export const QuickLinks = ({ heading, data, index }) => {
   return (
     <Container>
-      <div sx={{ py: 4 }}>
-        <h2 sx={{ color: 'darkNavyBluePS', textTransform: 'uppercase', mt: 0 }}>
+      <div
+        sx={{
+          py: 4,
+          '@media screen and (max-width: 63em)': {
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+          },
+        }}
+      >
+        <h2
+          sx={{
+            color: 'darkNavyBluePS',
+            textTransform: 'uppercase',
+            mt: 0,
+          }}
+        >
           {heading}
         </h2>
         <div
@@ -16,6 +32,10 @@ export const QuickLinks = ({ heading, data, index }) => {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
+            '@media screen and (max-width: 63em)': {
+              width: '100%',
+              justifyContent: 'space-evenly',
+            },
           }}
         >
           {data.quickLinkList.map((item, index) => {

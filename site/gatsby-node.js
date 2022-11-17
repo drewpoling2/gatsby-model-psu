@@ -43,7 +43,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 }
 
-// in gatsby-node.js
 exports.createSchemaCustomization = async ({ actions }) => {
   actions.createFieldExtension({
     name: "blocktype",

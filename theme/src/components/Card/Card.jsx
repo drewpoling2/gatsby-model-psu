@@ -36,7 +36,7 @@ export const Card = ({ item, index }) => {
       >
         <Styled.h2 sx={{ p: 0, lineHeight: '26px' }}>
           <Link
-            id={`quicklink ${index} ${item.slug}`}
+            id={`quicklink-${index}`}
             sx={{
               fontFamily: 'roboto-slab-var',
               fontSize: '22px',

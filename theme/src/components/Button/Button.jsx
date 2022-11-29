@@ -9,8 +9,8 @@ const VariantDefault = ({ text, onClick, disabled, href }) => {
       onClick={onClick}
       sx={{
         backgroundImage: () =>
-          `linear-gradient(to bottom, ${theme.colors.robinsEggBluePS},  ${theme.colors.bluePS})`,
-        color: 'whitePS',
+          `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
+        color: 'whiteout',
         width: 5,
         height: 5,
         px: 13,
@@ -26,7 +26,7 @@ const VariantDefault = ({ text, onClick, disabled, href }) => {
         href={href}
         sx={{
           variant: 'text.button',
-          color: 'whitePS',
+          color: 'whiteout',
           textDecoration: 'none',
         }}
       >
@@ -43,8 +43,8 @@ const VariantHotline = ({ text, onClick, disabled, href }) => {
       onClick={onClick}
       href={'https://clc.com/home/get-licensed/'}
       sx={{
-        backgroundColor: 'bluishBlackPS',
-        color: 'lightBluePS',
+        backgroundColor: 'endlessPotential',
+        color: 'paLinkLight',
         width: 5,
         height: 5,
         border: '2px solid #000321',
@@ -56,8 +56,8 @@ const VariantHotline = ({ text, onClick, disabled, href }) => {
         variant: 'layout.rowJAC',
         '&:hover': {
           border: '2px solid #ffd100',
-          backgroundColor: 'yellowPS',
-          color: 'bluishBlackPS',
+          backgroundColor: 'brightKeystone',
+          color: 'endlessPotential',
         },
       }}
     >
@@ -78,7 +78,7 @@ const VariantOutlined = ({ text, onClick, disabled, href }) => {
       onClick={onClick}
       sx={{
         backgroundColor: 'none',
-        color: 'whitePS',
+        color: 'whiteout',
         border: 'outlineButton',
         fontSize: 2,
         width: 5,
@@ -89,8 +89,8 @@ const VariantOutlined = ({ text, onClick, disabled, href }) => {
         cursor: 'pointer',
         variant: 'layout.rowJAC',
         '&:hover': {
-          backgroundColor: 'lightBluePS',
-          color: 'mediumBluePS',
+          backgroundColor: 'paLinkLight',
+          color: 'paLink',
         },
       }}
     >
@@ -99,7 +99,7 @@ const VariantOutlined = ({ text, onClick, disabled, href }) => {
         sx={{
           variant: 'text.button',
           textDecoration: 'none',
-          color: 'whitePS',
+          color: 'whiteout',
         }}
       >
         {text}
@@ -115,7 +115,7 @@ const VariantOutlinedNav = ({ text, onClick, disabled, href }) => {
       href={href}
       sx={{
         backgroundColor: 'none',
-        color: 'lightBluePS',
+        color: 'paLinkLight',
         border: '2px solid #ccf0ff',
         width: 5,
         textDecoration: 'none',
@@ -128,8 +128,8 @@ const VariantOutlinedNav = ({ text, onClick, disabled, href }) => {
         '&:hover': {
           border: '2px solid #009CDE',
           backgroundImage: () =>
-            `linear-gradient(to bottom, ${theme.colors.robinsEggBluePS},  ${theme.colors.bluePS})`,
-          color: 'whitePS',
+            `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
+          color: 'whiteout',
         },
       }}
     >
@@ -145,7 +145,7 @@ const VariantIcon = ({ text, onClick, disabled, Icon, href, iconSize }) => {
       onClick={onClick}
       sx={{
         backgroundColor: 'transparent',
-        color: 'whitePS',
+        color: 'whiteout',
         cursor: 'pointer',
         textDecoration: 'none',
         variant: 'layout.rowJAC',

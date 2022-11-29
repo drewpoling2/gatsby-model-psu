@@ -25,7 +25,7 @@ export const TopicPageHeader = ({
           fontSize: 10,
           pb: '28px',
           lineHeight: '32px',
-          color: 'darkNavyBluePS',
+          color: 'nittanyNavy',
           whiteSpace: 'pre-line',
         }}
       >
@@ -36,7 +36,7 @@ export const TopicPageHeader = ({
         sx={{
           variant: 'text.copyP',
           fontSize: 3,
-          color: 'paragraphGrayPS',
+          color: 'oldCoaly',
           m: 0,
         }}
       >

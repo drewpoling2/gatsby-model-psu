@@ -55,7 +55,7 @@ export const LandingPageImageHero = ({
                     mt: 3,
                     mb: 5,
                     fontSize: 13,
-                    color: 'bluePS',
+                    color: 'beaverBlue',
                   }}
                 >
                   {headingText}
@@ -72,7 +72,7 @@ export const LandingPageImageHero = ({
                   sx={{
                     variant: 'text.copyP',
                     fontSize: 14,
-                    color: 'paragraphGrayPS',
+                    color: 'oldCoaly',
                     pb: 4,
                     pt: 3,
                     m: 0,

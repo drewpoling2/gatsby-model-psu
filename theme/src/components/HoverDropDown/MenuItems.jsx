@@ -20,7 +20,7 @@ const MenuItems = ({ items, column }) => {
         <>
           <div
             sx={{
-              color: column ? 'darkNavyBluePS' : 'white',
+              color: column ? 'nittanyNavy' : 'white',
               textDecoration: 'none',
               fontSize: column ? 4 : 11,
               mx: column ? 0 : 3,
@@ -61,7 +61,7 @@ const MenuItems = ({ items, column }) => {
             fontSize: column ? 4 : 11,
             letterSpacing: '.16px',
             fontFamily: 'roboto-condensed-regular',
-            color: column ? 'darkNavyBluePS' : 'white',
+            color: column ? 'nittanyNavy' : 'white',
             mx: 14,
             position: 'relative',
             cursor: 'pointer',

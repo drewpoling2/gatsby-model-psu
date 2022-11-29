@@ -36,7 +36,7 @@ export const ParagraphSummary = ({
               m: 0,
               whiteSpace: 'nowrap',
               fontSize: 2,
-              color: 'bluishBlackPS',
+              color: 'endlessPotential',
               '@media screen and (max-width: 64em)': {
                 display: 'none',
               },
@@ -47,7 +47,7 @@ export const ParagraphSummary = ({
           <h5
             sx={{
               textTransform: 'uppercase',
-              color: 'mediumGrayPS',
+              color: 'mediumGray',
               m: 0,
               fontSize: 2,
               '@media screen and (max-width: 64em)': {
@@ -63,7 +63,7 @@ export const ParagraphSummary = ({
           sx={{
             variant: 'text.copyP',
             fontSize: 14,
-            color: 'blueGrayPS',
+            color: 'slate',
             pt: 3,
             pb: 4,
             pl: 3,

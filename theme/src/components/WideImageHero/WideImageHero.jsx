@@ -16,7 +16,7 @@ export const WideImageHero = ({
           <div
             sx={{
               backgroundImage: () =>
-                `linear-gradient(to bottom, ${theme.colors.robinsEggBluePS},  ${theme.colors.bluePS})`,
+                `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
               width: '100%',
               height: '604px',
               display: 'flex',
@@ -59,7 +59,7 @@ export const WideImageHero = ({
                   zIndex: 1,
                   letterSpacing: 0.5,
                   fontSize: 3,
-                  color: 'lightBluePS',
+                  color: 'paLinkLight',
                   textTransform: 'uppercase',
                 }}
               >
@@ -81,7 +81,7 @@ export const WideImageHero = ({
                   lineHeight: '70px',
                   letterSpacing: '.35px',
                   fontSize: 13,
-                  color: 'whitePS',
+                  color: 'whiteout',
                   fontStyle: 'italic',
                 }}
               >

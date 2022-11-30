@@ -72,9 +72,8 @@ export const Nav = ({ imageSrc, navData }) => {
                     sx={{
                       flexDirection: openMobileNav ? 'column' : 'row',
                       alignItems: openMobileNav ? 'center' : 'none',
-                      mx: 0,
-                      my: 0,
-                      borderBottom: `1px dashed ${theme.colors.mediumGrayPS}`,
+                      m: 0,
+                      borderBottom: `1px dashed ${theme.colors.mediumGray}`,
                       pt: 4,
                       pb: 3,
                       justifyContent: 'center',
@@ -91,23 +90,22 @@ export const Nav = ({ imageSrc, navData }) => {
                               : `/${item.node.ref.slug}`
                           }
                           sx={{
-                            backgroundColor: 'bluishBlackPS',
-                            color: 'lightBluePS',
+                            backgroundColor: 'endlessPotential',
+                            color: 'paLinkLight',
                             width: 5,
                             height: 5,
-                            my: 1,
                             border: '2px solid #000321',
                             px: 13,
                             textDecoration: 'none',
                             py: 1,
                             fontSize: 3,
-                            mx: 1,
+                            m: 1,
                             cursor: 'pointer',
                             variant: 'layout.rowJAC',
                             '&:hover': {
                               border: '2px solid #ffd100',
-                              backgroundColor: 'yellowPS',
-                              color: 'bluishBlackPS',
+                              backgroundColor: 'brightKeystone',
+                              color: 'endlessPotential',
                             },
                           }}
                         >
@@ -130,24 +128,22 @@ export const Nav = ({ imageSrc, navData }) => {
                           }
                           sx={{
                             backgroundColor: 'none',
-                            color: 'mediumBluePS',
-                            border: `2px solid ${theme.colors.mediumBluePS}`,
+                            color: 'paLink',
+                            border: `2px solid ${theme.colors.paLink}`,
                             width: 5,
                             textDecoration: 'none',
                             height: 5,
                             fontSize: 3,
-
                             px: 13,
                             py: 1,
-                            my: 1,
-                            mx: 1,
+                            m: 1,
                             cursor: 'pointer',
                             variant: 'layout.rowJAC',
                             '&:hover': {
                               border: '2px solid #009CDE',
                               backgroundImage: () =>
-                                `linear-gradient(to bottom, ${theme.colors.robinsEggBluePS},  ${theme.colors.bluePS})`,
-                              color: 'whitePS',
+                                `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
+                              color: 'whiteout',
                             },
                           }}
                         >
@@ -226,8 +222,8 @@ export const Nav = ({ imageSrc, navData }) => {
                           : `/${item.node.ref.slug}`
                       }
                       sx={{
-                        backgroundColor: 'bluishBlackPS',
-                        color: 'lightBluePS',
+                        backgroundColor: 'endlessPotential',
+                        color: 'paLinkLight',
                         width: 5,
                         height: 5,
                         border: '2px solid #000321',
@@ -239,8 +235,8 @@ export const Nav = ({ imageSrc, navData }) => {
                         variant: 'layout.rowJAC',
                         '&:hover': {
                           border: '2px solid #ffd100',
-                          backgroundColor: 'yellowPS',
-                          color: 'bluishBlackPS',
+                          backgroundColor: 'brightKeystone',
+                          color: 'endlessPotential',
                         },
                       }}
                     >
@@ -267,7 +263,7 @@ export const Nav = ({ imageSrc, navData }) => {
                       }
                       sx={{
                         backgroundColor: 'none',
-                        color: 'lightBluePS',
+                        color: 'paLinkLight',
                         border: '2px solid #ccf0ff',
                         width: 5,
                         textDecoration: 'none',
@@ -280,8 +276,8 @@ export const Nav = ({ imageSrc, navData }) => {
                         '&:hover': {
                           border: '2px solid #009CDE',
                           backgroundImage: () =>
-                            `linear-gradient(to bottom, ${theme.colors.robinsEggBluePS},  ${theme.colors.bluePS})`,
-                          color: 'whitePS',
+                            `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
+                          color: 'whiteout',
                         },
                       }}
                     >

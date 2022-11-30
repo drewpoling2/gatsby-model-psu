@@ -19,7 +19,7 @@ export const QuickLinks = ({ heading, data, index }) => {
       >
         <h2
           sx={{
-            color: 'darkNavyBluePS',
+            color: 'nittanyNavy',
             textTransform: 'uppercase',
             mt: 0,
           }}

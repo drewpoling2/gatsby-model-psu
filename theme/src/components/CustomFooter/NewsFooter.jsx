@@ -316,7 +316,7 @@ export const NewsFooter = ({ apiURL }) => {
                       fontWeight: 700,
                       px: 3,
                       textDecoration: 'none',
-                      color: 'whitePS',
+                      color: 'whiteout',
                       borderLeft: '1px solid #1e407c',
                     }}
                     to={`tel:${telephone?.html}`}
@@ -340,7 +340,7 @@ export const NewsFooter = ({ apiURL }) => {
                       fontWeight: 700,
                       pl: 3,
                       textDecoration: 'none',
-                      color: 'whitePS',
+                      color: 'whiteout',
                       borderLeft: '1px solid #1e407c',
                     }}
                     to={contactUs?.uri}

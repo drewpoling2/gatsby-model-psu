@@ -9,7 +9,7 @@ const Dropdown = ({ submenus, dropdown, column }) => {
         <div sx={{ zIndex: 100, position: 'absolute', mt: 1 }}>
           <div
             sx={{
-              backgroundColor: 'whitePS',
+              backgroundColor: 'whiteout',
               height: '20px',
               position: 'absolute',
               left: 4,
@@ -20,7 +20,7 @@ const Dropdown = ({ submenus, dropdown, column }) => {
           <div
             sx={{
               zIndex: 101,
-              backgroundColor: 'whitePS',
+              backgroundColor: 'whiteout',
               p: 13,
               mt: 2,
               position: 'absolute',
@@ -33,9 +33,9 @@ const Dropdown = ({ submenus, dropdown, column }) => {
               <div key={index} sx={{ py: 2, borderBottom: '1px dashed gray' }}>
                 <a
                   sx={{
-                    color: 'bluishBlackPS',
+                    color: 'endlessPotential',
                     variant: 'text.dropdownMenu',
-                    '&:hover': { color: 'bluePS', fontStyle: 'italic' },
+                    '&:hover': { color: 'beaverBlue', fontStyle: 'italic' },
                   }}
                   href={submenu.ref.href}
                 >

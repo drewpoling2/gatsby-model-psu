@@ -7,7 +7,7 @@ const VariantDefault = ({ Icon, onClick, disabled, iconSize }) => {
       disabled={disabled}
       onClick={onClick}
       sx={{
-        backgroundColor: 'whitePS',
+        backgroundColor: 'whiteout',
         cursor: 'pointer',
         height: '30px',
         width: '30px',

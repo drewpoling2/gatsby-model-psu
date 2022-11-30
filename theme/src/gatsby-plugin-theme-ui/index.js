@@ -2,7 +2,7 @@ const theme = {
   //built in theme.ui keys
   //docs for implementing theme object by using sx prop >>> https://theme-ui.com/sx-prop
   //to access the sx prop >>> make sure /** @jsx jsx */ import { jsx } from 'theme-ui'; are imported on the component
-  //implementation >>> <div sx={{backgroundColor: 'bluishBlackPS', color: 'whitePS'}}>this div is using the theme colors with the sx prop</div>
+  //implementation >>> <div sx={{backgroundColor: 'endlessPotential', color: 'whiteout'}}>this div is using the theme colors with the sx prop</div>
   breakpoints: ['40em', '52em', '64em'],
 
   //if you have to add another index to theme arrays, add it onto the end so it doesn't break the targeting elsewhere
@@ -55,25 +55,41 @@ const theme = {
     robotoCondensedRegular: 'roboto-condensed-regular, sans-serif',
   },
   colors: {
-    whitePS: '#fff',
+    whiteout: '#fff',
+    lionShrineLight: '#f7f2ee',
+    lionShrineMaxLight: '#fdfbf5',
     blackPS: '#000',
-    bluePS: '#1E407C',
-    mediumBluePS: '#005fa9',
-    lightBluePS: '#ccf0ff',
-    robinsEggBluePS: '#009CDE',
-    navyBluePS: '#002e69',
-    darkNavyBluePS: '#001E44',
+    creek: '#3eae9e',
+    creekLight: '#cfeceb',
+    creekMaxLight: '#edf8f7',
+    beaverBlue: '#1E407C',
+    paLink: '#005fa9',
+    paLinkLight: '#ccf0ff',
+    paSky: '#009CDE',
+    midnightBlue: '#002e69',
+    nittanyNavy: '#001E44',
     lightNavyBluePS: '#1b3c76',
-    bluishBlackPS: '#000321',
+    endlessPotential: '#000321',
     grayPS: '#C0C0C0',
     silverGrayPS: '#CCDAE6',
     darkSteelPS: '#455460',
-    blueGrayPS: '#314D64',
-    paragraphGrayPS: '#444444',
-    yellowPS: '#ffd100',
-    lightGrayPS: '#F2F2F4',
-    mediumGrayPS: '#727272',
+    oldCoaly: '#444444',
+    brightKeystone: '#ffd100',
+    mediumGray: '#727272',
     background: '#fff',
+    oldCoaly: '#444',
+    limestone: '#a2aaad',
+    limestoneLight: '#E4E5E7',
+    limestoneMaxLight: '#f2f2f4',
+    slate: '#314d64',
+    slateLight: '#ccdae6',
+    slateMaxLight: '#eef3f7',
+    lionShring: '#b88965',
+    lionShrineLight: '#f7f2ee',
+    lionShrineMaxLight: '#fdfbf5',
+    lionsRoar: '#bf8226',
+    lionsRoarLight: '#f9eddc',
+    lionsRoarMaxLight: '#fffaf2',
     text: '#000',
 
     transparent: 'transparent',
@@ -229,22 +245,22 @@ const theme = {
     Layout: {},
     Header: {
       backgroundImage: () =>
-        `linear-gradient(to right, ${theme.colors.darkNavyBluePS} 0, ${theme.colors.darkNavyBluePS} 31%, ${theme.colors.lightNavyBluePS} 76%, ${theme.colors.bluishBlackPS})`,
+        `linear-gradient(to right, ${theme.colors.nittanyNavy} 0, ${theme.colors.nittanyNavy} 31%, ${theme.colors.lightNavyBluePS} 76%, ${theme.colors.endlessPotential})`,
     },
     Main: { width: 4 },
     Container: { p: 0, maxWidth: 1325 },
     Footer: {
       width: 4,
       backgroundImage: () =>
-        `linear-gradient(to bottom, ${theme.colors.navyBluePS}, ${theme.colors.darkNavyBluePS})`,
-      color: 'whitePS',
+        `linear-gradient(to bottom, ${theme.colors.midnightBlue}, ${theme.colors.nittanyNavy})`,
+      color: 'whiteout',
     },
 
     //not built in keys
     //to access the sx prop >>> make sure /** @jsx jsx */ import { jsx, Styled } from 'theme-ui'; are imported on the component
     //implementation >>> <Styled.h1>using the styled h1 object</Styled.h1>
     p: {
-      color: 'paragraphGrayPS',
+      color: 'oldCoaly',
       variant: 'text.p',
       fontSize: 4,
       my: 2,
@@ -252,7 +268,7 @@ const theme = {
     h1: {
       variant: 'text.heading',
       fontSize: 5,
-      color: 'darkNavyBluePS',
+      color: 'nittanyNavy',
       textTransform: 'uppercase',
       my: 2,
     },
@@ -260,7 +276,7 @@ const theme = {
       variant: 'text.heading',
       fontSize: 4,
       fontFamily: 'roboto-slab-var',
-      color: 'mediumBluePS',
+      color: 'paLink',
       my: 1,
     },
     h3: {

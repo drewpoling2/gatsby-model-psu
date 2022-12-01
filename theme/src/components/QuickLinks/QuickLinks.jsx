@@ -18,20 +18,19 @@ export const QuickLinks = ({ heading, data, index }) => {
         }}
       >
         <h2
+          className="uppercase"
           sx={{
             color: 'nittanyNavy',
-            textTransform: 'uppercase',
             mt: 0,
           }}
         >
           {heading}
         </h2>
         <div
+          className="flex justify-between"
           sx={{
             mt: 4,
-            display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'space-between',
             '@media screen and (max-width: 63em)': {
               width: '100%',
               justifyContent: 'space-evenly',

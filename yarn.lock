@@ -7025,7 +7025,7 @@ bindings@^1.5.0:
 
 bit-bin@^14.8.8:
   version "14.8.8"
-  resolved "https://registry.npmjs.org/bit-bin/-/bit-bin-14.8.8.tgz"
+  resolved "https://registry.yarnpkg.com/bit-bin/-/bit-bin-14.8.8.tgz#81d5fb8e2f48792082d59072e393471636ea981b"
   integrity sha512-t7PKK2o72FKW8LHEE7D11uFswljrTJIlwHD4ymG2eEvB6mzIv3POmce5pOTW4FiJEzY9WUA/bXarjHhtmDAzLQ==
   dependencies:
     "@apollo/react-hooks" "^3.1.5"
@@ -17693,7 +17693,7 @@ lodash.memoize@^4.1.2:
   resolved "https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-4.1.2.tgz"
   integrity sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==
 
-lodash.merge@^4.6.0, lodash.merge@^4.6.1, lodash.merge@^4.6.2:
+lodash.merge@^4.6.0, lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==

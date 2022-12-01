@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui"
+import { jsx } from "theme-ui"
 import { LandingPageImageHero } from "gatsby-theme-theme-ui-psu/src/components/LandingPageImageHero/LandingPageImageHero"
 import { WideImageHero } from "gatsby-theme-theme-ui-psu/src/components/WideImageHero/WideImageHero"
-import { Stack } from "gatsby-theme-theme-ui-psu/src/components/Stack/Stack"
 import { QuickLinks } from "gatsby-theme-theme-ui-psu/src/components/QuickLinks/QuickLinks"
 import { ParagraphSummary } from "gatsby-theme-theme-ui-psu/src/components/ParagraphSummary/ParagraphSummary"
 import { RichTextContent } from "gatsby-theme-theme-ui-psu/src/components/RichTextContent/RichTextContent"
@@ -61,7 +60,7 @@ export const CustomPageContent = ({ data }) => {
 
   return (
     <div sx={{ pt: 0, pb: 5 }}>
-      <Stack variant="col">{components}</Stack>
+      <div sx={{ display: "flex", flexDirection: "column" }}>{components}</div>
     </div>
   )
 }

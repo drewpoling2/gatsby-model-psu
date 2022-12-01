@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import { jsx, Container } from 'theme-ui';
 import { Button } from '../Button/Button';
-import { Stack } from '../Stack/Stack';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
+import theme from '../../gatsby-plugin-theme-ui';
 export const LandingPageImageHero = ({
   paragraphText,
   headingText,
@@ -12,25 +11,15 @@ export const LandingPageImageHero = ({
 }) => {
   return (
     <div sx={{ pb: 4 }}>
-      <Stack variant="col">
+      <div className="flex-col">
         <div
+          className="relative w-full bg-cover bg-no-repeat"
           style={{
             backgroundImage: `url(${imageSrc})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            width: '100%',
-            position: 'relative',
           }}
           alt={`${imageSrc}`}
         >
-          <div
-            sx={{
-              display: 'flex',
-              height: '100%',
-              alignContent: 'center',
-              flexDirection: 'column',
-            }}
-          >
+          <div className="flex-col h-full content-center">
             <Container
               sx={{
                 height: '100%',
@@ -54,7 +43,7 @@ export const LandingPageImageHero = ({
                   sx={{
                     mt: 3,
                     mb: 5,
-                    fontSize: 13,
+                    fontSize: '10xl',
                     color: 'beaverBlue',
                   }}
                 >
@@ -63,7 +52,7 @@ export const LandingPageImageHero = ({
                 <div
                   sx={{
                     mb: 3,
-                    borderBottom: '5px solid #009CDE',
+                    borderBottom: `5px solid ${theme.colors.paSky}`,
                     width: '10.5%',
                   }}
                 ></div>
@@ -71,7 +60,7 @@ export const LandingPageImageHero = ({
                 <p
                   sx={{
                     variant: 'text.copyP',
-                    fontSize: 14,
+                    fontSize: '4xl',
                     color: 'oldCoaly',
                     pb: 4,
                     pt: 3,
@@ -84,7 +73,7 @@ export const LandingPageImageHero = ({
             </Container>
           </div>
         </div>
-      </Stack>
+      </div>
     </div>
   );
 };

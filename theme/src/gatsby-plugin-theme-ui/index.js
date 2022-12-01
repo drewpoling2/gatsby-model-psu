@@ -45,15 +45,17 @@ const theme = {
     '80%',
   ], //9
   fonts: {
-    body: 'roboto-regular, sans-serif',
-    heading: 'roboto-bold, sans-serif',
+    body: 'roboto-regular, system-ui',
+    heading: 'roboto-bold, system-ui',
     monospace: 'Menlo, monospace',
-    a: 'roboto-regular',
-    robotoBold: 'roboto-bold, sans-serif',
-    robotoRegular: 'roboto-regular, sans-serif',
-    robotoCondensedBold: 'roboto-condensed-bold, sans-serif',
-    robotoCondensedRegular: 'roboto-condensed-regular, sans-serif',
+    a: 'roboto-regular, system-ui',
+    robotoBold: 'roboto-bold, system-ui',
+    robotoRegular: 'roboto-regular, system-ui',
+    robotoCondensedBold: 'roboto-condensed-bold, system-ui',
+    robotoCondensedRegular: 'roboto-condensed-regular, system-ui',
   },
+
+  //example >>> sx={{color: 'whiteout'}} -or- sx={{border: `1px solid ${theme.colors.whiteout}}} (to get colors this way you need to import theme object)
   colors: {
     whiteout: '#fff',
     lionShrineLight: '#f7f2ee',
@@ -95,24 +97,43 @@ const theme = {
     transparent: 'transparent',
   },
 
-  //example >>> <h1 sx={{fontSize: 2}}>h1 using a font size of 16</h1>
-  fontSizes: [
-    '.75rem',
-    '0.875rem',
-    '1rem',
-    '1.25rem',
-    '1.5rem',
-    '2rem',
-    '3rem',
-    '4rem',
-    '6rem',
-    '1.438rem',
-    '2.625rem',
-    '1.125rem',
-    '3.438rem',
-    '4.375rem',
-    '1.875rem',
-  ], //length 14
+  //example >>> <h1 sx={{fontSize: 'lg'}}>h1 using a font size of 1.25rem</h1>
+  fontSizes: {
+    xs: [
+      '0.75rem',
+      { lineHeight: '1rem' },
+
+      // '.75rem',
+      // '0.875rem',
+      // '1rem',
+      // '1.25rem',
+      // '1.5rem',
+      // '2rem',
+      // '3rem',
+      // '4rem',
+      // '6rem',
+      // '1.438rem',
+      // '2.625rem',
+      // '1.125rem',
+      // '3.438rem',
+      // '4.375rem',
+      // '1.875rem',
+    ],
+    s: ['.875rem', { lineHeight: '1.25rem' }],
+    m: ['1rem', { lineHeight: '1.5rem' }],
+    lg: ['1.25rem', { lineHeight: '1.75rem' }],
+    xl: ['1.375rem', { lineHeight: '1.875rem' }],
+    '2xl': ['1.438rem', { lineHeight: '1.938rem' }],
+    '3xl': ['1.5rem', { lineHeight: '2rem' }],
+    '4xl': ['1.875rem', { lineHeight: '2.375rem' }],
+    '5xl': ['2rem', { lineHeight: '2.5rem' }],
+    '6xl': ['2.625rem', { lineHeight: '3.125rem' }],
+    '7xl': ['3rem', { lineHeight: '3.5rem' }],
+    '8xl': ['3.438rem', { lineHeight: '3.938rem' }],
+    '9xl': ['4rem', { lineHeight: '4.5rem' }],
+    '10xl': ['4.375rem', { lineHeight: '4.875rem' }],
+    '11xl': ['6rem', { lineHeight: '6.5rem' }],
+  },
   fontWeights: {
     body: 400,
     heading: 700,
@@ -208,18 +229,69 @@ const theme = {
     },
   },
   buttons: {
-    primary: {
-      color: 'red',
-      bg: 'blue',
-      '&:hover': {
-        bg: 'text',
-      },
-      px: 3,
-      py: 1,
+    default: {
+      backgroundImage: () =>
+        `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
+      color: 'whiteout',
+      px: 13,
+      py: 2,
+      mx: 0,
+      '&:hover': {},
     },
-    secondary: {
-      color: 'yellow',
-      bg: 'green',
+    hotline: {
+      backgroundColor: 'endlessPotential',
+      color: 'paLinkLight',
+      border: '2px solid #000321',
+      px: 13,
+      py: 1,
+      mx: 1,
+      '&:hover': {
+        border: '2px solid #ffd100',
+        backgroundColor: 'brightKeystone',
+        color: 'endlessPotential',
+      },
+    },
+    outlined: {
+      backgroundColor: 'none',
+      color: 'whiteout',
+      border: 'outlineButton',
+      px: 13,
+      py: 2,
+      my: 2,
+      '&:hover': {
+        backgroundColor: 'paLinkLight',
+        color: 'paLink',
+      },
+    },
+    outlinedNav: {
+      backgroundColor: 'none',
+      color: 'paLinkLight',
+      border: '2px solid #ccf0ff',
+      px: 13,
+      py: 1,
+      mx: 1,
+      cursor: 'pointer',
+      '&:hover': {
+        border: '2px solid #009CDE',
+        backgroundImage: () =>
+          `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
+        color: 'whiteout',
+      },
+    },
+    outlinedNavSecondary: {
+      backgroundColor: 'none',
+      color: 'paLink',
+      border: '2px solid #005fa9',
+      px: 13,
+      py: 1,
+      mx: 1,
+      cursor: 'pointer',
+      '&:hover': {
+        border: '2px solid #009CDE',
+        backgroundImage: () =>
+          `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
+        color: 'whiteout',
+      },
     },
   },
   arrows: {

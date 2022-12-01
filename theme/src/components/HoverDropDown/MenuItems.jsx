@@ -19,15 +19,13 @@ const MenuItems = ({ items, column }) => {
       {items.navItems ? (
         <>
           <div
+            className="decoration-none relative pointer"
             sx={{
               color: column ? 'nittanyNavy' : 'white',
-              textDecoration: 'none',
-              fontSize: column ? 4 : 11,
+              fontSize: column ? '3xl' : '1.125rem',
               mx: column ? 0 : 3,
               letterSpacing: '.16px',
               fontFamily: 'roboto-condensed-regular',
-              position: 'relative',
-              cursor: 'pointer',
             }}
             type="button"
             aria-expanded={dropdown ? 'true' : 'false'}
@@ -58,7 +56,7 @@ const MenuItems = ({ items, column }) => {
         <Link
           sx={{
             textDecoration: 'none',
-            fontSize: column ? 4 : 11,
+            fontSize: column ? '3xl' : '1.125rem',
             letterSpacing: '.16px',
             fontFamily: 'roboto-condensed-regular',
             color: column ? 'nittanyNavy' : 'white',

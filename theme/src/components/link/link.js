@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withPrefix, Link as GatsbyLink } from 'gatsby';
 // Since DOM elements <a> cannot receive activeClassName
 // and partiallyActive, destructure the prop here and
@@ -35,16 +34,6 @@ const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
       {children}
     </a>
   );
-};
-
-Link.propTypes = {
-  to: PropTypes.string,
-  activeClassName: PropTypes.string,
-  partiallyActive: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
 };
 
 export default Link;

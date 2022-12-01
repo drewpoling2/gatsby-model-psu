@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
-import { Stack } from '../Stack/Stack';
 import { graphql } from 'gatsby';
+import theme from '../../gatsby-plugin-theme-ui';
 
 export const TopicPageHeader = ({
   topicPageHeaderText,
@@ -10,10 +10,9 @@ export const TopicPageHeader = ({
 }) => {
   return (
     <div
+      className="flex-col"
       sx={{
         py: 4,
-        display: 'flex',
-        flexDirection: 'column',
         '@media screen and (max-width: 64em)': {
           px: 4,
         },
@@ -21,10 +20,10 @@ export const TopicPageHeader = ({
     >
       <h1
         sx={{
-          borderBottom: '1px solid #314D64',
-          fontSize: 10,
+          borderBottom: `1px solid ${theme.colors.slate}`,
+          fontSize: '6xl',
           pb: '28px',
-          lineHeight: '32px',
+          lineHeight: '2rem',
           color: 'nittanyNavy',
           whiteSpace: 'pre-line',
         }}
@@ -34,8 +33,8 @@ export const TopicPageHeader = ({
 
       <p
         sx={{
-          variant: 'text.copyP',
-          fontSize: 3,
+          fontFamily: 'roboto-regular',
+          fontSize: 'lg',
           color: 'oldCoaly',
           m: 0,
         }}

@@ -6,25 +6,18 @@ import { Link } from 'gatsby';
 export const Card = ({ item, index }) => {
   return (
     <div
+      className="flex-col"
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
         width: '305px',
       }}
     >
       <div
+        className="flex items-center justfiy-center pointer bg-no-repeat bg-cover bg-center"
         sx={{
           height: '260px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
         }}
         style={{
           backgroundImage: `url(${item.image.gatsbyImageData.images.fallback.src})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
         }}
         alt={'Psu Altoona Logo'}
         onClick={() => console.log('Logo')}
@@ -34,31 +27,31 @@ export const Card = ({ item, index }) => {
           py: 3,
         }}
       >
-        <Styled.h2 sx={{ p: 0, lineHeight: '26px' }}>
+        <h2 sx={{ my: 2, p: 0, lineHeight: '1.625rem' }}>
           <Link
             id={`quicklink-${index}`}
             sx={{
               fontFamily: 'roboto-slab-var',
-              fontSize: '22px',
+              fontSize: 'xl',
               textDecoration: 'none',
             }}
             to={`${item.slug}`}
           >
             {item.cardTitle}
           </Link>
-        </Styled.h2>
-        <Styled.h4
+        </h2>
+        <h4
+          className="uppercase"
           sx={{
-            color: '#444444',
-            mt: '20px',
-            fontSize: '18px',
+            color: 'oldCoaly',
+            mt: '1.25rem',
+            fontSize: '1.125rem',
             letterSpacing: '.54px',
-            lineHeight: '22px',
-            textTransform: 'uppercase',
+            lineHeight: '1.25rem',
           }}
         >
           {item.cardDescription}
-        </Styled.h4>
+        </h4>
       </div>
     </div>
   );

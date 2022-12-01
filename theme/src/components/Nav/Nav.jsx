@@ -3,6 +3,7 @@ import { Container, jsx, Flex } from 'theme-ui';
 import { FiMenu } from 'react-icons/fi';
 import { HoverDropDown } from '../HoverDropDown/HoverDropDown';
 import { Link } from 'gatsby';
+import { Button } from '../Button/Button';
 import React, { useState } from 'react';
 import theme from '../../gatsby-plugin-theme-ui';
 import { IoMdClose } from 'react-icons/io';
@@ -17,21 +18,18 @@ export const Nav = ({ imageSrc, navData }) => {
     <>
       {/* mobile */}
       <div
+        className="w-full relative"
         sx={{
-          width: '100%',
-          position: 'relative',
           '@media screen and (min-width: 70em)': {
             display: 'none',
           },
         }}
       >
         <div
+          className="flex justify-between items-center"
           sx={{
             my: 3,
             mx: 4,
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
           }}
         >
           <Link to="/">
@@ -44,29 +42,27 @@ export const Nav = ({ imageSrc, navData }) => {
           </Link>
           {openMobileNav ? (
             <IoMdClose
-              sx={{ color: 'white', fontSize: 5, cursor: 'pointer' }}
+              sx={{ color: 'white', fontSize: '5xl', cursor: 'pointer' }}
               onClick={toggle}
             />
           ) : (
             <FiMenu
-              sx={{ color: 'white', fontSize: 5, cursor: 'pointer' }}
+              sx={{ color: 'white', fontSize: '5xl', cursor: 'pointer' }}
               onClick={toggle}
             />
           )}
         </div>
         {openMobileNav && (
-          <Flex
+          <div
+            className="flex w-full absolute z-middle"
             sx={{
               backgroundColor: 'white',
               boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
               pb: 3,
-              position: 'absolute',
-              width: '100%',
-              zIndex: 15,
             }}
           >
             <Container>
-              <Flex sx={{ justifyContent: 'center' }}>
+              <div className="flex justify-center">
                 <div>
                   <Flex
                     sx={{
@@ -82,90 +78,47 @@ export const Nav = ({ imageSrc, navData }) => {
                     {/* using Button here is better but something is wrong with the Button export blocking conditional rendering for variants*/}
                     {items.map((item, i) => {
                       return i === 0 ? (
-                        <Link
-                          key={i}
-                          href={
-                            item.node.ref.href
-                              ? `/${item.node.ref.href}`
-                              : `/${item.node.ref.slug}`
-                          }
-                          sx={{
-                            backgroundColor: 'endlessPotential',
-                            color: 'paLinkLight',
-                            width: 5,
-                            height: 5,
-                            border: '2px solid #000321',
-                            px: 13,
-                            textDecoration: 'none',
-                            py: 1,
-                            fontSize: 3,
-                            m: 1,
-                            cursor: 'pointer',
-                            variant: 'layout.rowJAC',
-                            '&:hover': {
-                              border: '2px solid #ffd100',
-                              backgroundColor: 'brightKeystone',
-                              color: 'endlessPotential',
-                            },
-                          }}
-                        >
-                          <span
-                            sx={{
-                              variant: 'text.button',
-                            }}
-                          >
-                            {item.node.text}
-                          </span>
-                        </Link>
+                        <div sx={{ my: 1 }}>
+                          <Button
+                            id={`nav-cta-${i}`}
+                            key={i}
+                            to={
+                              item.node.ref.href
+                                ? `${item.node.ref.href}`
+                                : `/${item.node.ref.slug}`
+                            }
+                            text={item.node.text}
+                            variant="hotline"
+                          />
+                        </div>
                       ) : (
-                        <Link
-                          id={`nav-cta ${i}`}
-                          key={i}
-                          href={
-                            item.node.ref.href
-                              ? `/${item.node.ref.href}`
-                              : `/${item.node.ref.slug}`
-                          }
-                          sx={{
-                            backgroundColor: 'none',
-                            color: 'paLink',
-                            border: `2px solid ${theme.colors.paLink}`,
-                            width: 5,
-                            textDecoration: 'none',
-                            height: 5,
-                            fontSize: 3,
-                            px: 13,
-                            py: 1,
-                            m: 1,
-                            cursor: 'pointer',
-                            variant: 'layout.rowJAC',
-                            '&:hover': {
-                              border: '2px solid #009CDE',
-                              backgroundImage: () =>
-                                `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
-                              color: 'whiteout',
-                            },
-                          }}
-                        >
-                          <span sx={{ variant: 'text.button' }}>
-                            {item.node.text}
-                          </span>
-                        </Link>
+                        <div sx={{ my: 1 }}>
+                          <Button
+                            id={`nav-cta-${i}`}
+                            key={i}
+                            to={
+                              item.node.ref.href
+                                ? `${item.node.ref.href}`
+                                : `/${item.node.ref.slug}`
+                            }
+                            variant={'outlinedNavSecondary'}
+                            text={item.node.text}
+                          />
+                        </div>
                       );
                     })}
                   </Flex>
                   <HoverDropDown column={openMobileNav} navData={navData} />
                 </div>
-              </Flex>
+              </div>
             </Container>
-          </Flex>
+          </div>
         )}
       </div>
       {/* desktop */}
       <div
+        className="w-full flex-row justify-between"
         sx={{
-          variant: 'layout.rowJSB',
-          width: 4,
           '@media screen and (max-width: 70em)': {
             display: 'none',
           },
@@ -176,7 +129,7 @@ export const Nav = ({ imageSrc, navData }) => {
             variant: 'layout.rowJSB',
           }}
         >
-          <div sx={{ variant: 'layout.rowJAC' }}>
+          <div className="flex-row justify-center items-center">
             <Link to="/">
               <img
                 src={imageSrc}
@@ -186,21 +139,16 @@ export const Nav = ({ imageSrc, navData }) => {
               />
             </Link>
           </div>
-          <div
-            sx={{
-              variant: 'layout.rowJAC',
-            }}
-          >
+          <div className="flex-row justify-center items-center">
             <div
+              className="flex-col items-end"
               sx={{
-                variant: 'layout.col',
-                alignItems: 'flex-end',
                 pb: 2,
               }}
             >
               <div
+                className="flex-row justify-center items-center"
                 sx={{
-                  variant: 'layout.rowJAC',
                   mx: 3,
                   my: 15,
                   pt: 3,
@@ -209,90 +157,33 @@ export const Nav = ({ imageSrc, navData }) => {
                 {/* using Button here is better but something is wrong with the Button export blocking conditional rendering for variants*/}
                 {items.map((item, i) => {
                   return i === 0 ? (
-                    <Link
+                    <Button
+                      id={`nav-cta-${i}`}
                       key={i}
-                      id={`nav-cta-${i}-${
+                      to={
                         item.node.ref.href
-                          ? item.node.ref.href
-                          : item.node.ref.slug
-                      }`}
-                      href={
-                        item.node.ref.href
-                          ? `/${item.node.ref.href}`
+                          ? `${item.node.ref.href}`
                           : `/${item.node.ref.slug}`
                       }
-                      sx={{
-                        backgroundColor: 'endlessPotential',
-                        color: 'paLinkLight',
-                        width: 5,
-                        height: 5,
-                        border: '2px solid #000321',
-                        px: 13,
-                        textDecoration: 'none',
-                        py: 1,
-                        mx: 1,
-                        cursor: 'pointer',
-                        variant: 'layout.rowJAC',
-                        '&:hover': {
-                          border: '2px solid #ffd100',
-                          backgroundColor: 'brightKeystone',
-                          color: 'endlessPotential',
-                        },
-                      }}
-                    >
-                      <span
-                        sx={{
-                          variant: 'text.button',
-                        }}
-                      >
-                        {item.node.text}
-                      </span>
-                    </Link>
+                      text={item.node.text}
+                      variant="hotline"
+                    />
                   ) : (
-                    <Link
+                    <Button
+                      id={`nav-cta-${i}`}
                       key={i}
-                      id={`nav-cta-${i}-${
+                      to={
                         item.node.ref.href
-                          ? item.node.ref.href
-                          : item.node.ref.slug
-                      }`}
-                      href={
-                        item.node.ref.href
-                          ? `/${item.node.ref.href}`
+                          ? `${item.node.ref.href}`
                           : `/${item.node.ref.slug}`
                       }
-                      sx={{
-                        backgroundColor: 'none',
-                        color: 'paLinkLight',
-                        border: '2px solid #ccf0ff',
-                        width: 5,
-                        textDecoration: 'none',
-                        height: 5,
-                        px: 13,
-                        py: 1,
-                        mx: 1,
-                        cursor: 'pointer',
-                        variant: 'layout.rowJAC',
-                        '&:hover': {
-                          border: '2px solid #009CDE',
-                          backgroundImage: () =>
-                            `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
-                          color: 'whiteout',
-                        },
-                      }}
-                    >
-                      <span sx={{ variant: 'text.button' }}>
-                        {item.node.text}
-                      </span>
-                    </Link>
+                      variant={'outlinedNav'}
+                      text={item.node.text}
+                    />
                   );
                 })}
               </div>
-              <div
-                sx={{
-                  variant: 'layout.row',
-                }}
-              >
+              <div className="flex-row">
                 <HoverDropDown navData={navData} />
               </div>
             </div>

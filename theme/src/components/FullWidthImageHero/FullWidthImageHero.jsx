@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Button } from '../Button/Button';
-import { Stack } from '../Stack/Stack';
 import theme from '../../gatsby-plugin-theme-ui';
 import { graphql } from 'gatsby';
 export const FullWidthImageHero = ({
@@ -10,49 +9,40 @@ export const FullWidthImageHero = ({
   subTitle = 'featured',
 }) => {
   return (
-    <div sx={{ width: 4, pb: 4 }}>
-      <Stack variant="col">
+    <div className="w-full" sx={{ pb: 4 }}>
+      <div className="flex-col">
         <div
+          className="flex justify-center w-full"
           sx={{
             backgroundImage: () =>
               `linear-gradient(to bottom, ${theme.colors.paSky},  ${theme.colors.beaverBlue})`,
-            width: '100%',
             pb: 4,
             height: '504px',
-            display: 'flex',
-            justifyContent: 'center',
           }}
         >
           <div
+            className="absolute bg-cover bg-no-repeat"
             style={{
               backgroundImage: `url(${imageSrc})`,
-              backgroundRepeat: 'no-repeat',
-              position: 'absolute',
-              backgroundSize: 'cover',
               zIndex: 0,
             }}
             alt={`${imageSrc}`}
           ></div>
-
           <div
+            className="flex-col w-full h-full justify-end"
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
               pl: 5,
               pr: 8,
-              width: '100%',
-              height: '100%',
-              justifyContent: 'flex-end',
             }}
           >
             <h5
+              className="uppercase"
               sx={{
                 mb: 3,
                 zIndex: 1,
                 letterSpacing: 0.5,
-                fontSize: 11,
+                fontSize: '1.125rem',
                 color: 'paLinkLight',
-                textTransform: 'uppercase',
               }}
             >
               {subTitle}
@@ -61,25 +51,25 @@ export const FullWidthImageHero = ({
               sx={{
                 zIndex: 1,
                 mb: 3,
-                borderBottom: '1px solid white',
+                borderBottom: `1px solid ${theme.colors.whiteout}`,
                 width: '3.5%',
               }}
             ></div>
             <h1
+              className="italic"
               sx={{
                 mt: 3,
                 mb: 3,
                 zIndex: 1,
-                fontSize: 13,
+                fontSize: '10xl',
                 color: 'whiteout',
-                fontStyle: 'italic',
               }}
             >
               {headingText}
             </h1>
           </div>
         </div>
-      </Stack>
+      </div>
     </div>
   );
 };

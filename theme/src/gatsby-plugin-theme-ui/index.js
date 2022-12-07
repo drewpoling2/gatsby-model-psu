@@ -99,26 +99,7 @@ const theme = {
 
   //example >>> <h1 sx={{fontSize: 'lg'}}>h1 using a font size of 1.25rem</h1>
   fontSizes: {
-    xs: [
-      '0.75rem',
-      { lineHeight: '1rem' },
-
-      // '.75rem',
-      // '0.875rem',
-      // '1rem',
-      // '1.25rem',
-      // '1.5rem',
-      // '2rem',
-      // '3rem',
-      // '4rem',
-      // '6rem',
-      // '1.438rem',
-      // '2.625rem',
-      // '1.125rem',
-      // '3.438rem',
-      // '4.375rem',
-      // '1.875rem',
-    ],
+    xs: ['0.75rem', { lineHeight: '1rem' }],
     s: ['.875rem', { lineHeight: '1.25rem' }],
     m: ['1rem', { lineHeight: '1.5rem' }],
     lg: ['1.25rem', { lineHeight: '1.75rem' }],

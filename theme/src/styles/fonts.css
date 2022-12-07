@@ -4,7 +4,7 @@
   font-weight: 400;
   font-stretch: 100%;
   font-display: swap;
-  src: url('../../static/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf')
+  src: url('../static/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf')
     format('truetype');
 }
 @font-face {
@@ -13,7 +13,7 @@
   font-display: swap;
   font-style: normal;
   font-named-instance: 'Regular';
-  src: url('../../static/fonts/RobotoSlab/RobotoSlab-VariableFont_wght.ttf')
+  src: url('../static/fonts/RobotoSlab/RobotoSlab-VariableFont_wght.ttf')
     format('truetype');
 }
 @font-face {
@@ -22,7 +22,7 @@
   font-weight: 700;
   font-stretch: 100%;
   font-display: swap;
-  src: url('../../static/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf')
+  src: url('../static/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf')
     format('truetype');
 }
 @font-face {
@@ -31,7 +31,7 @@
   font-weight: 400;
   font-stretch: 100%;
   font-display: swap;
-  src: url('../../static/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  src: url('../static/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'roboto-bold';
@@ -39,5 +39,5 @@
   font-weight: 700;
   font-stretch: 100%;
   font-display: swap;
-  src: url('../../static/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  src: url('../static/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
 }

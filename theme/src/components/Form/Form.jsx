@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui';
 import { useState } from 'react';
-import { Stack } from '../Stack/Stack';
 import { Button } from '../Button/Button';
 export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
   const [inputOne, setInputOne] = useState('');
@@ -31,8 +30,8 @@ export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
     }
   };
   return (
-    <Stack variant={'col'}>
-      <div sx={{ width: '100%' }}>
+    <div className="flex-col">
+      <div className="flex w-full">
         <form
           onSubmit={handleSubmit}
           sx={{
@@ -43,11 +42,11 @@ export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
             },
           }}
         >
-          <Flex sx={{ flexDirection: 'column' }}>
+          <div className="flex-col">
             <input
               sx={{
                 p: 16,
-                fontSize: 2,
+                fontSize: 'm',
                 mb: 2,
               }}
               placeholder={fieldTextOne}
@@ -56,7 +55,7 @@ export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
               onChange={handleChangeOne}
             />
             <input
-              sx={{ p: 16, fontSize: 2, mb: 2 }}
+              sx={{ p: 16, fontSize: 'm', mb: 2 }}
               placeholder={fieldTextTwo}
               type="text"
               value={inputTwo}
@@ -65,7 +64,7 @@ export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
             <input
               sx={{
                 p: 16,
-                fontSize: 2,
+                fontSize: 'm',
                 mb: 2,
               }}
               placeholder={fieldTextThree}
@@ -73,10 +72,10 @@ export const Form = ({ fieldTextOne, fieldTextTwo, fieldTextThree }) => {
               value={inputThree}
               onChange={handleChangeThree}
             />
-          </Flex>
+          </div>
           <Button type="submit" text="Submit" onClick={handleSubmit}></Button>
         </form>
       </div>
-    </Stack>
+    </div>
   );
 };

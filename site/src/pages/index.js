@@ -4,7 +4,7 @@ import logo from "../../assets/psu-mark.png"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
 import { HomePageContent } from "../components/HomePageContent"
-import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
+import { CustomFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/CustomFooter"
 import { graphql } from "gatsby"
 
 export const query = graphql`
@@ -100,7 +100,7 @@ const index = ({ data }) => (
       />
     }
     mainChild={<HomePageContent data={data} />}
-    footerChild={<NewsFooter />}
+    footerChild={<CustomFooter />}
   ></Layout>
 )
 

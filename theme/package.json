@@ -40,14 +40,14 @@
     "postcss-remove-nested-calc": "^1.0.3",
     "react-performance-testing": "^2.0.0",
     "sass": "^1.55.0",
-    "theme-ui": "^0.2.5"
+    "theme-ui": "^0.2.5",
+    "yarn": "^1.22.19"
   },
   "sasslintConfig": ".sass-lint.yml",
   "scripts": {
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate-c": "yarn plop --plopfile ./component-plopfile.js",
-    "generate-p": "yarn plop --plopfile ./page-plopfile.js"
+    "generate-c": "yarn plop --plopfile ./component-plopfile.js"
   },
   "bit": {
     "env": {
@@ -55,5 +55,17 @@
     },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

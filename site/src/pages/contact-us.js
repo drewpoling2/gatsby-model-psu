@@ -2,7 +2,7 @@
 import { jsx, Container } from "theme-ui"
 import Layout from "gatsby-theme-theme-ui-psu/src/components/Layout/Layout"
 import { Nav } from "gatsby-theme-theme-ui-psu/src/components/Nav/Nav"
-import { NewsFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/NewsFooter"
+import { CustomFooter } from "gatsby-theme-theme-ui-psu/src/components/CustomFooter/CustomFooter"
 import logo from "../../assets/psu-mark.png"
 import { graphql } from "gatsby"
 import { Form } from "gatsby-theme-theme-ui-psu/src/components/Form/Form"
@@ -108,7 +108,7 @@ const contactUsPage = ({ data }) => (
         </div>
       </Container>
     }
-    footerChild={<NewsFooter />}
+    footerChild={<CustomFooter />}
   ></Layout>
 )
 

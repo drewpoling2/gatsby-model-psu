@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Container, Flex } from 'theme-ui';
+import { jsx, Container } from 'theme-ui';
 import React from 'react';
-import { Stack } from '../Stack/Stack';
 import { graphql } from 'gatsby';
+import theme from '../../gatsby-plugin-theme-ui';
 
 export const ParagraphSummary = ({
   paragraphSummaryAuthor,
@@ -12,18 +12,17 @@ export const ParagraphSummary = ({
   return (
     <Container>
       <div
+        className="flex-row"
         sx={{
           py: 4,
-          display: 'flex',
-          flexDirection: 'row',
           '@media screen and (max-width: 64em)': {
             px: 4,
           },
         }}
       >
-        <Flex
+        <div
+          className="flex-col"
           sx={{
-            flexDirection: 'column',
             '@media screen and (min-width: 64em)': {
               width: '55%',
             },
@@ -35,7 +34,7 @@ export const ParagraphSummary = ({
               pr: 3,
               m: 0,
               whiteSpace: 'nowrap',
-              fontSize: 2,
+              fontSize: 'm',
               color: 'endlessPotential',
               '@media screen and (max-width: 64em)': {
                 display: 'none',
@@ -45,11 +44,11 @@ export const ParagraphSummary = ({
             {paragraphSummaryAuthor}
           </h6>
           <h5
+            className="uppercase"
             sx={{
-              textTransform: 'uppercase',
               color: 'mediumGray',
               m: 0,
-              fontSize: 2,
+              fontSize: 'm',
               '@media screen and (max-width: 64em)': {
                 display: 'none',
               },
@@ -57,18 +56,20 @@ export const ParagraphSummary = ({
           >
             {paragraphSummarySubtitle}
           </h5>
-        </Flex>
-        <div sx={{ mb: 3, borderLeft: '4px solid #314D64' }}></div>
+        </div>
+        <div
+          sx={{ mb: 3, borderLeft: `4px solid ${theme.colors.slate}` }}
+        ></div>
         <p
+          className="italic"
           sx={{
             variant: 'text.copyP',
-            fontSize: 14,
+            fontSize: '4xl',
             color: 'slate',
             pt: 3,
             pb: 4,
             pl: 3,
             m: 0,
-            fontStyle: 'italic',
           }}
         >
           {paragraphSummaryText}
